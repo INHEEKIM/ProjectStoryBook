@@ -17,15 +17,30 @@ namespace Vuforia
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
-    
+        private MarkerStateManager mMarkerStateManager;
+        private Canvas subUI;
+        private GameObject chaKnight;
+        private GameObject cuboidMarker;
+
+        private bool stoneTrigger = false;
+        private bool markerTrigger = false;
+
+        private bool moveTrigger = false;
         #endregion // PRIVATE_MEMBER_VARIABLES
 
 
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
-    
+
         void Start()
         {
+            mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
+            subUI = GameObject.Find("SubUI").GetComponent<Canvas>();
+            subUI.enabled = false;
+
+            chaKnight = GameObject.Find("Cha_Knight");
+            cuboidMarker = GameObject.Find("CuboidMarker");
+
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
             if (mTrackableBehaviour)
             {
@@ -52,10 +67,51 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
                 OnTrackingFound();
+                //스톤 마커를 발견하게 되면
+                if (mTrackableBehaviour.TrackableName == "stones")
+                {
+                    mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
+                }
+                if (mTrackableBehaviour.TrackableName == "Cuboid")
+                {
+                    mMarkerStateManager.setCuboidMarker(MarkerStateManager.StateType.On);
+                }
+                //스톤마커와 큐보이드 마커를 발견하면
+                if(mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On)
+                {
+                    moveTrigger = true;
+                    Debug.Log("OK : " + moveTrigger);
+                }
+
+                
             }
             else
             {
                 OnTrackingLost();
+
+                if (mTrackableBehaviour.TrackableName == "stones")
+                {
+                    mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.Off);
+                }
+                if (mTrackableBehaviour.TrackableName == "Cuboid")
+                {
+                    mMarkerStateManager.setCuboidMarker(MarkerStateManager.StateType.Off);
+                }
+
+                if (mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.Off &&
+            mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.Off)
+                {
+                    moveTrigger = false;
+                    Debug.Log("Off : " + moveTrigger);
+                }
+
+                if (mTrackableBehaviour.TrackableName == "stones")
+                {
+                    //SubUI를 보여준다.
+                    subUI.enabled = false;
+                }
+
             }
         }
 
@@ -65,6 +121,23 @@ namespace Vuforia
 
         #region PRIVATE_METHODS
 
+        void Update()
+        {
+            if (moveTrigger == true)
+            {
+                CharaterMove();
+            }
+            
+        }
+
+        void CharaterMove()
+        {
+            Vector3 direction = chaKnight.transform.position - cuboidMarker.transform.position; //로컬 포지션으로 캐릭터와 마커의 사이의 벡터를 구한후
+            Quaternion rotation = Quaternion.LookRotation(-direction); //캐릭터의 foward가 반대로 되어있음
+            chaKnight.transform.rotation = (Quaternion.Slerp(chaKnight.transform.rotation, rotation, Time.deltaTime * 1.5f));
+
+            chaKnight.transform.position = Vector3.Lerp(chaKnight.transform.position, cuboidMarker.transform.position, Time.deltaTime * 0.8f);
+        }
 
         private void OnTrackingFound()
         {
