@@ -7,8 +7,11 @@ private var animationList:Array;
 function Start () {
      print("animationGetCount:" + GetComponent.<Animation>().GetClipCount());
      print(GetComponent.<Animation>().clip.name);
+     
      animationCount = GetComponent.<Animation>().GetClipCount();
+
      print(gameObject.GetComponent.<Animation>());
+
      animationList = GetAnimationList();
 }
 
