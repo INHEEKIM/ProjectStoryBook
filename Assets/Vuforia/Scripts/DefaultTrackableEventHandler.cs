@@ -71,6 +71,7 @@ namespace Vuforia
                 if (mTrackableBehaviour.TrackableName == "stones")
                 {
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
+                    subUI.enabled = true;
                 }
                 if (mTrackableBehaviour.TrackableName == "Cuboid")
                 {
@@ -93,23 +94,20 @@ namespace Vuforia
                 if (mTrackableBehaviour.TrackableName == "stones")
                 {
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.Off);
+                    //SubUI를 보여준다.
+                    subUI.enabled = false;
                 }
                 if (mTrackableBehaviour.TrackableName == "Cuboid")
                 {
                     mMarkerStateManager.setCuboidMarker(MarkerStateManager.StateType.Off);
                 }
 
+                //만약 큐보이드 마커의 발견 상태와 스톤마커의 발견 상태가 오프 상태이면
                 if (mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.Off &&
             mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.Off)
                 {
                     moveTrigger = false;
                     Debug.Log("Off : " + moveTrigger);
-                }
-
-                if (mTrackableBehaviour.TrackableName == "stones")
-                {
-                    //SubUI를 보여준다.
-                    subUI.enabled = false;
                 }
 
             }
