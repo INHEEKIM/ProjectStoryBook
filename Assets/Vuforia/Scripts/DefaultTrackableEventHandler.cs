@@ -67,11 +67,18 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
                 OnTrackingFound();
-                //스톤 마커를 발견하게 되면
-                if (mTrackableBehaviour.TrackableName == "stones")
+                //stoneMarker를 발견하게 되면
+                if (mTrackableBehaviour.TrackableName == "stones") //Page1
                 {
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
                     subUI.enabled = true;
+                }
+                //chipMarker
+                if (mTrackableBehaviour.TrackableName == "chip")
+                {
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page2);
+
                 }
                 if (mTrackableBehaviour.TrackableName == "Cuboid")
                 {
@@ -91,12 +98,23 @@ namespace Vuforia
             {
                 OnTrackingLost();
 
+                //stoneMarker를 읽으면
                 if (mTrackableBehaviour.TrackableName == "stones")
                 {
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
+
                     //SubUI를 보여준다.
                     subUI.enabled = false;
                 }
+
+                //chipMarker를 잃으면
+                if (mTrackableBehaviour.TrackableName == "chip")
+                {
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing); 
+
+                }
+
                 if (mTrackableBehaviour.TrackableName == "Cuboid")
                 {
                     mMarkerStateManager.setCuboidMarker(MarkerStateManager.StateType.Off);
