@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager manager;
 
-    public List<bool> phase;
+    public bool[] phase;
 
     void Awake()
     {
@@ -24,13 +24,7 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        //처음 켰을 때 초기화.
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
-        PlayerData data = new PlayerData();
-        for (int i = 0; i < data.phase.Count; i++)
-            data.phase[i] = false;
-
+        phase = new bool[20];
     }
 
 
@@ -43,8 +37,9 @@ public class GameManager : MonoBehaviour {
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
 
         PlayerData data = new PlayerData();
+        data.phase = new bool[20];
 
-        for (int i = 0; i < data.phase.Count; i++)  data.phase[i] = phase[i];
+        for (int i = 0; i < data.phase.Length; i++)  data.phase[i] = phase[i];
 
         bf.Serialize(file, data);
         file.Close();
@@ -61,7 +56,7 @@ public class GameManager : MonoBehaviour {
             PlayerData data = (PlayerData)bf.Deserialize(file);
             file.Close();
 
-            for (int i = 0; i < data.phase.Count; i++)
+            for (int i = 0; i < data.phase.Length; i++)
                 phase[i] = data.phase[i];
         }
     }
@@ -76,5 +71,5 @@ public class GameManager : MonoBehaviour {
 [Serializable]
 class PlayerData
 {
-    public List<bool> phase;
+    public bool[] phase;
 }
