@@ -12,7 +12,6 @@ public class GazeRay : MonoBehaviour
     public ViewTrigger[] viewTriggers;
     #endregion // PUBLIC_MEMBER_VARIABLES
 
-
     #region MONOBEHAVIOUR_METHODS
     void Update()
     {
@@ -28,6 +27,7 @@ public class GazeRay : MonoBehaviour
             if (trigger.Focused)
             {
                 Debug.Log(trigger.gameObject);
+                trigger.mFocuseState = true;
             }
 
             trigger.Focused = hit.collider && (hit.collider.gameObject == trigger.gameObject);

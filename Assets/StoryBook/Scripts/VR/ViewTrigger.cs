@@ -28,15 +28,15 @@ public class ViewTrigger : MonoBehaviour
     public float activationTime = 1.5f;
     public Material focusedMaterial;
     public Material nonFocusedMaterial;
+    public bool mFocuseState;
     public bool Focused { get; set; }
     #endregion // PUBLIC_MEMBER_VARIABLES
 
 
     #region PRIVATE_MEMBER_VARIABLES
     private float mFocusedTime = 0;
-    private bool mTriggered = false;
+    public bool mTriggered = false;
     private TransitionManager mTransitionManager;
-    private ViewTrigger[] viewTrigger;
     #endregion // PRIVATE_MEMBER_VARIABLES
 
 
@@ -44,10 +44,10 @@ public class ViewTrigger : MonoBehaviour
     void Start()
     {
         //
-        viewTrigger = GameObject.Find("GazeRay").GetComponent<GazeRay>().viewTriggers;
 
         mTransitionManager = FindObjectOfType<TransitionManager>();
         mTriggered = false;
+        mFocuseState = false; // 포커스 상태 중이면 true
         mFocusedTime = 0;
         Focused = false;
         GetComponent<Renderer>().material = nonFocusedMaterial;
@@ -55,39 +55,36 @@ public class ViewTrigger : MonoBehaviour
 
     void Update()
     {
-		if (mTriggered) 
-			return;
+        if (mTriggered)
+            return;
 
         UpdateMaterials(Focused);
 
-        foreach (var trigger in viewTrigger)
+      
+
+        bool startAction = false;
+        if (Input.GetMouseButtonUp(0))
         {
-            if (trigger.worldType == ViewTrigger.WorldType.House)
-            {
-
-            }
+            startAction = true;
         }
-        
-
-		bool startAction = false;
-		if (Input.GetMouseButtonUp (0)) 
-		{
-			startAction = true;
-		}
 
         if (Focused)
         {
             // Update the "focused state" time
             mFocusedTime += Time.deltaTime;
-			if ((mFocusedTime > activationTime) || startAction)
+            if ((mFocusedTime > activationTime) || startAction)
             {
                 mTriggered = true;
                 mFocusedTime = 0;
                 
+                //
+                
+                //
+
                 // Activate transition from AR to VR or vice versa
                 bool goingBackToAR = (triggerType == TriggerType.AR_TRIGGER);
                 mTransitionManager.Play(goingBackToAR);
-                StartCoroutine(ResetAfter(0.3f*mTransitionManager.transitionDuration));
+                StartCoroutine(ResetAfter(0.3f * mTransitionManager.transitionDuration));
             }
         }
         else
@@ -102,6 +99,8 @@ public class ViewTrigger : MonoBehaviour
     #region PRIVATE_METHODS
     private void UpdateMaterials(bool focused)
     {
+
+        //포커스 중인 상태에 따른 버튼 재질 변경
         Renderer meshRenderer = GetComponent<Renderer>();
         if (focused)
         {
@@ -113,7 +112,7 @@ public class ViewTrigger : MonoBehaviour
             if (meshRenderer.material != nonFocusedMaterial)
                 meshRenderer.material = nonFocusedMaterial;
         }
-        
+
         float t = focused ? Mathf.Clamp01(mFocusedTime / activationTime) : 0;
         foreach (var rnd in GetComponentsInChildren<Renderer>())
         {

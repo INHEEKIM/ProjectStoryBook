@@ -19,12 +19,17 @@ public class TransitionManager : MonoBehaviour
     private bool mBackward = false;
     private MixedRealityController.Mode mCurrentMode = MixedRealityController.Mode.HANDHELD_AR;
     private float mCurrentTime = 0; //HANDHELD_AR
+    private ViewTrigger[] viewTrigger;
+
+    private TransitionManager mTransitionManager; //
     #endregion // PRIVATE_MEMBER_VARIABLES
 
 
     #region PUBLIC_MEMBER_VARIABLES
     public GameObject[] VROnlyObjects;
     public GameObject[] AROnlyObjects;
+
+    public bool mTriggered = false;
 
     [Range(0.1f, 5.0f)]
     public float transitionDuration = 1.5f; // seconds
@@ -34,11 +39,15 @@ public class TransitionManager : MonoBehaviour
 
 
     #region MONOBEHAVIOUR_METHODS
-    void Start () 
+    void Start()
     {
+        viewTrigger = GameObject.Find("GazeRay").GetComponent<GazeRay>().viewTriggers;
+
         // At start we assume we are in AR
         mTransitionCursor = 0;
-        
+
+        mTransitionManager = FindObjectOfType<TransitionManager>(); //
+
         mBlackMask = FindObjectOfType<BlackMaskBehaviour>();
         SetBlackMaskVisible(false, 0);
 
@@ -51,13 +60,13 @@ public class TransitionManager : MonoBehaviour
 
         mCurrentTime = Time.realtimeSinceStartup;
     }
-    
-    void Update () 
+
+    void Update()
     {
         float time = Time.realtimeSinceStartup;
         float deltaTime = Mathf.Clamp01(time - mCurrentTime);
         mCurrentTime = time;
-        
+
         // We need to check if the video background is curently enabled
         // because Vuforia may restart the video background when the App is resumed
         // even if the app was paused in VR mode
@@ -65,6 +74,9 @@ public class TransitionManager : MonoBehaviour
 
         MixedRealityController.Mode mixedRealityMode = GetMixedRealityMode();
 
+
+        //현재모드가 혼합현실모드가 아니거나 현재비디오상태가 AR로 진입한 상태가 아닐 때
+        //VR 모드에 대한 처리부분
         if ((mCurrentMode != mixedRealityMode) || (InAR != isVideoCurrentlyEnabled))
         {
             // mixed reality mode to switch to
@@ -75,7 +87,9 @@ public class TransitionManager : MonoBehaviour
             // so to reduce CPU usage, as tracking is not needed in this phase
             // (with AutoStopCameraIfNotRequired ON by default, camera/tracker
             //  will be turned off for performance optimization).
-          
+
+            //AR -> VR로 변환될 때 (카메라 및 데이터셋 비활성화)
+
             if (mCurrentMode == MixedRealityController.Mode.HANDHELD_VR
                 || mCurrentMode == MixedRealityController.Mode.VIEWER_VR)
             {
@@ -88,6 +102,8 @@ public class TransitionManager : MonoBehaviour
             // this will ensure that the Tracker and Camera are restarted, 
             // in case they were previously stopped when moving to VR
             // before activating the AR mode
+
+            //VR ->  AR로 변환될 때
             if (mCurrentMode == MixedRealityController.Mode.HANDHELD_AR
                 || mCurrentMode == MixedRealityController.Mode.VIEWER_AR)
             {
@@ -105,7 +121,7 @@ public class TransitionManager : MonoBehaviour
             if (mTransitionCursor < 0.33f)
             {
                 // fade to full black in first part of transition
-                fadeFactor = Mathf.SmoothStep(0, 1, mTransitionCursor/0.33f);
+                fadeFactor = Mathf.SmoothStep(0, 1, mTransitionCursor / 0.33f);
             }
             else if (mTransitionCursor < 0.66f)
             {
@@ -147,6 +163,11 @@ public class TransitionManager : MonoBehaviour
     }
     #endregion // PUBLIC_METHODS
 
+    public void SwitchingTrigger(bool newTrigger)
+    {
+        mTriggered = newTrigger;
+    }
+
 
     #region PRIVATE_METHODS
     private void ActivateDatasets(bool enableDataset)
@@ -155,7 +176,7 @@ public class TransitionManager : MonoBehaviour
         ObjectTracker objectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
         IEnumerable<DataSet> datasets = objectTracker.GetDataSets();
 
-        foreach (DataSet dataset in datasets) 
+        foreach (DataSet dataset in datasets)
         {
             if (enableDataset)
                 objectTracker.ActivateDataSet(dataset);
@@ -185,14 +206,40 @@ public class TransitionManager : MonoBehaviour
     {
         //등록해둔 VR 오브젝트는 여기서 visible이 결정됨
         //아직 스윗칭 기능밖에 없다.
+
+        //
+
+
+        //
         foreach (var go in VROnlyObjects)
         {
-            go.SetActive(!InAR);
+            //AR이 아닐 경우에 대해 true값을 가진다 그러나 계속 업데이트 중인상태이기에 
+            //go.SetActive(!InAR);
+            if (!InAR)
+            {
+                if (viewTrigger[0].mFocuseState == true && viewTrigger[0].worldType == ViewTrigger.WorldType.House)
+                {
+                    mTransitionManager.VROnlyObjects[0].SetActive(true); //Home
+                    mTransitionManager.VROnlyObjects[1].SetActive(false); //Sky
+                }
+                if (viewTrigger[1].mFocuseState == true && viewTrigger[1].worldType == ViewTrigger.WorldType.Sky)
+                {
+                    mTransitionManager.VROnlyObjects[0].SetActive(false); //Home
+                    mTransitionManager.VROnlyObjects[1].SetActive(true); //Sky
+                }
+            }
+            else
+            {
+                viewTrigger[0].mFocuseState = false;
+                viewTrigger[1].mFocuseState = false;
+                go.SetActive(false);
+            }           
         }
 
         foreach (var go in AROnlyObjects)
         {
             go.SetActive(InAR);
+
         }
     }
 
