@@ -72,10 +72,34 @@ namespace Vuforia
                 {
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
+
                     subUI.enabled = true;
+
+                    //로드.
+                    GameManager.manager.Load();
+                    //이미 페이지 진행을 모두 했을 때.
+                    if (GameManager.manager.phase[0])
+                    {
+                        //다음페이지를 가라는 가이드와 다시하기 버튼 띄움.
+
+                    }
+                    //페이지 진행을 처음 할 때. or 다시할 때.
+                    else
+                    {
+                        //knight가 3번 이상 공격했을 때
+                        if (knight_Anim.anim.getAttack() > 2)
+                        {
+                            //다음페이지로 가라는 가이드 띄움.
+
+                            //저장.
+                            GameManager.manager.phase[0] = true;
+                            GameManager.manager.Save();
+                        }
+                    }
+
                 }
                 //chipMarker
-                if (mTrackableBehaviour.TrackableName == "chip")
+                if (mTrackableBehaviour.TrackableName == "chip") //Page2
                 {
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page2);
 

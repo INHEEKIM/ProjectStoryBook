@@ -3,12 +3,29 @@ using System.Collections;
 
 public class knight_Anim : MonoBehaviour {
 
-    //void Start () {
-    //gameObject.GetComponent<Animation>().CrossFade("Attack", 1.0f);
-    //gameObject.GetComponent<Animation>().Play("Attack");
-    //}
+    public static knight_Anim anim;
 
-    
+    private int attack;
+
+
+    void Awake()
+    {
+        if (anim == null)
+        {
+            DontDestroyOnLoad(gameObject);  //don't destroy!!! other Scene
+            anim = this;
+        }
+        else if (anim != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+        void Start()
+    {
+        attack = 0;
+    }
+
     //충돌하는 동안.
     void OnTriggerStay(Collider coll)
     {
@@ -17,6 +34,10 @@ public class knight_Anim : MonoBehaviour {
         {
             //공격 모션
             gameObject.GetComponent<Animation>().Play("Attack");
+
+            attack++;
+            if (attack > 3) attack = 3;
+            
         }
 
     }
@@ -29,6 +50,14 @@ public class knight_Anim : MonoBehaviour {
             //보통 상태
             gameObject.GetComponent<Animation>().CrossFade("Wait", 1.0f);
         }
+    }
+
+
+
+
+    public int getAttack()
+    {
+        return attack;
     }
 
 }
