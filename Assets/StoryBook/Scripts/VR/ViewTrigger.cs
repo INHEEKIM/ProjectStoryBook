@@ -16,8 +16,15 @@ public class ViewTrigger : MonoBehaviour
         AR_TRIGGER
     }
 
+    public enum WorldType
+    {
+        House,
+        Sky
+    }
+
     #region PUBLIC_MEMBER_VARIABLES
     public TriggerType triggerType = TriggerType.VR_TRIGGER;
+    public WorldType worldType = WorldType.House;
     public float activationTime = 1.5f;
     public Material focusedMaterial;
     public Material nonFocusedMaterial;
@@ -29,12 +36,16 @@ public class ViewTrigger : MonoBehaviour
     private float mFocusedTime = 0;
     private bool mTriggered = false;
     private TransitionManager mTransitionManager;
+    private ViewTrigger[] viewTrigger;
     #endregion // PRIVATE_MEMBER_VARIABLES
 
 
     #region MONOBEHAVIOUR_METHODS
     void Start()
     {
+        //
+        viewTrigger = GameObject.Find("GazeRay").GetComponent<GazeRay>().viewTriggers;
+
         mTransitionManager = FindObjectOfType<TransitionManager>();
         mTriggered = false;
         mFocusedTime = 0;
@@ -48,6 +59,15 @@ public class ViewTrigger : MonoBehaviour
 			return;
 
         UpdateMaterials(Focused);
+
+        foreach (var trigger in viewTrigger)
+        {
+            if (trigger.worldType == ViewTrigger.WorldType.House)
+            {
+
+            }
+        }
+        
 
 		bool startAction = false;
 		if (Input.GetMouseButtonUp (0)) 

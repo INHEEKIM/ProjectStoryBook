@@ -20,13 +20,16 @@ public class GazeRay : MonoBehaviour
         RaycastHit hit;
         Ray cameraGaze = new Ray(this.transform.position, this.transform.forward);
         Physics.Raycast(cameraGaze, out hit, Mathf.Infinity);
+
+        
+
         foreach (var trigger in viewTriggers)
         {
             if (trigger.Focused)
             {
                 Debug.Log(trigger.gameObject);
             }
-            
+
             trigger.Focused = hit.collider && (hit.collider.gameObject == trigger.gameObject);
         }
     }

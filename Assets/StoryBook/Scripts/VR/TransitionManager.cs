@@ -18,7 +18,7 @@ public class TransitionManager : MonoBehaviour
     private bool mPlaying = false;
     private bool mBackward = false;
     private MixedRealityController.Mode mCurrentMode = MixedRealityController.Mode.HANDHELD_AR;
-    private float mCurrentTime = 0;
+    private float mCurrentTime = 0; //HANDHELD_AR
     #endregion // PRIVATE_MEMBER_VARIABLES
 
 
@@ -168,6 +168,8 @@ public class TransitionManager : MonoBehaviour
     {
         if (InAR)
         {
+            //조건문 만약 isFullScreenMode가 참이면 Mode.Handheld_AR을 반환
+            //거짓이면 Mode.Viewer_AR를 반환
             return ModeConfig.isFullScreenMode ?
                 MixedRealityController.Mode.HANDHELD_AR : MixedRealityController.Mode.VIEWER_AR;
         }
@@ -181,6 +183,8 @@ public class TransitionManager : MonoBehaviour
 
     private void UpdateVisibleObjects()
     {
+        //등록해둔 VR 오브젝트는 여기서 visible이 결정됨
+        //아직 스윗칭 기능밖에 없다.
         foreach (var go in VROnlyObjects)
         {
             go.SetActive(!InAR);

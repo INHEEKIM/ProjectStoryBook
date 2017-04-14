@@ -123,6 +123,7 @@
     <Compile Include="Assets\slime_anim.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Mushroom house\StandardDoubleSided.shader" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
     <None Include="Assets\README_SD_UnityChan.txt" />
@@ -143,6 +144,7 @@
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
     <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
+    <None Include="Assets\Wood texture floor_01\readme.txt" />
     <None Include="Assets\license_3rdpartynotice.txt" />
     <None Include="Assets\link.xml" />
     <None Include="Assets\readme_SDK.txt" />
