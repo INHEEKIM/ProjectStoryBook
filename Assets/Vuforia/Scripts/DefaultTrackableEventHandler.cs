@@ -26,6 +26,7 @@ namespace Vuforia
         private bool markerTrigger = false;
 
         private bool moveTrigger = false;
+
         #endregion // PRIVATE_MEMBER_VARIABLES
 
 

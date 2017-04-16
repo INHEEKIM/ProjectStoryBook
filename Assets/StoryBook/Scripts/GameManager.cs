@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager manager;
 
-    public bool[] phase;
+    private bool[] phase;
+
+    public GameObject next;
+    public GameObject resetButton;
 
     void Awake()
     {
@@ -25,7 +28,50 @@ public class GameManager : MonoBehaviour {
         }
 
         phase = new bool[20];
+        for (int i = 0; i < phase.Length; i++)
+            phase[i] = false;
     }
+
+
+
+
+    public void activeNext()
+    {
+        StartCoroutine("activeNextQuad");
+    }
+    IEnumerator activeNextQuad()
+    {
+        yield return new WaitForSeconds(3.0f);
+        next.SetActive(true);
+        resetButton.SetActive(true);
+
+        phase[0] = true;
+        Save();
+    }
+
+
+    public void inactiveNext()
+    {
+        //StartCoroutine("inactiveNextQuad");
+        next.SetActive(false);
+        resetButton.SetActive(false);
+        knight_Anim.anim.resetAttack();
+
+        phase[0] = false;
+        Save();
+    }
+    IEnumerator inactiveNextQuad()
+    {
+        yield return new WaitForSeconds(3.0f);
+        next.SetActive(false);
+        resetButton.SetActive(false);
+        knight_Anim.anim.resetAttack();
+
+        phase[0] = false;
+        Save();
+    }
+
+
 
 
     /// <summary>
@@ -62,7 +108,10 @@ public class GameManager : MonoBehaviour {
     }
 
 
-
+    public void setPhase(int index, bool b)
+    {
+        phase[index] = b;
+    }
 
 
 }
