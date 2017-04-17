@@ -11,7 +11,7 @@ public class VirtualButton1 : MonoBehaviour, IVirtualButtonEventHandler{
         resetButton = GameObject.Find("resetButton");
 
         resetButton.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
-        resetButton.SetActive(false);
+        //resetButton.SetActive(false);
     }
 
 
