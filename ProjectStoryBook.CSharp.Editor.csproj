@@ -128,6 +128,11 @@
     <None Include="Assets\StoryBook\Shaders\SkyBlend.shader" />
     <None Include="Assets\StoryBook\Shaders\TransparentUnlit.shader" />
     <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\TargetTest.xml" />
+    <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
+    <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
+    <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
+    <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
     <None Include="Assets\Vuforia\Editor\Scripts\Vuforia.UnityExtensions.Editor.XML" />
     <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
     <None Include="Assets\Vuforia\Scripts\Internal\Vuforia.UnityExtensions.XML" />

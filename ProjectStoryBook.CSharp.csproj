@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\StoryBook\Scripts\AplicationBehavior.cs" />
+    <Compile Include="Assets\StoryBook\Scripts\GameManager.cs" />
     <Compile Include="Assets\StoryBook\Scripts\MarkerStateManager.cs" />
     <Compile Include="Assets\StoryBook\Scripts\VR\ARVRAboutManager.cs" />
     <Compile Include="Assets\StoryBook\Scripts\VR\Autofocus.cs" />
@@ -79,6 +80,9 @@
     <Compile Include="Assets\StoryBook\Scripts\VR\TransitionManager.cs" />
     <Compile Include="Assets\StoryBook\Scripts\VR\ViewModeManager.cs" />
     <Compile Include="Assets\StoryBook\Scripts\VR\ViewTrigger.cs" />
+    <Compile Include="Assets\StoryBook\Scripts\VirtualButton1.cs" />
+    <Compile Include="Assets\StoryBook\Scripts\knight_Anim.cs" />
+    <Compile Include="Assets\StoryBook\Scripts\knight_move.cs" />
     <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CameraSettings\CameraSettings.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CameraSettings\SamplesTapHandler.cs" />
@@ -118,8 +122,6 @@
     <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
     <Compile Include="Assets\cha_data\Script\ScreenShot.cs" />
-    <Compile Include="Assets\knight_Anim.cs" />
-    <Compile Include="Assets\knight_move.cs" />
     <Compile Include="Assets\slime_anim.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +135,11 @@
     <None Include="Assets\StoryBook\Shaders\SkyBlend.shader" />
     <None Include="Assets\StoryBook\Shaders\TransparentUnlit.shader" />
     <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
+    <None Include="Assets\StreamingAssets\QCAR\TargetTest.xml" />
+    <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
+    <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
+    <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
+    <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
     <None Include="Assets\Vuforia\Editor\Scripts\Vuforia.UnityExtensions.Editor.XML" />
     <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
     <None Include="Assets\Vuforia\Scripts\Internal\Vuforia.UnityExtensions.XML" />
