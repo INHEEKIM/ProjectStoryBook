@@ -26,6 +26,7 @@ namespace Vuforia
         private bool markerTrigger = false;
 
         private bool moveTrigger = false;
+
         #endregion // PRIVATE_MEMBER_VARIABLES
 
 
@@ -72,10 +73,11 @@ namespace Vuforia
                 {
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
+
                     subUI.enabled = true;
                 }
                 //chipMarker
-                if (mTrackableBehaviour.TrackableName == "chip")
+                if (mTrackableBehaviour.TrackableName == "chip") //Page2
                 {
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page2);
 
@@ -105,7 +107,7 @@ namespace Vuforia
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
 
                     //SubUI를 보여준다.
-                    subUI.enabled = false;
+                    //subUI.enabled = false;
                 }
 
                 //chipMarker를 잃으면

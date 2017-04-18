@@ -46,6 +46,22 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\StoryBook\Scripts\AplicationBehavior.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\GameManager.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\MarkerStateManager.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\ARVRAboutManager.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\Autofocus.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\BackToAbout.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\BlackMaskBehaviour.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\Button3D.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\GazeRay.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\ModeConfig.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\Reticle.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\TransitionManager.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\ViewModeManager.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VR\ViewTrigger.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\VirtualButton1.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\knight_Anim.cs" />
+     <Compile Include="Assets\StoryBook\Scripts\knight_move.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CameraSettings\CameraSettings.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CameraSettings\SamplesTapHandler.cs" />
@@ -84,26 +100,31 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\cha_data\Script\MarkerStateManager.cs" />
      <Compile Include="Assets\cha_data\Script\ScreenShot.cs" />
-     <Compile Include="Assets\knight_Anim.cs" />
-     <Compile Include="Assets\knight_move.cs" />
      <Compile Include="Assets\slime_anim.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\README_SD_UnityChan.txt" />
+     <None Include="Assets\StoryBook\Shaders\TransparentUnlit.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
+     <None Include="Assets\StoryBook\Shaders\SkyBlend.shader" />
+     <None Include="Assets\Wood texture floor_01\readme.txt" />
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
+     <None Include="Assets\StoryBook\Shaders\OverlayMesh.shader" />
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\TargetTest.xml" />
+     <None Include="Assets\StoryBook\Shaders\BlackMask.shader" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
+     <None Include="Assets\StoryBook\Shaders\GroundBlend.shader" />
+     <None Include="Assets\Mushroom house\StandardDoubleSided.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
