@@ -5,7 +5,7 @@ public class knight_Anim : MonoBehaviour {
 
     public static knight_Anim anim;
 
-    public Camera camera;
+    //public Camera camera;
 
     private int attack;
 
@@ -49,8 +49,8 @@ public class knight_Anim : MonoBehaviour {
 
     void Update()
     {
-        transform.LookAt(transform.position + camera.transform.rotation * Vector3.back,
-                        camera.transform.rotation * Vector3.up);
+        //transform.LookAt(transform.position + camera.transform.rotation * Vector3.back,
+        //                camera.transform.rotation * Vector3.up);
     }
 
     //충돌 끝나고 나갈 때

@@ -5,10 +5,10 @@ using System;
 
 public class VirtualButton1 : MonoBehaviour, IVirtualButtonEventHandler{
 
-    private GameObject resetButton;
+    public GameObject resetButton;
 
     void Start () {
-        resetButton = GameObject.Find("resetButton");
+        //resetButton = GameObject.Find("resetButton");
 
         resetButton.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
         //resetButton.SetActive(false);

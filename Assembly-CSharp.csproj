@@ -112,8 +112,10 @@
      <None Include="Assets\StoryBook\Shaders\SkyBlend.shader" />
      <None Include="Assets\Wood texture floor_01\readme.txt" />
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
+     <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
+     <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\StoryBook\Shaders\OverlayMesh.shader" />
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
@@ -123,6 +125,8 @@
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
+     <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
+     <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
      <None Include="Assets\StoryBook\Shaders\GroundBlend.shader" />
      <None Include="Assets\Mushroom house\StandardDoubleSided.shader" />
  <Reference Include="UnityEngine.UI">

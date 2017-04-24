@@ -9,6 +9,13 @@ public class slime_anim : MonoBehaviour {
         gameObject.GetComponent<Animation>().Play("Wait");
     }
 
+    void Update()
+    {
+        transform.position += ( (Vector3.forward + Vector3.right) * Time.deltaTime * 1f);
+        
+        transform.Rotate(Vector3.up, Time.deltaTime * 45f);
+    }
+
     //충돌하는 동안.
     void OnTriggerStay(Collider coll)
     {

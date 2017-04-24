@@ -122,13 +122,13 @@ namespace Vuforia
                     mMarkerStateManager.setCuboidMarker(MarkerStateManager.StateType.Off);
                 }
 
-                //만약 큐보이드 마커의 발견 상태와 스톤마커의 발견 상태가 오프 상태이면
-                if (mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.Off &&
-            mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.Off)
-                {
-                    moveTrigger = false;
-                    Debug.Log("Off : " + moveTrigger);
-                }
+            //    //만약 큐보이드 마커의 발견 상태와 스톤마커의 발견 상태가 오프 상태이면
+            //    if (mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.Off &&
+            //mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.Off)
+            //    {
+            //        moveTrigger = false;
+            //        Debug.Log("Off : " + moveTrigger);
+            //    }
 
             }
         }
@@ -139,23 +139,23 @@ namespace Vuforia
 
         #region PRIVATE_METHODS
 
-        void Update()
-        {
-            if (moveTrigger == true)
-            {
-                CharaterMove();
-            }
+        //void Update()
+        //{
+        //    if (moveTrigger == true)
+        //    {
+        //        CharaterMove();
+        //    }
             
-        }
+        //}
 
-        void CharaterMove()
-        {
-            Vector3 direction = chaKnight.transform.position - cuboidMarker.transform.position; //로컬 포지션으로 캐릭터와 마커의 사이의 벡터를 구한후
-            Quaternion rotation = Quaternion.LookRotation(-direction); //캐릭터의 foward가 반대로 되어있음
-            chaKnight.transform.rotation = (Quaternion.Slerp(chaKnight.transform.rotation, rotation, Time.deltaTime * 1.5f));
+        //void CharaterMove()
+        //{
+        //    Vector3 direction = chaKnight.transform.position - cuboidMarker.transform.position; //로컬 포지션으로 캐릭터와 마커의 사이의 벡터를 구한후
+        //    Quaternion rotation = Quaternion.LookRotation(-direction); //캐릭터의 foward가 반대로 되어있음
+        //    chaKnight.transform.rotation = (Quaternion.Slerp(chaKnight.transform.rotation, rotation, Time.deltaTime * 1.5f));
 
-            chaKnight.transform.position = Vector3.Lerp(chaKnight.transform.position, cuboidMarker.transform.position, Time.deltaTime * 0.8f);
-        }
+        //    chaKnight.transform.position = Vector3.Lerp(chaKnight.transform.position, cuboidMarker.transform.position, Time.deltaTime * 0.8f);
+        //}
 
         private void OnTrackingFound()
         {
