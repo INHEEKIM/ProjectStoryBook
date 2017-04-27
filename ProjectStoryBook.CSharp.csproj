@@ -254,6 +254,8 @@
     <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
     <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
     <None Include="Assets\Wood texture floor_01\readme.txt" />
+    <None Include="Assets\grassKit\readme.txt" />
+    <None Include="Assets\grassKit\wavingGrass.shader" />
     <None Include="Assets\license_3rdpartynotice.txt" />
     <None Include="Assets\link.xml" />
     <None Include="Assets\readme_SDK.txt" />

@@ -13,7 +13,8 @@ public class ViewTrigger : MonoBehaviour
     public enum TriggerType
     {
         VR_TRIGGER,
-        AR_TRIGGER
+        AR_TRIGGER,
+        Other_Func
     }
 
     public enum WorldType
@@ -28,7 +29,7 @@ public class ViewTrigger : MonoBehaviour
     public float activationTime = 1.5f;
     public Material focusedMaterial;
     public Material nonFocusedMaterial;
-    public bool mFocuseState;
+    //public bool mFocuseState;
     public bool Focused { get; set; }
     #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -47,7 +48,7 @@ public class ViewTrigger : MonoBehaviour
 
         mTransitionManager = FindObjectOfType<TransitionManager>();
         mTriggered = false;
-        mFocuseState = false; // 포커스 상태 중이면 true
+        //mFocuseState = false; // 포커스 상태 중이면 true
         mFocusedTime = 0;
         Focused = false;
         GetComponent<Renderer>().material = nonFocusedMaterial;
@@ -85,6 +86,8 @@ public class ViewTrigger : MonoBehaviour
                 bool goingBackToAR = (triggerType == TriggerType.AR_TRIGGER);
                 mTransitionManager.Play(goingBackToAR);
                 StartCoroutine(ResetAfter(0.3f * mTransitionManager.transitionDuration));
+
+                //mFocuseState = false;
             }
         }
         else
@@ -100,7 +103,7 @@ public class ViewTrigger : MonoBehaviour
     private void UpdateMaterials(bool focused)
     {
 
-        //포커스 중인 상태에 따른 버튼 재질 변경
+        //포커스 중인 상태에 따른 버튼 Material 변경
         Renderer meshRenderer = GetComponent<Renderer>();
         if (focused)
         {

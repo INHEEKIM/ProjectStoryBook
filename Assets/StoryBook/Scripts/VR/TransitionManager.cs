@@ -5,6 +5,7 @@ Vuforia is a trademark of PTC Inc., registered in the United States and other
 countries.
 ===============================================================================*/
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
 using Vuforia;
@@ -19,7 +20,7 @@ public class TransitionManager : MonoBehaviour
     private bool mBackward = false;
     private MixedRealityController.Mode mCurrentMode = MixedRealityController.Mode.HANDHELD_AR;
     private float mCurrentTime = 0; //HANDHELD_AR
-    private ViewTrigger[] viewTrigger;
+    private string viewTrigger;
 
     private TransitionManager mTransitionManager; //
     #endregion // PRIVATE_MEMBER_VARIABLES
@@ -41,7 +42,8 @@ public class TransitionManager : MonoBehaviour
     #region MONOBEHAVIOUR_METHODS
     void Start()
     {
-        viewTrigger = GameObject.Find("GazeRay").GetComponent<GazeRay>().viewTriggers;
+        //viewTriggers = GameObject.Find("GazeRay").GetComponent<GazeRay>().viewTriggers;
+        //viewTrigger = GameObject.Find("GazeRay").GetComponent<GazeRay>().viewTrigger;
 
         // At start we assume we are in AR
         mTransitionCursor = 0;
@@ -163,11 +165,10 @@ public class TransitionManager : MonoBehaviour
     }
     #endregion // PUBLIC_METHODS
 
-    public void SwitchingTrigger(bool newTrigger)
+    public void SetViewTriggerName(string newViewTriggerName)
     {
-        mTriggered = newTrigger;
+        viewTrigger = newViewTriggerName;
     }
-
 
     #region PRIVATE_METHODS
     private void ActivateDatasets(bool enableDataset)
@@ -207,8 +208,10 @@ public class TransitionManager : MonoBehaviour
         //등록해둔 VR 오브젝트는 여기서 visible이 결정됨
         //아직 스윗칭 기능밖에 없다.
 
-        //
+        // 스윗칭 되는 버튼의 이름 식별할 때
+        //Debug.Log(viewTrigger); 
 
+        //
 
         //
         foreach (var go in VROnlyObjects)
@@ -217,21 +220,26 @@ public class TransitionManager : MonoBehaviour
             //go.SetActive(!InAR);
             if (!InAR)
             {
-                if (viewTrigger[0].mFocuseState == true && viewTrigger[0].worldType == ViewTrigger.WorldType.House)
+                //홈버튼 충돌상태가 트루이면
+                if (viewTrigger == "VRHomePotal")
                 {
                     mTransitionManager.VROnlyObjects[0].SetActive(true); //Home
                     mTransitionManager.VROnlyObjects[1].SetActive(false); //Sky
                 }
-                if (viewTrigger[1].mFocuseState == true && viewTrigger[1].worldType == ViewTrigger.WorldType.Sky)
+                //스카이버튼 충돌상태가 트루이면
+                if (viewTrigger == "VRSkyPotal")
                 {
                     mTransitionManager.VROnlyObjects[0].SetActive(false); //Home
                     mTransitionManager.VROnlyObjects[1].SetActive(true); //Sky
                 }
+                if (viewTrigger == "QuitPotal")
+                {
+                    SceneManager.LoadScene("TitleScene");
+                }
             }
             else
             {
-                viewTrigger[0].mFocuseState = false;
-                viewTrigger[1].mFocuseState = false;
+               
                 go.SetActive(false);
             }           
         }
