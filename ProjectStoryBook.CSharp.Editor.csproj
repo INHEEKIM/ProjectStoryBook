@@ -111,6 +111,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Quantum Theory\3D Cloud Models\Editor\Editor_3DCloudModels.cs" />
     <Compile Include="Assets\Vuforia\Editor\Scripts\ComponentFactoryStarter\ComponentFactoryStarter.cs" />
     <Compile Include="Assets\Vuforia\Editor\Scripts\ExtensionImport.cs" />
     <Compile Include="Assets\Vuforia\Editor\Scripts\PostProcessBuildPlayer.cs" />
@@ -118,6 +119,11 @@
     <Compile Include="Assets\Vuforia\Editor\Scripts\VuforiaConfigurationEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\(0)StoryBook\Shaders\BlackMask.shader" />
+    <None Include="Assets\(0)StoryBook\Shaders\GroundBlend.shader" />
+    <None Include="Assets\(0)StoryBook\Shaders\OverlayMesh.shader" />
+    <None Include="Assets\(0)StoryBook\Shaders\SkyBlend.shader" />
+    <None Include="Assets\(0)StoryBook\Shaders\TransparentUnlit.shader" />
     <None Include="Assets\Character\CommodityProgect\Shader\ShuangMian.shader" />
     <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
@@ -192,12 +198,11 @@
     <None Include="Assets\Mushroom house\StandardDoubleSided.shader" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
+    <None Include="Assets\Quantum Theory\3D Cloud Models\Documentation.txt" />
+    <None Include="Assets\Quantum Theory\3D Cloud Models\Shaders\3DCloudModels-AlphaClip.shader" />
+    <None Include="Assets\Quantum Theory\3D Cloud Models\Shaders\3DCloudModels-HardAlphaBlend.shader" />
+    <None Include="Assets\Quantum Theory\3D Cloud Models\Shaders\3DCloudModels-SoftAlphaBlend.shader" />
     <None Include="Assets\README_SD_UnityChan.txt" />
-    <None Include="Assets\StoryBook\Shaders\BlackMask.shader" />
-    <None Include="Assets\StoryBook\Shaders\GroundBlend.shader" />
-    <None Include="Assets\StoryBook\Shaders\OverlayMesh.shader" />
-    <None Include="Assets\StoryBook\Shaders\SkyBlend.shader" />
-    <None Include="Assets\StoryBook\Shaders\TransparentUnlit.shader" />
     <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
     <None Include="Assets\StreamingAssets\QCAR\TargetTest.xml" />
     <None Include="Assets\Suriyun\README.txt" />

@@ -66,6 +66,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\(0)StoryBook\Scripts\AplicationBehavior.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\GameManager.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\MarkerStateManager.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\ARVRAboutManager.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\Autofocus.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\BackToAbout.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\BlackMaskBehaviour.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\Button3D.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\GazeRay.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\ModeConfig.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\Reticle.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\TransitionManager.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewModeManager.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewTrigger.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VirtualButton1.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\knight_Anim.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\knight_move.cs" />
     <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\DestorySelf.cs" />
     <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\ObjMoveFront.cs" />
     <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\UIObjRotation.cs" />
@@ -83,23 +100,6 @@
     <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\SepiaToneEffect.cs" />
     <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\TwirlEffect.cs" />
     <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\AplicationBehavior.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\GameManager.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\MarkerStateManager.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\ARVRAboutManager.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\Autofocus.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\BackToAbout.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\BlackMaskBehaviour.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\Button3D.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\GazeRay.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\ModeConfig.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\Reticle.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\TransitionManager.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\ViewModeManager.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VR\ViewTrigger.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\VirtualButton1.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\knight_Anim.cs" />
-    <Compile Include="Assets\StoryBook\Scripts\knight_move.cs" />
     <Compile Include="Assets\Suriyun\Script\AnimatorController.cs" />
     <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CameraSettings\CameraSettings.cs" />
@@ -143,6 +143,11 @@
     <Compile Include="Assets\slime_anim.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\(0)StoryBook\Shaders\BlackMask.shader" />
+    <None Include="Assets\(0)StoryBook\Shaders\GroundBlend.shader" />
+    <None Include="Assets\(0)StoryBook\Shaders\OverlayMesh.shader" />
+    <None Include="Assets\(0)StoryBook\Shaders\SkyBlend.shader" />
+    <None Include="Assets\(0)StoryBook\Shaders\TransparentUnlit.shader" />
     <None Include="Assets\Character\CommodityProgect\Shader\ShuangMian.shader" />
     <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
@@ -217,12 +222,11 @@
     <None Include="Assets\Mushroom house\StandardDoubleSided.shader" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
+    <None Include="Assets\Quantum Theory\3D Cloud Models\Documentation.txt" />
+    <None Include="Assets\Quantum Theory\3D Cloud Models\Shaders\3DCloudModels-AlphaClip.shader" />
+    <None Include="Assets\Quantum Theory\3D Cloud Models\Shaders\3DCloudModels-HardAlphaBlend.shader" />
+    <None Include="Assets\Quantum Theory\3D Cloud Models\Shaders\3DCloudModels-SoftAlphaBlend.shader" />
     <None Include="Assets\README_SD_UnityChan.txt" />
-    <None Include="Assets\StoryBook\Shaders\BlackMask.shader" />
-    <None Include="Assets\StoryBook\Shaders\GroundBlend.shader" />
-    <None Include="Assets\StoryBook\Shaders\OverlayMesh.shader" />
-    <None Include="Assets\StoryBook\Shaders\SkyBlend.shader" />
-    <None Include="Assets\StoryBook\Shaders\TransparentUnlit.shader" />
     <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
     <None Include="Assets\StreamingAssets\QCAR\TargetTest.xml" />
     <None Include="Assets\Suriyun\README.txt" />

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/StoryBook/Scenes/MainScene.unity
+- path: Assets/(0)StoryBook/Scenes/MainScene.unity
   isLoaded: 1
   isActive: 1
