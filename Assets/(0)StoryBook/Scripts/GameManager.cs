@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour {
 
     private bool[] phase;
 
-    public GameObject next;
-    public GameObject resetButton;
+    //public GameObject next;
+    //public GameObject resetButton;
 
     void Awake()
     {
@@ -35,41 +35,41 @@ public class GameManager : MonoBehaviour {
 
 
 
-    public void activeNext()
-    {
-        StartCoroutine("activeNextQuad");
-    }
-    IEnumerator activeNextQuad()
-    {
-        yield return new WaitForSeconds(3.0f);
-        next.SetActive(true);
-        resetButton.SetActive(true);
+    //public void activeNext()
+    //{
+    //    StartCoroutine("activeNextQuad");
+    //}
+    //IEnumerator activeNextQuad()
+    //{
+    //    yield return new WaitForSeconds(3.0f);
+    //    next.SetActive(true);
+    //    resetButton.SetActive(true);
 
-        phase[0] = true;
-        Save();
-    }
+    //    phase[0] = true;
+    //    Save();
+    //}
 
 
-    public void inactiveNext()
-    {
-        //StartCoroutine("inactiveNextQuad");
-        next.SetActive(false);
-        resetButton.SetActive(false);
-        knight_Anim.anim.resetAttack();
+    //public void inactiveNext()
+    //{
+    //    //StartCoroutine("inactiveNextQuad");
+    //    next.SetActive(false);
+    //    resetButton.SetActive(false);
+    //    knight_Anim.anim.resetAttack();
 
-        phase[0] = false;
-        Save();
-    }
-    IEnumerator inactiveNextQuad()
-    {
-        yield return new WaitForSeconds(3.0f);
-        next.SetActive(false);
-        resetButton.SetActive(false);
-        knight_Anim.anim.resetAttack();
+    //    phase[0] = false;
+    //    Save();
+    //}
+    //IEnumerator inactiveNextQuad()
+    //{
+    //    yield return new WaitForSeconds(3.0f);
+    //    next.SetActive(false);
+    //    resetButton.SetActive(false);
+    //    knight_Anim.anim.resetAttack();
 
-        phase[0] = false;
-        Save();
-    }
+    //    phase[0] = false;
+    //    Save();
+    //}
 
 
 

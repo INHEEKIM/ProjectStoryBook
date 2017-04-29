@@ -37,10 +37,10 @@ public class knight_Anim : MonoBehaviour {
             //공격 모션
             gameObject.GetComponent<Animation>().Play("Attack");
 
-            if (attack == 3)
-                GameManager.manager.activeNext();
-            else if (attack < 4)
-                attack++;
+            //if (attack == 3)
+            //    GameManager.manager.activeNext();
+            //else if (attack < 4)
+            //    attack++;
             
         }
 

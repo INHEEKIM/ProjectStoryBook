@@ -19,13 +19,15 @@ namespace Vuforia
         private TrackableBehaviour mTrackableBehaviour;
         private MarkerStateManager mMarkerStateManager;
         private Canvas subUI;
-        private GameObject chaKnight;
         private GameObject cuboidMarker;
 
         private bool stoneTrigger = false;
         private bool markerTrigger = false;
 
         private bool moveTrigger = false;
+
+        public GameObject LRRH_stoneMaker;
+        public GameObject LRRH_cuboid;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -39,7 +41,6 @@ namespace Vuforia
             subUI = GameObject.Find("SubUI").GetComponent<Canvas>();
             subUI.enabled = false;
 
-            chaKnight = GameObject.Find("Cha_Knight");
             cuboidMarker = GameObject.Find("CuboidMarker");
 
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
@@ -68,13 +69,24 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
                 OnTrackingFound();
+
                 //stoneMarker를 발견하게 되면
                 if (mTrackableBehaviour.TrackableName == "stones") //Page1
                 {
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
-
                     subUI.enabled = true;
+
+
+                    //스톤마커와 큐보이드 마커를 발견하면
+                    if (mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On &&
+                        mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
+                    {
+                        LRRH_stoneMaker.SetActive(true);
+                        LRRH_cuboid.SetActive(false);
+                        GameManager.manager.setPhase(1, true);
+                    }
+
                 }
                 //chipMarker
                 if (mTrackableBehaviour.TrackableName == "chip") //Page2
@@ -82,17 +94,22 @@ namespace Vuforia
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page2);
 
                 }
+
+                //큐브
                 if (mTrackableBehaviour.TrackableName == "Cuboid")
                 {
                     mMarkerStateManager.setCuboidMarker(MarkerStateManager.StateType.On);
+
+                    //스톤마커와 큐보이드 마커를 발견하면
+                    if (mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On &&
+                        mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
+                    {
+                        LRRH_stoneMaker.SetActive(true);
+                        LRRH_cuboid.SetActive(false);
+                        GameManager.manager.setPhase(1, true);
+                    }
                 }
-                //스톤마커와 큐보이드 마커를 발견하면
-                if(mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On)
-                {
-                    moveTrigger = true;
-                    Debug.Log("OK : " + moveTrigger);
-                }
+
 
                 
             }
@@ -114,7 +131,6 @@ namespace Vuforia
                 if (mTrackableBehaviour.TrackableName == "chip")
                 {
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing); 
-
                 }
 
                 if (mTrackableBehaviour.TrackableName == "Cuboid")
@@ -146,15 +162,6 @@ namespace Vuforia
         //        CharaterMove();
         //    }
             
-        //}
-
-        //void CharaterMove()
-        //{
-        //    Vector3 direction = chaKnight.transform.position - cuboidMarker.transform.position; //로컬 포지션으로 캐릭터와 마커의 사이의 벡터를 구한후
-        //    Quaternion rotation = Quaternion.LookRotation(-direction); //캐릭터의 foward가 반대로 되어있음
-        //    chaKnight.transform.rotation = (Quaternion.Slerp(chaKnight.transform.rotation, rotation, Time.deltaTime * 1.5f));
-
-        //    chaKnight.transform.position = Vector3.Lerp(chaKnight.transform.position, cuboidMarker.transform.position, Time.deltaTime * 0.8f);
         //}
 
         private void OnTrackingFound()

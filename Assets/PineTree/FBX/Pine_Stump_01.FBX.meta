@@ -3,7 +3,12 @@ guid: df1144f0d9cc2da46a5ff75953405fae
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Pine_Stump_01
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0

@@ -20,7 +20,7 @@ public class VirtualButton1 : MonoBehaviour, IVirtualButtonEventHandler{
     public void OnButtonPressed(VirtualButtonAbstractBehaviour vb)
     {
         Debug.Log("button1");
-        GameManager.manager.inactiveNext();
+        //GameManager.manager.inactiveNext();
         //throw new NotImplementedException();
        
     }
