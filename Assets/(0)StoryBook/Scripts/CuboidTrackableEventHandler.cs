@@ -75,9 +75,7 @@ namespace Vuforia
                 if (mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
                 {
-                    Debug.Log("ㅇㅁㄴㄴㅇ");
                     LRRH_stoneMaker.SetActive(true);
-                    LRRH_cuboid.SetActive(false);
                     GameManager.manager.setPhase(1, true);
                 }
 

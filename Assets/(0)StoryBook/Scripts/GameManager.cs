@@ -12,8 +12,7 @@ public class GameManager : MonoBehaviour {
 
     private bool[] phase;
 
-    //public GameObject next;
-    //public GameObject resetButton;
+
 
     void Awake()
     {

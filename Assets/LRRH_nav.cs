@@ -7,14 +7,35 @@ public class LRRH_nav : MonoBehaviour {
 
     private NavMeshAgent nav;
 
-    void Awaek()
+    private MarkerStateManager mMarkerStateManager;
+
+
+    void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
+        mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
+
     }
 
     void Update()
     {
-        nav.SetDestination(LRRH_destination.transform.position);
+        if(mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On)
+            nav.SetDestination(LRRH_destination.transform.position);
     }
+
+
+    //충돌
+    void OnTriggerEnter(Collider coll)
+    {
+        //목적지 도달.
+        if (coll.tag == "EndCube1")
+        {
+            Debug.Log("도착");
+            gameObject.SetActive(false);
+            
+        }
+
+    }
+
 
 }
