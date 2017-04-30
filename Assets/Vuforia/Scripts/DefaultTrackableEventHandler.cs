@@ -15,19 +15,15 @@ namespace Vuforia
                                                 ITrackableEventHandler
     {
         #region PRIVATE_MEMBER_VARIABLES
- 
+
         private TrackableBehaviour mTrackableBehaviour;
         private MarkerStateManager mMarkerStateManager;
         private Canvas subUI;
         private GameObject cuboidMarker;
 
-        private bool stoneTrigger = false;
-        private bool markerTrigger = false;
 
-        private bool moveTrigger = false;
 
-        public GameObject LRRH_stoneMaker;
-        public GameObject LRRH_cuboid;
+
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -68,6 +64,9 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.TRACKED ||
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
+                //스톤마커와 큐보이드 마커를 발견하면 큐보이드는 CuboidTrackable 스크립트에서 On값 받음
+               
+
                 OnTrackingFound();
 
                 //stoneMarker를 발견하게 되면
@@ -76,18 +75,12 @@ namespace Vuforia
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
                     subUI.enabled = true;
-
-
-                    //스톤마커와 큐보이드 마커를 발견하면
-                    if (mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On &&
-                        mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
-                    {
-                        LRRH_stoneMaker.SetActive(true);
-                        LRRH_cuboid.SetActive(false);
-                        GameManager.manager.setPhase(1, true);
-                    }
-
+                    Debug.Log(mMarkerStateManager.getStoneMarker() + "" + mMarkerStateManager.getCuboidMarker());
                 }
+
+
+
+
                 //chipMarker
                 if (mTrackableBehaviour.TrackableName == "chip") //Page2
                 {
@@ -95,23 +88,8 @@ namespace Vuforia
 
                 }
 
-                //큐브
-                if (mTrackableBehaviour.TrackableName == "Cuboid")
-                {
-                    mMarkerStateManager.setCuboidMarker(MarkerStateManager.StateType.On);
-
-                    //스톤마커와 큐보이드 마커를 발견하면
-                    if (mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On &&
-                        mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
-                    {
-                        LRRH_stoneMaker.SetActive(true);
-                        LRRH_cuboid.SetActive(false);
-                        GameManager.manager.setPhase(1, true);
-                    }
-                }
 
 
-                
             }
             else
             {
@@ -122,7 +100,7 @@ namespace Vuforia
                 {
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
-
+                    Debug.Log(mMarkerStateManager.getStoneMarker());
                     //SubUI를 보여준다.
                     //subUI.enabled = false;
                 }
@@ -130,21 +108,16 @@ namespace Vuforia
                 //chipMarker를 잃으면
                 if (mTrackableBehaviour.TrackableName == "chip")
                 {
-                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing); 
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                 }
 
-                if (mTrackableBehaviour.TrackableName == "Cuboid")
-                {
-                    mMarkerStateManager.setCuboidMarker(MarkerStateManager.StateType.Off);
-                }
-
-            //    //만약 큐보이드 마커의 발견 상태와 스톤마커의 발견 상태가 오프 상태이면
-            //    if (mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.Off &&
-            //mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.Off)
-            //    {
-            //        moveTrigger = false;
-            //        Debug.Log("Off : " + moveTrigger);
-            //    }
+                //    //만약 큐보이드 마커의 발견 상태와 스톤마커의 발견 상태가 오프 상태이면
+                //    if (mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.Off &&
+                //mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.Off)
+                //    {
+                //        moveTrigger = false;
+                //        Debug.Log("Off : " + moveTrigger);
+                //    }
 
             }
         }
@@ -154,15 +127,6 @@ namespace Vuforia
 
 
         #region PRIVATE_METHODS
-
-        //void Update()
-        //{
-        //    if (moveTrigger == true)
-        //    {
-        //        CharaterMove();
-        //    }
-            
-        //}
 
         private void OnTrackingFound()
         {
