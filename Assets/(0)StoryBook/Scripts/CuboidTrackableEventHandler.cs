@@ -21,6 +21,7 @@ namespace Vuforia
         private GameObject cuboidMarker;
 
         public GameObject LRRH_stoneMaker;
+        public GameObject LRRH_chipMaker;
         public GameObject LRRH_cuboid;
 
         private bool moveTrigger = false;
@@ -79,6 +80,13 @@ namespace Vuforia
                     GameManager.manager.setPhase(1, true);
                 }
 
+                //chip 마커와 큐브마커를 찾으면
+                if (mMarkerStateManager.getChipMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
+                {
+                    LRRH_chipMaker.SetActive(true);
+                    GameManager.manager.setPhase(2, true);
+                }
 
             }
             else

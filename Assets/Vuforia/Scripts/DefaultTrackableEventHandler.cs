@@ -84,6 +84,7 @@ namespace Vuforia
                 //chipMarker
                 if (mTrackableBehaviour.TrackableName == "chip") //Page2
                 {
+                    mMarkerStateManager.setChipMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page2);
 
                 }
@@ -108,16 +109,10 @@ namespace Vuforia
                 //chipMarker를 잃으면
                 if (mTrackableBehaviour.TrackableName == "chip")
                 {
+                    mMarkerStateManager.setChipMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                 }
 
-                //    //만약 큐보이드 마커의 발견 상태와 스톤마커의 발견 상태가 오프 상태이면
-                //    if (mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.Off &&
-                //mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.Off)
-                //    {
-                //        moveTrigger = false;
-                //        Debug.Log("Off : " + moveTrigger);
-                //    }
 
             }
         }

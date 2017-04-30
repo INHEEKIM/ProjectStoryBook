@@ -8,6 +8,7 @@ public class MarkerStateManager : MonoBehaviour {
     private PageType BookMarker = PageType.Nothing; //페이지를 넘겼을 때에 따른 페이지 별 상태를 저장
     private StateType CuboidMarker = StateType.Off; // 임시용 큐브마커 상태 저장
     private StateType StoneMarker = StateType.Off; //임시용 스톤마커 상태 저장
+    private StateType ChipMarker = StateType.Off; //임시용 chip마커 상태 저장
 
     public enum PageType
     {
@@ -57,5 +58,15 @@ public class MarkerStateManager : MonoBehaviour {
     public void setStoneMarker(StateType newState)
     {
         StoneMarker = newState;
+    }
+
+    public StateType getChipMarker()
+    {
+        return ChipMarker;
+    }
+
+    public void setChipMarker(StateType newState)
+    {
+        ChipMarker = newState;
     }
 }
