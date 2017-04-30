@@ -7,7 +7,7 @@ public class LRRH_nav : MonoBehaviour {
     private bool[] des_flag;
 
     public float speed = 10.0f;
-    public float minDistance = 0.01f;
+    public float minDistance = 0.1f;
 
 
     private MarkerStateManager mMarkerStateManager;
@@ -30,6 +30,7 @@ public class LRRH_nav : MonoBehaviour {
 
     private void Move()
     {
+        //1번째 목적지
         if(des_flag[0] == false)
         {
             if (Vector3.Distance(transform.position, LRRH_destination[0].transform.position) > minDistance)
@@ -38,52 +39,11 @@ public class LRRH_nav : MonoBehaviour {
                 Vector3 vMoveVector = vDirection.normalized * speed * Time.deltaTime;
                 transform.position += vMoveVector;
 
-                transform.LookAt(LRRH_destination[0].transform);
-            }
-            else
-            {
-                des_flag[0] = true;
+                Quaternion turretRotation = Quaternion.LookRotation(LRRH_destination[0].transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 0.05f);
             }
         }
-        if (des_flag[0] == true)
-        {
-            if (Vector3.Distance(transform.position, LRRH_destination[1].transform.position) > minDistance)
-            {
-                Vector3 vDirection = LRRH_destination[1].transform.position - transform.position;
-                Vector3 vMoveVector = vDirection.normalized * speed * Time.deltaTime;
-                transform.position += vMoveVector;
-
-                transform.LookAt(LRRH_destination[1].transform);
-            }
-            else
-                des_flag[1] = true;
-        }
-        if (des_flag[1] == true)
-        {
-            if (Vector3.Distance(transform.position, LRRH_destination[2].transform.position) > minDistance)
-            {
-                Vector3 vDirection = LRRH_destination[2].transform.position - transform.position;
-                Vector3 vMoveVector = vDirection.normalized * speed * Time.deltaTime;
-                transform.position += vMoveVector;
-
-                transform.LookAt(LRRH_destination[2].transform);
-            }
-            else
-                des_flag[2] = true;
-        }
-        if (des_flag[2] == true)
-        {
-            if (Vector3.Distance(transform.position, LRRH_destination[3].transform.position) > minDistance)
-            {
-                Vector3 vDirection = LRRH_destination[3].transform.position - transform.position;
-                Vector3 vMoveVector = vDirection.normalized * speed * Time.deltaTime;
-                transform.position += vMoveVector;
-
-                transform.LookAt(LRRH_destination[3].transform);
-            }
-            else
-                des_flag[3] = true;
-        }
+        //마지막 목적지
         if (des_flag[3] == true)
         {
             if (Vector3.Distance(transform.position, LRRH_destination[4].transform.position) > minDistance)
@@ -92,23 +52,94 @@ public class LRRH_nav : MonoBehaviour {
                 Vector3 vMoveVector = vDirection.normalized * speed * Time.deltaTime;
                 transform.position += vMoveVector;
 
-                transform.LookAt(LRRH_destination[4].transform);
+                Quaternion turretRotation = Quaternion.LookRotation(LRRH_destination[4].transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.time * 0.05f);
             }
-            else
-                des_flag[4] = true;
         }
+        //4번째 목적지
+        else if (des_flag[2] == true)
+        {
+            if (Vector3.Distance(transform.position, LRRH_destination[3].transform.position) > minDistance)
+            {
+                Vector3 vDirection = LRRH_destination[3].transform.position - transform.position;
+                Vector3 vMoveVector = vDirection.normalized * speed * Time.deltaTime;
+                transform.position += vMoveVector;
+
+                Quaternion turretRotation = Quaternion.LookRotation(LRRH_destination[3].transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.time * 0.05f);
+            }
+        }
+        //3번째 목적지
+        else if (des_flag[1] == true)
+        {
+            if (Vector3.Distance(transform.position, LRRH_destination[2].transform.position) > minDistance)
+            {
+                Vector3 vDirection = LRRH_destination[2].transform.position - transform.position;
+                Vector3 vMoveVector = vDirection.normalized * speed * Time.deltaTime;
+                transform.position += vMoveVector;
+
+                Quaternion turretRotation = Quaternion.LookRotation(LRRH_destination[2].transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.time * 0.05f);
+            }
+        }
+        //2번째 목적지
+        else if (des_flag[0] == true)
+        {
+            if (Vector3.Distance(transform.position, LRRH_destination[1].transform.position) > minDistance)
+            {
+                Vector3 vDirection = LRRH_destination[1].transform.position - transform.position;
+                Vector3 vMoveVector = vDirection.normalized * speed * Time.deltaTime;
+                transform.position += vMoveVector;
+
+                Quaternion turretRotation = Quaternion.LookRotation(LRRH_destination[1].transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.time * 0.05f);
+            }
+        }
+        
+        
+        
     }
 
 
     //충돌
     void OnTriggerEnter(Collider coll)
     {
-        //목적지 도달.
+        //최종 목적지 도달.
         if (coll.tag == "EndCube1")
         {
             Debug.Log("도착");
             gameObject.SetActive(false);
             
+        }
+
+        //중간 목적지 충돌.
+        if (coll.tag == "destination")
+        {
+            if (des_flag[0] == false)
+            {
+                des_flag[0] = true;
+                LRRH_destination[0].SetActive(false);
+            }
+            else if (des_flag[3] == true)
+            {
+                des_flag[4] = true;
+                LRRH_destination[4].SetActive(false);
+            }
+            else if (des_flag[2] == true)
+            {
+                des_flag[3] = true;
+                LRRH_destination[3].SetActive(false);
+            }
+            else if (des_flag[1] == true)
+            {
+                des_flag[2] = true;
+                LRRH_destination[2].SetActive(false);
+            }
+            else if (des_flag[0] == true)
+            {
+                des_flag[1] = true;
+                LRRH_destination[1].SetActive(false);
+            }
         }
 
     }
