@@ -48,6 +48,8 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\AplicationBehavior.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\CuboidTrackableEventHandler.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\GameManager.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\LRRH_nav.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\LRRH_nav_2.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\MarkerStateManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ARVRAboutManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\Autofocus.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewModeManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewTrigger.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VirtualButton1.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\Wolf_nav_2.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\knight_Anim.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\knight_move.cs" />
      <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\DestorySelf.cs" />
@@ -80,7 +83,6 @@
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\SepiaToneEffect.cs" />
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
-     <Compile Include="Assets\LRRH_nav.cs" />
      <Compile Include="Assets\Suriyun\Script\AnimatorController.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CameraSettings\CameraSettings.cs" />
@@ -120,7 +122,6 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\cha_data\Script\ScreenShot.cs" />
      <Compile Include="Assets\slime_anim.cs" />
      <None Include="Assets\Suriyun\UnityChanShader_v1.2.1\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
