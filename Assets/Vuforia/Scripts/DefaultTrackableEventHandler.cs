@@ -75,17 +75,18 @@ namespace Vuforia
                     mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
                     subUI.enabled = true;
-                    Debug.Log(mMarkerStateManager.getStoneMarker() + "" + mMarkerStateManager.getCuboidMarker());
+                    //Debug.Log(mMarkerStateManager.getStoneMarker() + "" + mMarkerStateManager.getCuboidMarker());
                 }
 
 
 
 
                 //chipMarker
-                if (mTrackableBehaviour.TrackableName == "chip") //Page2
+                if (mTrackableBehaviour.TrackableName == "chips") //Page2
                 {
                     mMarkerStateManager.setChipMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page2);
+                    Debug.Log(mMarkerStateManager.getChipMarker() + "" + mMarkerStateManager.getCuboidMarker());
 
                 }
 
@@ -107,7 +108,7 @@ namespace Vuforia
                 }
 
                 //chipMarker¸¦ ÀÒÀ¸¸é
-                if (mTrackableBehaviour.TrackableName == "chip")
+                if (mTrackableBehaviour.TrackableName == "chips")
                 {
                     mMarkerStateManager.setChipMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
