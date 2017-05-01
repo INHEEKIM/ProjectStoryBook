@@ -105,6 +105,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="ProjectStoryBook.CSharp.Plugins.csproj">
+      <Project>{C7B73BC4-7974-BE8F-DCF9-DE09B8BB102E}</Project>
+      <Name>ProjectStoryBook.CSharp.Plugins</Name>
+    </ProjectReference>
     <ProjectReference Include="ProjectStoryBook.CSharp.csproj">
       <Project>{4CA47CBD-6D4C-8C2D-FB95-1DAEFD13B099}</Project>
       <Name>ProjectStoryBook.CSharp</Name>

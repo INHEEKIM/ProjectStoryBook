@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 962c5d08d00fb3a48ad4c4ea1123a81b
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Basket
+    100002: Big Bed
+    100004: Book 1
+    100006: Book 2
+    100008: Book 3
+    100010: Bookcase
+    100012: Bowl
+    100014: Candle
+    100016: Chandelere 1
+    100018: Chandelere 2
+    100020: Chandelere 3
+    100022: Chandelere 4
+    100024: Chest
+    100026: Chest Top
+    100028: Closet
+    100030: Closet Door 1
+    100032: Closet Door 2
+    100034: Closet Door 3
+    100036: Closet Door 4
+    100038: Container
+    100040: Container Lid
+    100042: Desk
+    100044: Desk Chair
+    100046: FirePlace
+    100048: House 1
+    100050: House 2
+    100052: House 3
+    100054: House 4
+    100056: House 5
+    100058: House 6
+    100060: House 7
+    100062: House 8
+    100064: House 9
+    100066: Kitchen Chair
+    100068: Kitchen Shelves
+    100070: Kitchen Table
+    100072: Long Bowl
+    100074: Long Chair
+    100076: Long Table
+    100078: //RootNode
+    100080: Main Chair
+    100082: NIght Stand
+    100084: Open Book
+    100086: Plant Pot
+    100088: Plant Pot_2
+    100090: Plate
+    100092: Round Container
+    100094: Round Container Lid
+    100096: Round Rug
+    100098: Round Rug 2
+    100100: Round Table
+    100102: Rug
+    100104: Rug_2
+    100106: Shelf
+    100108: Short Table
+    100110: Small Bed
+    100112: Small Chair
+    100114: Sofa
+    100116: Sofa Chair
+    100118: Stack Of Books
+    100120: Stack Of Books 2
+    100122: Stone Stairs
+    100124: Stone Stairs Small
+    100126: Stove
+    100128: Wooden Stairs
+    100130: Wooden Stairs Medium
+    100132: Wooden Stairs Small
+    400000: Basket
+    400002: Big Bed
+    400004: Book 1
+    400006: Book 2
+    400008: Book 3
+    400010: Bookcase
+    400012: Bowl
+    400014: Candle
+    400016: Chandelere 1
+    400018: Chandelere 2
+    400020: Chandelere 3
+    400022: Chandelere 4
+    400024: Chest
+    400026: Chest Top
+    400028: Closet
+    400030: Closet Door 1
+    400032: Closet Door 2
+    400034: Closet Door 3
+    400036: Closet Door 4
+    400038: Container
+    400040: Container Lid
+    400042: Desk
+    400044: Desk Chair
+    400046: FirePlace
+    400048: House 1
+    400050: House 2
+    400052: House 3
+    400054: House 4
+    400056: House 5
+    400058: House 6
+    400060: House 7
+    400062: House 8
+    400064: House 9
+    400066: Kitchen Chair
+    400068: Kitchen Shelves
+    400070: Kitchen Table
+    400072: Long Bowl
+    400074: Long Chair
+    400076: Long Table
+    400078: //RootNode
+    400080: Main Chair
+    400082: NIght Stand
+    400084: Open Book
+    400086: Plant Pot
+    400088: Plant Pot_2
+    400090: Plate
+    400092: Round Container
+    400094: Round Container Lid
+    400096: Round Rug
+    400098: Round Rug 2
+    400100: Round Table
+    400102: Rug
+    400104: Rug_2
+    400106: Shelf
+    400108: Short Table
+    400110: Small Bed
+    400112: Small Chair
+    400114: Sofa
+    400116: Sofa Chair
+    400118: Stack Of Books
+    400120: Stack Of Books 2
+    400122: Stone Stairs
+    400124: Stone Stairs Small
+    400126: Stove
+    400128: Wooden Stairs
+    400130: Wooden Stairs Medium
+    400132: Wooden Stairs Small
+    2300000: Basket
+    2300002: Big Bed
+    2300004: Book 1
+    2300006: Book 2
+    2300008: Book 3
+    2300010: Bookcase
+    2300012: Bowl
+    2300014: Candle
+    2300016: Chandelere 1
+    2300018: Chandelere 2
+    2300020: Chandelere 3
+    2300022: Chandelere 4
+    2300024: Chest
+    2300026: Chest Top
+    2300028: Closet
+    2300030: Closet Door 1
+    2300032: Closet Door 2
+    2300034: Closet Door 3
+    2300036: Closet Door 4
+    2300038: Container
+    2300040: Container Lid
+    2300042: Desk
+    2300044: Desk Chair
+    2300046: FirePlace
+    2300048: House 1
+    2300050: House 2
+    2300052: House 3
+    2300054: House 4
+    2300056: House 5
+    2300058: House 6
+    2300060: House 7
+    2300062: House 8
+    2300064: House 9
+    2300066: Kitchen Chair
+    2300068: Kitchen Shelves
+    2300070: Kitchen Table
+    2300072: Long Bowl
+    2300074: Long Chair
+    2300076: Long Table
+    2300078: Main Chair
+    2300080: NIght Stand
+    2300082: Open Book
+    2300084: Plant Pot
+    2300086: Plant Pot_2
+    2300088: Plate
+    2300090: Round Container
+    2300092: Round Container Lid
+    2300094: Round Rug
+    2300096: Round Rug 2
+    2300098: Round Table
+    2300100: Rug
+    2300102: Rug_2
+    2300104: Shelf
+    2300106: Short Table
+    2300108: Small Bed
+    2300110: Small Chair
+    2300112: Sofa
+    2300114: Sofa Chair
+    2300116: Stack Of Books
+    2300118: Stack Of Books 2
+    2300120: Stone Stairs
+    2300122: Stone Stairs Small
+    2300124: Stove
+    2300126: Wooden Stairs
+    2300128: Wooden Stairs Medium
+    2300130: Wooden Stairs Small
+    3300000: Basket
+    3300002: Big Bed
+    3300004: Book 1
+    3300006: Book 2
+    3300008: Book 3
+    3300010: Bookcase
+    3300012: Bowl
+    3300014: Candle
+    3300016: Chandelere 1
+    3300018: Chandelere 2
+    3300020: Chandelere 3
+    3300022: Chandelere 4
+    3300024: Chest
+    3300026: Chest Top
+    3300028: Closet
+    3300030: Closet Door 1
+    3300032: Closet Door 2
+    3300034: Closet Door 3
+    3300036: Closet Door 4
+    3300038: Container
+    3300040: Container Lid
+    3300042: Desk
+    3300044: Desk Chair
+    3300046: FirePlace
+    3300048: House 1
+    3300050: House 2
+    3300052: House 3
+    3300054: House 4
+    3300056: House 5
+    3300058: House 6
+    3300060: House 7
+    3300062: House 8
+    3300064: House 9
+    3300066: Kitchen Chair
+    3300068: Kitchen Shelves
+    3300070: Kitchen Table
+    3300072: Long Bowl
+    3300074: Long Chair
+    3300076: Long Table
+    3300078: Main Chair
+    3300080: NIght Stand
+    3300082: Open Book
+    3300084: Plant Pot
+    3300086: Plant Pot_2
+    3300088: Plate
+    3300090: Round Container
+    3300092: Round Container Lid
+    3300094: Round Rug
+    3300096: Round Rug 2
+    3300098: Round Table
+    3300100: Rug
+    3300102: Rug_2
+    3300104: Shelf
+    3300106: Short Table
+    3300108: Small Bed
+    3300110: Small Chair
+    3300112: Sofa
+    3300114: Sofa Chair
+    3300116: Stack Of Books
+    3300118: Stack Of Books 2
+    3300120: Stone Stairs
+    3300122: Stone Stairs Small
+    3300124: Stove
+    3300126: Wooden Stairs
+    3300128: Wooden Stairs Medium
+    3300130: Wooden Stairs Small
+    4300000: Chandelere 4
+    4300002: Chandelere 3
+    4300004: Chandelere 2
+    4300006: Chandelere 1
+    4300008: Closet Door 3
+    4300010: Closet Door 4
+    4300012: Closet Door 2
+    4300014: Closet Door 1
+    4300016: Chest Top
+    4300018: Round Container Lid
+    4300020: Container Lid
+    4300022: Plant Pot_2
+    4300024: Round Rug
+    4300026: Rug_2
+    4300028: Stack Of Books 2
+    4300030: Stack Of Books
+    4300032: Book 3
+    4300034: Book 2
+    4300036: Stone Stairs Small
+    4300038: Stone Stairs
+    4300040: Wooden Stairs Small
+    4300042: Wooden Stairs Medium
+    4300044: Wooden Stairs
+    4300046: House 1
+    4300048: House 2
+    4300050: House 6
+    4300052: House 5
+    4300054: House 4
+    4300056: House 8
+    4300058: House 9
+    4300060: House 7
+    4300062: House 3
+    4300064: Basket
+    4300066: Big Bed
+    4300068: Book 1
+    4300070: Bowl
+    4300072: Candle
+    4300074: Chest
+    4300076: Closet
+    4300078: Container
+    4300080: Desk
+    4300082: Desk Chair
+    4300084: FirePlace
+    4300086: Kitchen Chair
+    4300088: Kitchen Shelves
+    4300090: Kitchen Table
+    4300092: Long Bowl
+    4300094: Long Chair
+    4300096: Long Table
+    4300098: Main Chair
+    4300100: NIght Stand
+    4300102: Open Book
+    4300104: Bookcase
+    4300106: Plant Pot
+    4300108: Plate
+    4300110: Round Container
+    4300112: Round Rug 2
+    4300114: Round Table
+    4300116: Rug
+    4300118: Shelf
+    4300120: Short Table
+    4300122: Small Bed
+    4300124: Small Chair
+    4300126: Sofa
+    4300128: Sofa Chair
+    4300130: Stove
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
