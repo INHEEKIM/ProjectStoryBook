@@ -37,8 +37,7 @@ public class Wolf_nav_2 : MonoBehaviour {
         {
             anim.SetBool("Run", false);
             Quaternion turretRotation = Quaternion.LookRotation(LRRH.transform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.time * 0.05f);
-            
+            transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.time * 0.05f);            
         }
 
     }
@@ -55,13 +54,26 @@ public class Wolf_nav_2 : MonoBehaviour {
         Quaternion turretRotation = Quaternion.LookRotation(Wolf_destination[0].transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 0.05f);
     }
-    public bool getDes_flag()
+    
+
+    //빨간모자 멈춘 후 2초 후 애니메이션.
+    public void Wolf_move2()
     {
-        return des_flag[0];
+        StartCoroutine("Wolf_attack");
+    }
+    IEnumerator Wolf_attack()
+    {
+        yield return new WaitForSeconds(2.0f);
+        anim.SetTrigger("Bite Attack");
     }
 
 
 
+
+    public bool getDes_flag(int index)
+    {
+        return des_flag[index];
+    }
     //충돌
     void OnTriggerEnter(Collider coll)
     {

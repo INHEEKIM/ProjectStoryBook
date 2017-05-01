@@ -6,6 +6,8 @@ public class LRRH_nav_2 : MonoBehaviour {
     public GameObject[] LRRH_destination; //목적지
     private bool[] des_flag;
 
+    private bool wolf_move2_flag = false;
+
     public float speed = 20.0f;
     public float minDistance = 0.001f;
     private Vector3 nomaliedVector;
@@ -38,7 +40,7 @@ public class LRRH_nav_2 : MonoBehaviour {
     {
         //1번째 목적지 
         //늑대 등장.
-        if (!wolf_nav.getDes_flag())
+        if (!wolf_nav.getDes_flag(0))
         { 
             if (des_flag[0])
             {          
@@ -73,9 +75,15 @@ public class LRRH_nav_2 : MonoBehaviour {
         //}
         //2번째 목적지
         //빨간모자 멈춤.
+        //2초 후 늑대 애니메이션
         if (des_flag[1] == true)
         {
             anim.CrossFade("wait");
+            if (!wolf_move2_flag)
+            {
+                wolf_nav.Wolf_move2();
+                wolf_move2_flag = !wolf_move2_flag;
+            }
         }
         //2번째 목적지로
         //빨간모자 이동.
