@@ -88,7 +88,17 @@ ModelImporter:
     4300008: shoes
     4300010: head
     4300012: body
-    7400000: Take 001
+    7400000: 0_idle
+    7400002: 1_idle2
+    7400004: 2_walk
+    7400006: 3_run
+    7400008: 4_rrr
+    7400010: 5_jump
+    7400012: 6_talk
+    7400014: 7_talk2
+    7400016: 8_disapointed
+    7400018: 9_
+    7400020: 10_
     9500000: //RootNode
     13700000: body
     13700002: gloves
@@ -117,7 +127,1173 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: 0_idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 1_idle2
+      takeName: Take 001
+      firstFrame: 21
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 2_walk
+      takeName: Take 001
+      firstFrame: 41
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 3_run
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 4_rrr
+      takeName: Take 001
+      firstFrame: 81
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 5_jump
+      takeName: Take 001
+      firstFrame: 101
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 6_talk
+      takeName: Take 001
+      firstFrame: 121
+      lastFrame: 140
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 7_talk2
+      takeName: Take 001
+      firstFrame: 141
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 8_disapointed
+      takeName: Take 001
+      firstFrame: 161
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 9_
+      takeName: Take 001
+      firstFrame: 181
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: 10_
+      takeName: Take 001
+      firstFrame: 201
+      lastFrame: 221
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 1
+      - path: gloves
+        weight: 1
+      - path: hair
+        weight: 1
+      - path: head
+        weight: 1
+      - path: leg
+        weight: 1
+      - path: mantle
+        weight: 1
+      - path: pivot
+        weight: 1
+      - path: pivot/body 1
+        weight: 1
+      - path: pivot/body 1/joint3
+        weight: 1
+      - path: pivot/body 1/joint3/Chest
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint21/joint22
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmLeft/FrontArmLeft/HandLeft/joint23/joint24
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint28/joint29
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/ArmRight/FrontArmRight/HandRight/joint30/joint31
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head
+        weight: 1
+      - path: pivot/body 1/joint3/Chest/Neck/Head/joint7
+        weight: 1
+      - path: pivot/body 1/legTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL
+        weight: 1
+      - path: pivot/body 1/legTopL/legBotL/footTopL/footBotL/joint12
+        weight: 1
+      - path: pivot/body 1/legTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR
+        weight: 1
+      - path: pivot/body 1/legTopR/legBotR/footTopR/footBotR/joint17
+        weight: 1
+      - path: shoes
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
