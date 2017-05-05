@@ -228,7 +228,6 @@
     <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
     <None Include="Assets\Forest Wolf\Read me.txt" />
-    <None Include="Assets\Mushroom house\StandardDoubleSided.shader" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
     <None Include="Assets\Quantum Theory\3D Cloud Models\Documentation.txt" />
