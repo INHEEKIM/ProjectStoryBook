@@ -20,9 +20,11 @@ namespace Vuforia
         private MarkerStateManager mMarkerStateManager;
         private GameObject cuboidMarker;
 
-        public GameObject LRRH_stoneMaker;
-        public GameObject LRRH_chipMaker;
-        public GameObject LRRH_cuboid;
+        //
+        public GameObject[] MaleCivilian;
+
+        //큐브 위에 뜨는 캐릭터
+        public GameObject MaleCivilian_cuboid;
 
         private bool moveTrigger = false;
 
@@ -76,16 +78,14 @@ namespace Vuforia
                 if (mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
                 {
-                    LRRH_stoneMaker.SetActive(true);
-                    GameManager.manager.setPhase(1, true);
+                    MaleCivilian[0].SetActive(true);
                 }
 
                 //chip 마커와 큐브마커를 찾으면
                 if (mMarkerStateManager.getChipMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
                 {
-                    LRRH_chipMaker.SetActive(true);
-                    GameManager.manager.setPhase(2, true);
+                    //MaleCivilian[1].SetActive(true);
                 }
 
             }

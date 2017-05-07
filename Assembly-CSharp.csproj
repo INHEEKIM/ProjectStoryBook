@@ -51,6 +51,8 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\LRRH_nav.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\LRRH_nav_2.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\MarkerStateManager.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\SheepMove.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\Shepherd\ShepherdManager1.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ARVRAboutManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\Autofocus.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\BackToAbout.cs" />
@@ -207,6 +209,7 @@
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\Suriyun\UnityChanShader_v1.2.1\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" />
@@ -223,7 +226,6 @@
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
-     <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\EdgeDetectNormals.shader" />
@@ -238,7 +240,6 @@
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\(0)StoryBook\Shaders\GroundBlend.shader" />
-     <None Include="Assets\Mushroom house\StandardDoubleSided.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -249,6 +250,10 @@
  <Reference Include="Vuforia.UnityExtensions">
  <HintPath>C:/Users/JOO/Documents/ProjectStoryBook/Assets/Vuforia/Scripts/Internal/Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{F1AA952B-1419-9224-AD15-F939824AB84F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
