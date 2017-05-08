@@ -78,6 +78,8 @@
     <Compile Include="Assets\(0)StoryBook\Scripts\LRRH_nav.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\LRRH_nav_2.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\MarkerStateManager.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\SheepMove.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\Shepherd\ShepherdManager1.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\ARVRAboutManager.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\Autofocus.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\BackToAbout.cs" />
