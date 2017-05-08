@@ -15,7 +15,7 @@ public class ShepherdManager1 : MonoBehaviour {
 
     //속도
     private float walkSpeed = 15.0f;
-    private float runSpeed = 20.0f;
+    private float runSpeed = 30.0f;
     private float minDistance = 0.1f;
 
 
@@ -84,12 +84,45 @@ public class ShepherdManager1 : MonoBehaviour {
             transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
         }
         //멈추고 기다림.
+        //뭔가 생각난 듯 점프하고 킥킥 웃음.
         else if (desFlag[4])
         {
             anim.SetBool("walk", false);
             desFlag[4] = !desFlag[4];
-
+            StartCoroutine("move4");
         }
+        // 2목적지로.
+        else if (desFlag[5])
+        {
+            anim.SetBool("run", true);
+
+            Vector3 vDirection = destination[2].transform.position - transform.position;
+            Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
+            transform.position += vMoveVector;
+
+            Quaternion turretRotation = Quaternion.LookRotation(destination[2].transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
+        }
+        // 3목적지로.
+        else if (desFlag[6])
+        {
+            anim.SetBool("run", true);
+
+            Vector3 vDirection = destination[3].transform.position - transform.position;
+            Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
+            transform.position += vMoveVector;
+        }
+        // 4목적지로.
+        else if (desFlag[7])
+        {
+            anim.SetBool("run", true);
+
+            Vector3 vDirection = destination[4].transform.position - transform.position;
+            Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
+            transform.position += vMoveVector;
+        }
+
+
     }
 
     //토크 애니메이션
@@ -108,7 +141,18 @@ public class ShepherdManager1 : MonoBehaviour {
         desFlag[3] = true;
     }
 
-    
+    //토크 애니메이션
+    IEnumerator move4()
+    {
+        yield return new WaitForSeconds(2.0f);
+        anim.SetTrigger("jump");
+        yield return new WaitForSeconds(1.0f);
+        anim.SetBool("laugh", true);
+        yield return new WaitForSeconds(1.0f);
+        anim.SetBool("laugh", false);
+        yield return new WaitForSeconds(1.0f);
+        desFlag[5] = true;
+    }
 
 
     //충돌
@@ -125,8 +169,28 @@ public class ShepherdManager1 : MonoBehaviour {
         //중간 목적지 충돌.
         if (coll.tag == "destination")
         {
+            //4목적지. 
+            if (desFlag[7] == true)
+            {
+                desFlag[7] = false;
+                destination[4].SetActive(false);
+            }
+            //3목적지. 
+            else if(desFlag[6] == true)
+            {
+                desFlag[6] = false;
+                desFlag[7] = true;
+                destination[3].SetActive(false);
+            }
+            //2목적지. 
+            else if(desFlag[5] == true)
+            {
+                desFlag[5] = false;
+                desFlag[6] = true;             
+                destination[2].SetActive(false);
+            }
             //1목적지. 밑으로 이동했을 때. 
-            if (desFlag[3] == true)
+            else if(desFlag[3] == true)
             {
                 desFlag[4] = true;
                 desFlag[3] = false;
