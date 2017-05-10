@@ -55,6 +55,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\Shepherd\ShepherdManager1.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\Shepherd\ShepherdManager2.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\Shepherd\ShepherdManager4.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\Shepherd\ShepherdManager5.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ARVRAboutManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\Autofocus.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\BackToAbout.cs" />

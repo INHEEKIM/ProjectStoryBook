@@ -7,11 +7,7 @@ public class ShepherdManager1 : MonoBehaviour {
     public GameObject[] destination;
     //동작 순서 체크
     private bool[] desFlag;
-    //애니메이션 1번 체크
-    private bool animFlag = false;
 
-    //시간 체크
-    private float time = 0.0f;
 
     //속도
     private float walkSpeed = 15.0f;
