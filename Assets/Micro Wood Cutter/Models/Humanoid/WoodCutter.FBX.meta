@@ -1,0 +1,639 @@
+fileFormatVersion: 2
+guid: 582235cb650dd8742a143801979f706f
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bip001 Footsteps
+    100002: Bip001 HeadNub
+    100004: Bip001 L Toe0Nub
+    100006: Bip001 Ponytail1Nub
+    100008: Bip001 R Toe0Nub
+    100010: Weapon_Ctl
+    100012: Wood_Ctl
+    100014: //RootNode
+    100016: WoodCutter
+    100018: WoodCutter_Axe
+    100020: WoodCutter_Axe_Bone001
+    100022: WoodCutter_Bip001
+    100024: WoodCutter_Bip001 Head
+    100026: WoodCutter_Bip001 L Calf
+    100028: WoodCutter_Bip001 L Clavicle
+    100030: WoodCutter_Bip001 L Foot
+    100032: WoodCutter_Bip001 L Forearm
+    100034: WoodCutter_Bip001 L Hand
+    100036: WoodCutter_Bip001 L Thigh
+    100038: WoodCutter_Bip001 L Toe0
+    100040: WoodCutter_Bip001 L UpperArm
+    100042: WoodCutter_Bip001 Neck
+    100044: WoodCutter_Bip001 Pelvis
+    100046: WoodCutter_Bip001 Ponytail1
+    100048: WoodCutter_Bip001 Ponytail11
+    100050: WoodCutter_Bip001 R Calf
+    100052: WoodCutter_Bip001 R Clavicle
+    100054: WoodCutter_Bip001 R Foot
+    100056: WoodCutter_Bip001 R Forearm
+    100058: WoodCutter_Bip001 R Hand
+    100060: WoodCutter_Bip001 R Thigh
+    100062: WoodCutter_Bip001 R Toe0
+    100064: WoodCutter_Bip001 R UpperArm
+    100066: WoodCutter_Bip001 Spine
+    100068: WoodCutter_Bip001 Spine1
+    100070: WoodCutter_wood
+    100072: WoodCutter_Wood_Bone002
+    100074: PivotPoint001
+    400000: Bip001 Footsteps
+    400002: Bip001 HeadNub
+    400004: Bip001 L Toe0Nub
+    400006: Bip001 Ponytail1Nub
+    400008: Bip001 R Toe0Nub
+    400010: Weapon_Ctl
+    400012: Wood_Ctl
+    400014: //RootNode
+    400016: WoodCutter
+    400018: WoodCutter_Axe
+    400020: WoodCutter_Axe_Bone001
+    400022: WoodCutter_Bip001
+    400024: WoodCutter_Bip001 Head
+    400026: WoodCutter_Bip001 L Calf
+    400028: WoodCutter_Bip001 L Clavicle
+    400030: WoodCutter_Bip001 L Foot
+    400032: WoodCutter_Bip001 L Forearm
+    400034: WoodCutter_Bip001 L Hand
+    400036: WoodCutter_Bip001 L Thigh
+    400038: WoodCutter_Bip001 L Toe0
+    400040: WoodCutter_Bip001 L UpperArm
+    400042: WoodCutter_Bip001 Neck
+    400044: WoodCutter_Bip001 Pelvis
+    400046: WoodCutter_Bip001 Ponytail1
+    400048: WoodCutter_Bip001 Ponytail11
+    400050: WoodCutter_Bip001 R Calf
+    400052: WoodCutter_Bip001 R Clavicle
+    400054: WoodCutter_Bip001 R Foot
+    400056: WoodCutter_Bip001 R Forearm
+    400058: WoodCutter_Bip001 R Hand
+    400060: WoodCutter_Bip001 R Thigh
+    400062: WoodCutter_Bip001 R Toe0
+    400064: WoodCutter_Bip001 R UpperArm
+    400066: WoodCutter_Bip001 Spine
+    400068: WoodCutter_Bip001 Spine1
+    400070: WoodCutter_wood
+    400072: WoodCutter_Wood_Bone002
+    400074: PivotPoint001
+    4300000: WoodCutter
+    4300002: WoodCutter_Axe
+    4300004: WoodCutter_wood
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: WoodCutter
+    13700002: WoodCutter_Axe
+    13700004: WoodCutter_wood
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: WoodCutter
+        weight: 1
+      - path: WoodCutter_Axe
+        weight: 1
+      - path: WoodCutter_Bip001
+        weight: 1
+      - path: WoodCutter_Bip001/Bip001 Footsteps
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          L Thigh
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          L Thigh/WoodCutter_Bip001 L Calf
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          L Thigh/WoodCutter_Bip001 L Calf/WoodCutter_Bip001 L Foot
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          L Thigh/WoodCutter_Bip001 L Calf/WoodCutter_Bip001 L Foot/WoodCutter_Bip001
+          L Toe0
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          L Thigh/WoodCutter_Bip001 L Calf/WoodCutter_Bip001 L Foot/WoodCutter_Bip001
+          L Toe0/Bip001 L Toe0Nub
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          R Thigh
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          R Thigh/WoodCutter_Bip001 R Calf
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          R Thigh/WoodCutter_Bip001 R Calf/WoodCutter_Bip001 R Foot
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          R Thigh/WoodCutter_Bip001 R Calf/WoodCutter_Bip001 R Foot/WoodCutter_Bip001
+          R Toe0
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          R Thigh/WoodCutter_Bip001 R Calf/WoodCutter_Bip001 R Foot/WoodCutter_Bip001
+          R Toe0/Bip001 R Toe0Nub
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 Head
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 Head/Bip001 HeadNub
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 Head/WoodCutter_Bip001 Ponytail1
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 Head/WoodCutter_Bip001 Ponytail1/WoodCutter_Bip001
+          Ponytail11
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 Head/WoodCutter_Bip001 Ponytail1/WoodCutter_Bip001
+          Ponytail11/Bip001 Ponytail1Nub
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 L Clavicle
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 L Clavicle/WoodCutter_Bip001
+          L UpperArm
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 L Clavicle/WoodCutter_Bip001
+          L UpperArm/WoodCutter_Bip001 L Forearm
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 L Clavicle/WoodCutter_Bip001
+          L UpperArm/WoodCutter_Bip001 L Forearm/WoodCutter_Bip001 L Hand
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 L Clavicle/WoodCutter_Bip001
+          L UpperArm/WoodCutter_Bip001 L Forearm/WoodCutter_Bip001 L Hand/Wood_Ctl
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 L Clavicle/WoodCutter_Bip001
+          L UpperArm/WoodCutter_Bip001 L Forearm/WoodCutter_Bip001 L Hand/Wood_Ctl/WoodCutter_Wood_Bone002
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 R Clavicle
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 R Clavicle/WoodCutter_Bip001
+          R UpperArm
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 R Clavicle/WoodCutter_Bip001
+          R UpperArm/WoodCutter_Bip001 R Forearm
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 R Clavicle/WoodCutter_Bip001
+          R UpperArm/WoodCutter_Bip001 R Forearm/WoodCutter_Bip001 R Hand
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 R Clavicle/WoodCutter_Bip001
+          R UpperArm/WoodCutter_Bip001 R Forearm/WoodCutter_Bip001 R Hand/Weapon_Ctl
+        weight: 1
+      - path: WoodCutter_Bip001/WoodCutter_Bip001 Pelvis/WoodCutter_Bip001 Spine/WoodCutter_Bip001
+          Spine1/WoodCutter_Bip001 Neck/WoodCutter_Bip001 R Clavicle/WoodCutter_Bip001
+          R UpperArm/WoodCutter_Bip001 R Forearm/WoodCutter_Bip001 R Hand/Weapon_Ctl/WoodCutter_Axe_Bone001
+        weight: 1
+      - path: WoodCutter_wood
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: WoodCutter_Bip001 Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: WoodCutter_Bip001 Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: WoodCutter(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Axe
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_wood
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001
+      position: {x: 0, y: 0.3903863, z: 0.02041788}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Bip001 Footsteps
+      position: {x: -0, y: 0, z: -0.38480094}
+      rotation: {x: 0, y: 0, z: -0.70710635, w: 0.7071073}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 Pelvis
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.5107339, y: 0.48902977, z: 0.48902988, w: 0.5107353}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: WoodCutter_Bip001 Spine
+      position: {x: -0.088707924, y: -0.003993063, z: 0.00000013906046}
+      rotation: {x: -0.0000020348778, y: 0.000000738336, z: 0.021306695, w: 0.999773}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 Spine1
+      position: {x: -0.17513534, y: -0.00023892641, z: -6.624532e-10}
+      rotation: {x: 4.5448137e-13, y: -0.00000007720074, z: 0.01848546, w: 0.9998292}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 Neck
+      position: {x: -0.30026367, y: -0.000032281874, z: -8.9530654e-11}
+      rotation: {x: -2.2870594e-14, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 Head
+      position: {x: -0.040545274, y: 0, z: 0}
+      rotation: {x: 9.867877e-12, y: 0.00000007609664, z: -0.018086694, w: 0.99983644}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001 HeadNub
+      position: {x: -0.8804953, y: 0, z: 0}
+      rotation: {x: -4.1174657e-20, y: -3.3881318e-21, z: -1.39505e-40, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: WoodCutter_Bip001 Ponytail1
+      position: {x: -0.28099257, y: -0.42230636, z: -0.0000009908251}
+      rotation: {x: -1.9082648e-12, y: -0.000002763647, z: 0.9964114, w: 0.08464266}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: WoodCutter_Bip001 Ponytail11
+      position: {x: -0.12732437, y: -0.000093231196, z: -2.5873303e-10}
+      rotation: {x: 5.04252e-14, y: 0.0000002413644, z: -0.08702207, w: 0.9962064}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: Bip001 Ponytail1Nub
+      position: {x: -0.118852004, y: 0, z: 0}
+      rotation: {x: 0.7073883, y: -0.70682526, z: -0.0000009802255, w: -0.0000009810065}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 L Clavicle
+      position: {x: 0.038713988, y: -0.05324046, z: 0.121530816}
+      rotation: {x: -0.58112735, y: -0.00023255905, z: 0.8138126, w: -0.00032324798}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 L UpperArm
+      position: {x: -0.13795456, y: 0.0000000023841857, z: -0.000000076293944}
+      rotation: {x: 0.002183424, y: 0.14659104, z: -0.0009165599, w: 0.98919433}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: WoodCutter_Bip001 L Forearm
+      position: {x: -0.29611304, y: 0.0000000011920929, z: 0}
+      rotation: {x: -0.00506621, y: 0.016475538, z: 0.028953057, w: 0.99943215}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 L Hand
+      position: {x: -0.1531208, y: -0.000000019073486, z: 0}
+      rotation: {x: -0.579493, y: -0.38703507, z: -0.42195317, w: 0.5799547}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Wood_Ctl
+      position: {x: -0.11989496, y: -0.49793562, z: 0.34089813}
+      rotation: {x: 0.24490367, y: 0.92310685, z: -0.061702136, w: -0.28998083}
+      scale: {x: 4.382213, y: 4.3822117, z: 4.382214}
+      transformModified: 1
+    - name: WoodCutter_Wood_Bone002
+      position: {x: 0.00000015258789, y: -0.000000019073486, z: -0.000000038146972}
+      rotation: {x: -0.00000023841856, y: 1.9460938e-15, z: 4.6398486e-22, w: 1}
+      scale: {x: 0.22819518, y: 0.22819522, z: 0.2281952}
+      transformModified: 1
+    - name: WoodCutter_Bip001 R Clavicle
+      position: {x: 0.038713988, y: -0.05323978, z: -0.1215311}
+      rotation: {x: 0.5811265, y: 0.00023023781, z: 0.81381315, w: -0.0003248494}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: WoodCutter_Bip001 R UpperArm
+      position: {x: -0.13795458, y: 0.000000007152557, z: -0.000000076293944}
+      rotation: {x: -0.002183449, y: -0.14659207, z: -0.00091670424, w: 0.9891943}
+      scale: {x: 1, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: WoodCutter_Bip001 R Forearm
+      position: {x: -0.296113, y: -0.0000000035762786, z: 0}
+      rotation: {x: 0.005066377, y: -0.016475305, z: 0.028953286, w: 0.99943215}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 R Hand
+      position: {x: -0.15312082, y: 0, z: -0.000000076293944}
+      rotation: {x: 0.70682526, y: 0, z: -0, w: 0.7073883}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+      transformModified: 1
+    - name: Weapon_Ctl
+      position: {x: -0.07460918, y: -0.001991806, z: 0.0257769}
+      rotation: {x: 0.7153703, y: -0.070017345, z: -0.65150625, w: -0.24265724}
+      scale: {x: 2.7373953, y: 2.737394, z: 2.7373943}
+      transformModified: 1
+    - name: WoodCutter_Axe_Bone001
+      position: {x: -0.00000014305114, y: 0, z: -0.000000076293944}
+      rotation: {x: -0.00000090996275, y: -0.00000015105385, z: 0.000000043710788,
+        w: 1}
+      scale: {x: 0.3452681, y: 0.34526813, z: 0.3452681}
+      transformModified: 1
+    - name: WoodCutter_Bip001 L Thigh
+      position: {x: 0.08879745, y: 0.0002097833, z: 0.14315894}
+      rotation: {x: 0.05179939, y: 0.996702, z: -0.004811652, w: 0.062280174}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 L Calf
+      position: {x: -0.1899801, y: 0, z: 0.000000019073486}
+      rotation: {x: 7.282972e-10, y: 0.0000000037702437, z: 0.054132663, w: 0.9985338}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 L Foot
+      position: {x: -0.13938397, y: 0.0000000047683715, z: 0.000000019073486}
+      rotation: {x: -0.001459446, y: 0.06244888, z: -0.106072605, w: 0.9923944}
+      scale: {x: 1, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 L Toe0
+      position: {x: -0.062169436, y: 0.18160184, z: 0}
+      rotation: {x: -0.00000001545431, y: 0.00000001545431, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 L Toe0Nub
+      position: {x: -0.0081090545, y: -5.9604643e-10, z: 0}
+      rotation: {x: -9.553415e-16, y: -1.755525e-30, z: 1, w: -1.8375893e-15}
+      scale: {x: -0.99999994, y: -1, z: -0.99999994}
+      transformModified: 1
+    - name: WoodCutter_Bip001 R Thigh
+      position: {x: 0.08879745, y: 0.0002105558, z: -0.14315894}
+      rotation: {x: 0.051799223, y: 0.99670196, z: 0.004814412, w: -0.062280405}
+      scale: {x: 1, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: WoodCutter_Bip001 R Calf
+      position: {x: -0.18998012, y: 0.0000000023841857, z: 0}
+      rotation: {x: -0.0000000012549344, y: -0.000000011260315, z: 0.054132674, w: 0.9985338}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 R Foot
+      position: {x: -0.13938397, y: 0, z: 0.000000019073486}
+      rotation: {x: 0.0014594353, y: -0.062448964, z: -0.10607262, w: 0.9923944}
+      scale: {x: 1.0000001, y: 1, z: 1}
+      transformModified: 1
+    - name: WoodCutter_Bip001 R Toe0
+      position: {x: -0.062169436, y: 0.18160184, z: 0}
+      rotation: {x: 0.000000015454312, y: -0.000000015454312, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 R Toe0Nub
+      position: {x: -0.0081090545, y: -5.9604643e-10, z: 0}
+      rotation: {x: -1.697032e-30, y: 9.553441e-16, z: 1.776357e-15, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

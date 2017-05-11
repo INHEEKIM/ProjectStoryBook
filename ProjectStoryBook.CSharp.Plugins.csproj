@@ -148,6 +148,11 @@
     <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
     <None Include="Assets\Forest Wolf\Read me.txt" />
+    <None Include="Assets\Micro Wood Cutter\ReadMe_[ v 1.0 ]_ 12_11.txt" />
+    <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
+    <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
+    <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
+    <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\iOS\Vuforia.UnityExtensions.iOS.XML" />
     <None Include="Assets\Quantum Theory\3D Cloud Models\Documentation.txt" />
