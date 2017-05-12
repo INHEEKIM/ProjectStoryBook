@@ -23,9 +23,6 @@ namespace Vuforia
         //
         public GameObject[] MaleCivilian;
 
-        //큐브 위에 뜨는 캐릭터
-        public GameObject MaleCivilian_cuboid;
-
         private bool moveTrigger = false;
 
         #endregion // PRIVATE_MEMBER_VARIABLES

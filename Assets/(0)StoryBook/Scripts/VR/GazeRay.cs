@@ -10,6 +10,7 @@ public class GazeRay : MonoBehaviour
 {
     #region PUBLIC_MEMBER_VARIABLES
     //시각 마우스에 반응하는 트리거 버튼 등록
+    public ViewButtonTrigger[] viewButtonTriggers;
     public ViewTrigger[] viewTriggers;
     private TransitionManager mTransitionManager;
     #endregion // PUBLIC_MEMBER_VARIABLES
@@ -40,6 +41,12 @@ public class GazeRay : MonoBehaviour
 
             }
             
+        }
+
+        //전환용 버튼 외의 버튼의 충돌체크
+        foreach (var trigger in viewButtonTriggers)
+        {
+            trigger.Focused = hit.collider && (hit.collider.gameObject == trigger.gameObject);
         }
     }
     #endregion // MONOBEHAVIOUR_METHODS

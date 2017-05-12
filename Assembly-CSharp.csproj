@@ -58,6 +58,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ModeConfig.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\Reticle.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\TransitionManager.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewButtonTrigger.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewModeManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewTrigger.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VirtualButton1.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager5.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager6.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\WolfManager6.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\char\WoodCutter4.cs" />
      <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\DestorySelf.cs" />
      <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\ObjMoveFront.cs" />
      <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\UIObjRotation.cs" />
@@ -85,6 +87,12 @@
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\SepiaToneEffect.cs" />
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
+     <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\Billboard.cs" />
+     <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\Effect.cs" />
+     <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\Intro_GuiButton.cs" />
+     <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\loadLevelbutton.cs" />
+     <Compile Include="Assets\Micro Wood Cutter\Scripts\View_Animation\MaterialChange.cs" />
+     <Compile Include="Assets\Micro Wood Cutter\Scripts\View_Animation\characterButton.cs" />
      <Compile Include="Assets\Suriyun\Script\AnimatorController.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CameraSettings\CameraSettings.cs" />
@@ -131,6 +139,7 @@
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Suriyun\UnityChanShader_v1.2.1\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
+     <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\README_SD_UnityChan.txt" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ShowAlphaChannel.shader" />
@@ -171,6 +180,7 @@
      <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
      <None Include="Assets\Suriyun\UnityChanShader_v1.2.1\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\grassKit\wavingGrass.shader" />
+     <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Suriyun\UnityChanShader_v1.2.1\Shader\Unitychan_chara_eye_blend.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\Quantum Theory\3D Cloud Models\Shaders\3DCloudModels-AlphaClip.shader" />
@@ -191,9 +201,12 @@
      <None Include="Assets\StreamingAssets\QCAR\TargetTest.xml" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\Suriyun\UnityChanShader_v1.2.1\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\Forest Wolf\Read me.txt" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
+     <None Include="Assets\Micro Wood Cutter\ReadMe_[ v 1.0 ]_ 12_11.txt" />
      <None Include="Assets\Villager\Animation Info\frame animation guide.txt" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />

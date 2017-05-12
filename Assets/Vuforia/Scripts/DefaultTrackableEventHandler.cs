@@ -18,7 +18,6 @@ namespace Vuforia
 
         private TrackableBehaviour mTrackableBehaviour;
         private MarkerStateManager mMarkerStateManager;
-        private Canvas subUI;
         private GameObject cuboidMarker;
 
 
@@ -34,8 +33,6 @@ namespace Vuforia
         void Start()
         {
             mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
-            subUI = GameObject.Find("SubUI").GetComponent<Canvas>();
-            subUI.enabled = false;
 
             cuboidMarker = GameObject.Find("CuboidMarker");
 
@@ -74,7 +71,6 @@ namespace Vuforia
                 {
                     mMarkerStateManager.setOnePageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
-                    subUI.enabled = true;
                     //Debug.Log(mMarkerStateManager.getStoneMarker() + "" + mMarkerStateManager.getCuboidMarker());
                 }
 
@@ -103,8 +99,6 @@ namespace Vuforia
                     mMarkerStateManager.setOnePageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                     Debug.Log(mMarkerStateManager.getOnePageMarker());
-                    //SubUI를 보여준다.
-                    //subUI.enabled = false;
                 }
 
                 //chipMarker를 잃으면

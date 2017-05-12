@@ -114,6 +114,9 @@ public class ShepherdManager4 : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         anim.SetTrigger("talk2");
         yield return new WaitForSeconds(2.0f);
+        //마을사람들 모임.
+
+
         desFlag[2] = true;
     }
     //딜레이
@@ -161,6 +164,7 @@ public class ShepherdManager4 : MonoBehaviour {
         }
 
     }
+
 
 
 
