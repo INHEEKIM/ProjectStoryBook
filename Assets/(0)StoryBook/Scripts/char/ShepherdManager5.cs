@@ -35,7 +35,7 @@ public class ShepherdManager5 : MonoBehaviour {
 
     void Update()
     {
-        if (mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On)
+        if (mMarkerStateManager.getOnePageMarker() == MarkerStateManager.StateType.On)
             Move();
     }
 

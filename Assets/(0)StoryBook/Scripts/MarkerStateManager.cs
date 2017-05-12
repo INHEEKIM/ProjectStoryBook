@@ -6,9 +6,23 @@ public class MarkerStateManager : MonoBehaviour {
 
 
     private PageType BookMarker = PageType.Nothing; //페이지를 넘겼을 때에 따른 페이지 별 상태를 저장
-    private StateType CuboidMarker = StateType.Off; // 임시용 큐브마커 상태 저장
-    private StateType StoneMarker = StateType.Off; //임시용 스톤마커 상태 저장
-    private StateType ChipMarker = StateType.Off; //임시용 chip마커 상태 저장
+
+    //캐릭터 마커
+    private StateType CuboidMarker = StateType.Off; // 임시용 큐브마커 상태 1페이즈
+
+    private StateType CharMarker = StateType.Off;
+    private StateType WolfMarker = StateType.Off;
+    private StateType PersonsMarker = StateType.Off;
+
+    //페이즈 마커
+    private StateType OnePageMarker = StateType.Off; // 임시용 스톤마커 상태 저장
+    private StateType TwoPageMarker = StateType.Off; // 임시용 chip마커 상태 저장
+    private StateType ThreePageMarker = StateType.Off;
+    private StateType FourPageMarker = StateType.Off;
+    private StateType FivePageMarker = StateType.Off;
+    private StateType SixPageMarker = StateType.Off;
+    private StateType SevenPageMarker = StateType.Off;
+    private StateType EightPageMarker = StateType.Off;
 
     public enum PageType
     {
@@ -50,23 +64,115 @@ public class MarkerStateManager : MonoBehaviour {
         CuboidMarker = newState;
     }
 
-    public StateType getStoneMarker()
+    public StateType getCharMarker()
     {
-        return StoneMarker;
+        return CharMarker;
     }
 
-    public void setStoneMarker(StateType newState)
+    public void setCharMarker(StateType newState)
     {
-        StoneMarker = newState;
+        CharMarker = newState;
     }
 
-    public StateType getChipMarker()
+    public StateType getWolfMarker()
     {
-        return ChipMarker;
+        return WolfMarker;
     }
 
-    public void setChipMarker(StateType newState)
+    public void setWolfMarker(StateType newState)
     {
-        ChipMarker = newState;
+        WolfMarker = newState;
     }
+
+    public StateType getPersonsMarker()
+    {
+        return PersonsMarker;
+    }
+
+    public void setPersonsMarker(StateType newState)
+    {
+        PersonsMarker = newState;
+    }
+
+    public StateType getOnePageMarker()
+    {
+        return OnePageMarker;
+    }
+
+    public void setOnePageMarker(StateType newState)
+    {
+        OnePageMarker = newState;
+    }
+
+    public StateType getTwoPageMarker()
+    {
+        return TwoPageMarker;
+    }
+
+    public void setTwoPageMarker(StateType newState)
+    {
+        TwoPageMarker = newState;
+    }
+
+    public StateType getThreePageMarker()
+    {
+        return ThreePageMarker;
+    }
+
+    public void setThreePageMarker(StateType newState)
+    {
+        ThreePageMarker = newState;
+    }
+
+    public StateType getFourPageMarker()
+    {
+        return FourPageMarker;
+    }
+
+    public void setFourPageMarker(StateType newState)
+    {
+        FourPageMarker = newState;
+    }
+
+    public StateType getFivePageMarker()
+    {
+        return FivePageMarker;
+    }
+
+    public void setFivePageMarker(StateType newState)
+    {
+        FivePageMarker = newState;
+    }
+
+    public StateType getSixPageMarker()
+    {
+        return SixPageMarker;
+    }
+
+    public void setSixPageMarker(StateType newState)
+    {
+        SixPageMarker = newState;
+    }
+
+    public StateType getSevenPageMarker()
+    {
+        return SevenPageMarker;
+    }
+
+    public void setSevenPageMarker(StateType newState)
+    {
+        SevenPageMarker = newState;
+    }
+
+    public StateType getEightPageMarker()
+    {
+        return EightPageMarker;
+    }
+
+    public void setEightPageMarker(StateType newState)
+    {
+        EightPageMarker = newState;
+    }
+
+    
 }

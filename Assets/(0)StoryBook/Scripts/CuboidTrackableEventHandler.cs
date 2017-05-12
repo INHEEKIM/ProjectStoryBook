@@ -75,14 +75,14 @@ namespace Vuforia
                 }
 
                 //스톤 마커와 큐브마커를 찾으면
-                if (mMarkerStateManager.getStoneMarker() == MarkerStateManager.StateType.On &&
+                if (mMarkerStateManager.getOnePageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
                 {
                     MaleCivilian[0].SetActive(true);
                 }
 
                 //chip 마커와 큐브마커를 찾으면
-                if (mMarkerStateManager.getChipMarker() == MarkerStateManager.StateType.On &&
+                if (mMarkerStateManager.getTwoPageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCuboidMarker() == MarkerStateManager.StateType.On)
                 {
                     //MaleCivilian[1].SetActive(true);

@@ -72,7 +72,7 @@ namespace Vuforia
                 //stoneMarker를 발견하게 되면
                 if (mTrackableBehaviour.TrackableName == "stones") //Page1
                 {
-                    mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.On);
+                    mMarkerStateManager.setOnePageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
                     subUI.enabled = true;
                     //Debug.Log(mMarkerStateManager.getStoneMarker() + "" + mMarkerStateManager.getCuboidMarker());
@@ -84,9 +84,9 @@ namespace Vuforia
                 //chipMarker
                 if (mTrackableBehaviour.TrackableName == "chips") //Page2
                 {
-                    mMarkerStateManager.setChipMarker(MarkerStateManager.StateType.On);
+                    mMarkerStateManager.setTwoPageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page2);
-                    Debug.Log(mMarkerStateManager.getChipMarker() + "" + mMarkerStateManager.getCuboidMarker());
+                    Debug.Log(mMarkerStateManager.getTwoPageMarker() + "" + mMarkerStateManager.getCuboidMarker());
 
                 }
 
@@ -100,9 +100,9 @@ namespace Vuforia
                 //stoneMarker를 읽으면
                 if (mTrackableBehaviour.TrackableName == "stones")
                 {
-                    mMarkerStateManager.setStoneMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setOnePageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
-                    Debug.Log(mMarkerStateManager.getStoneMarker());
+                    Debug.Log(mMarkerStateManager.getOnePageMarker());
                     //SubUI를 보여준다.
                     //subUI.enabled = false;
                 }
@@ -110,7 +110,7 @@ namespace Vuforia
                 //chipMarker를 잃으면
                 if (mTrackableBehaviour.TrackableName == "chips")
                 {
-                    mMarkerStateManager.setChipMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setTwoPageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                 }
 
