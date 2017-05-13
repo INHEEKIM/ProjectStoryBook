@@ -33,13 +33,13 @@ public class ShepherdManager4 : MonoBehaviour {
 
     void Update()
     {
-        if (mMarkerStateManager.getOnePageMarker() == MarkerStateManager.StateType.On)
+        //if (mMarkerStateManager.getFourPageMarker() == MarkerStateManager.StateType.On)
             Move();
     }
 
     void Move()
     {
-        //1번째 목적지로
+        //0번째 목적지로
         if (desFlag[0])
         {
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
@@ -81,6 +81,7 @@ public class ShepherdManager4 : MonoBehaviour {
             anim.SetBool("run", false);
             Quaternion turretRotation = Quaternion.LookRotation(person.transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
+
             StartCoroutine("move3");
         }
         //늑대가 나타났다고 한다.
@@ -115,14 +116,12 @@ public class ShepherdManager4 : MonoBehaviour {
         anim.SetTrigger("talk2");
         yield return new WaitForSeconds(2.0f);
         //마을사람들 모임.
-
-
         desFlag[2] = true;
     }
     //딜레이
     IEnumerator move3()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(5.0f);
         desFlag[3] = false;
         desFlag[4] = true;
     }
@@ -130,6 +129,7 @@ public class ShepherdManager4 : MonoBehaviour {
     IEnumerator move4()
     {
         yield return new WaitForSeconds(2.0f);
+        desFlag[4] = false;
         desFlag[5] = true;
     }
 
@@ -139,9 +139,7 @@ public class ShepherdManager4 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            Debug.Log("도착");
             gameObject.SetActive(false);
-
         }
 
         //중간 목적지 충돌.
@@ -167,6 +165,10 @@ public class ShepherdManager4 : MonoBehaviour {
 
 
 
+    public bool getDesFlag(int i)
+    {
+        return desFlag[i];
+    }
 
 
 
