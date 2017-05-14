@@ -10,6 +10,8 @@ public class ShepherdManager4 : MonoBehaviour {
     //동작 순서 체크
     private bool[] desFlag;
 
+    //딜레이 횟수 체크
+    private int delay = 0;
 
     //속도
     private float walkSpeed = 15.0f;
@@ -79,10 +81,18 @@ public class ShepherdManager4 : MonoBehaviour {
         else if (desFlag[3])
         {
             anim.SetBool("run", false);
-            Quaternion turretRotation = Quaternion.LookRotation(person.transform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
+            if (delay < 30)
+            {
+                Quaternion turretRotation = Quaternion.LookRotation(person.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
+                delay++;
+            }
+            else if (delay == 30)
+            {
+                delay++;
+                StartCoroutine("move3");
+            }
 
-            StartCoroutine("move3");
         }
         //늑대가 나타났다고 한다.
         else if (desFlag[4])
@@ -123,12 +133,13 @@ public class ShepherdManager4 : MonoBehaviour {
     {
         yield return new WaitForSeconds(5.0f);
         desFlag[3] = false;
+        delay = 0;
         desFlag[4] = true;
     }
     //딜레이
     IEnumerator move4()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
         desFlag[4] = false;
         desFlag[5] = true;
     }

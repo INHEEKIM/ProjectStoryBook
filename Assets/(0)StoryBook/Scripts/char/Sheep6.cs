@@ -7,20 +7,27 @@ public class Sheep6 : MonoBehaviour {
     public GameObject destination;
     //동작 순서 체크
     private bool[] desFlag;
+    //늑대
+    public GameObject wolf;
+
 
     //대기 시간
-    public float delayTime = 6.0f;
+    public float delayTime = 1.0f;
 
 
     //속도
     private float runSpeed = 25.0f;
     private float minDistance = 0.1f;
+    
+    //늑대6
+    private WolfManager6 wolfManager;
 
     private MarkerStateManager mMarkerStateManager;
     private Animator anim;
 
     void Awake()
     {
+        wolfManager = wolf.GetComponent<WolfManager6>();
         mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
         anim = GetComponent<Animator>();
         desFlag = new bool[10];
@@ -39,8 +46,11 @@ public class Sheep6 : MonoBehaviour {
     {
         if (desFlag[0])
         {
-            desFlag[0] = !desFlag[0];
-            StartCoroutine("move0");
+            if (wolfManager.getDesFlag(1))
+            {
+                desFlag[0] = !desFlag[0];
+                StartCoroutine("move0");
+            }
         }
         //0번째 목적지로
         else if (desFlag[1])

@@ -10,9 +10,11 @@ public class WoodCutter4 : MonoBehaviour {
     //동작 순서 체크
     private bool[] desFlag;
 
+    //딜레이 횟수 체크
+    private int delay = 0;
 
     //속도
-    private float runSpeed = 40.0f;
+    private float runSpeed = 38.0f;
     private float minDistance = 0.1f;
 
     //양치기4
@@ -104,9 +106,38 @@ public class WoodCutter4 : MonoBehaviour {
         else if (desFlag[5])
         {
             anim.CrossFade("WC_Idle");
+            if (delay < 30)
+            {
+                Quaternion turretRotation = Quaternion.LookRotation(shepherd.transform.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
+                delay++;
+            }
+            else if (delay == 30)
+            {
+                delay++;
+                StartCoroutine("move5");
+            }
+        }
+        //양치기가 뛰어감.
+        else if (desFlag[6])
+        {
+            if (shepherdManager.getDesFlag(5))
+            {
+                desFlag[6] = !desFlag[6];
+                StartCoroutine("move6");
+                
+            }
+        }
+        //양치기 따라감.
+        else if (desFlag[7])
+        {
+            anim.CrossFade("WC_Walk");
+            Vector3 vDirection = shepherd.transform.position - transform.position;
+            Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
+            transform.position += vMoveVector;
+
             Quaternion turretRotation = Quaternion.LookRotation(shepherd.transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
-
         }
 
     }
@@ -124,6 +155,20 @@ public class WoodCutter4 : MonoBehaviour {
     {
         yield return new WaitForSeconds(2.0f);
         desFlag[5] = true;
+    }
+    //딜레이
+    IEnumerator move5()
+    {
+        yield return new WaitForSeconds(3.0f);
+        desFlag[5] = false;
+        delay = 0;
+        desFlag[6] = true;
+    }
+    //딜레이
+    IEnumerator move6()
+    {
+        yield return new WaitForSeconds(0.5f);
+        desFlag[7] = !desFlag[7];
     }
 
     //충돌

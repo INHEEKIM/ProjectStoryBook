@@ -7,6 +7,8 @@ public class WolfManager6 : MonoBehaviour {
     public GameObject[] destination;
     //양
     public GameObject sheep;
+    //양치기
+    public GameObject shepherd;
     //동작 순서 체크
     private bool[] desFlag;
 
@@ -18,6 +20,9 @@ public class WolfManager6 : MonoBehaviour {
     private float walkSpeed = 20.0f;
     private float runSpeed = 45.0f;
     private float minDistance = 0.1f;
+    
+    //양치기6
+    private ShepherdManager6 shepherdManager;
 
 
     private MarkerStateManager mMarkerStateManager;
@@ -25,6 +30,7 @@ public class WolfManager6 : MonoBehaviour {
 
     void Awake()
     {
+        shepherdManager = shepherd.GetComponent<ShepherdManager6>();
         mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
         anim = GetComponent<Animator>();
         desFlag = new bool[10];
@@ -45,8 +51,11 @@ public class WolfManager6 : MonoBehaviour {
     {
         if (desFlag[0])
         {
-            desFlag[0] = !desFlag[0];
-            StartCoroutine("move0");
+            if (shepherdManager.getDesFlag(3))
+            {
+                desFlag[0] = !desFlag[0];
+                StartCoroutine("move0");
+            }
         }
         //0번째 목적지로
         else if (desFlag[1])
@@ -88,7 +97,7 @@ public class WolfManager6 : MonoBehaviour {
     //기다렸다가 0목적지로.
     IEnumerator move0()
     {
-        yield return new WaitForSeconds(6.0f);
+        yield return new WaitForSeconds(1.5f);
         desFlag[1] = true;
     }
 
@@ -117,6 +126,9 @@ public class WolfManager6 : MonoBehaviour {
     }
 
 
-
+    public bool getDesFlag(int i)
+    {
+        return desFlag[i];
+    }
 
 }
