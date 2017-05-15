@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WoodCutter4 : MonoBehaviour {
+public class People4 : MonoBehaviour {
 
     //목적지
     public GameObject[] destination;
@@ -17,6 +17,9 @@ public class WoodCutter4 : MonoBehaviour {
     private float runSpeed = 38.0f;
     private float minDistance = 0.1f;
 
+    //애니메이션 이름
+    public string anim_name;
+
     //양치기4
     private ShepherdManager4 shepherdManager;
 
@@ -27,7 +30,7 @@ public class WoodCutter4 : MonoBehaviour {
     {
         shepherdManager = shepherd.GetComponent<ShepherdManager4>();
         mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
-        
+
         anim = GetComponent<Animation>();
         desFlag = new bool[10];
         for (int i = 0; i < desFlag.Length; i++)
@@ -58,7 +61,7 @@ public class WoodCutter4 : MonoBehaviour {
         {
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
             {
-                anim.CrossFade("WC_Walk");
+                anim.CrossFade(anim_name + "_Walk");
                 Vector3 vDirection = destination[0].transform.position - transform.position;
                 Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
                 transform.position += vMoveVector;
@@ -67,46 +70,10 @@ public class WoodCutter4 : MonoBehaviour {
                 transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
             }
         }
-        //1목적지 달려감.
+        //양치기 쳐다봄.
         else if (desFlag[2])
         {
-            if (Vector3.Distance(transform.position, destination[1].transform.position) > minDistance)
-            {
-                Vector3 vDirection = destination[1].transform.position - transform.position;
-                Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
-                transform.position += vMoveVector;
-
-                Quaternion turretRotation = Quaternion.LookRotation(destination[1].transform.position - transform.position);
-                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
-            }
-        }
-        //2목적지 달려감.
-        else if (desFlag[3])
-        {
-            if (Vector3.Distance(transform.position, destination[2].transform.position) > minDistance)
-            {
-                Vector3 vDirection = destination[2].transform.position - transform.position;
-                Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
-                transform.position += vMoveVector;
-            }
-        }
-        //3목적지 달려감.
-        else if (desFlag[4])
-        {
-            if (Vector3.Distance(transform.position, destination[3].transform.position) > minDistance)
-            {
-                Vector3 vDirection = destination[3].transform.position - transform.position;
-                Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
-                transform.position += vMoveVector;
-
-                Quaternion turretRotation = Quaternion.LookRotation(destination[3].transform.position - transform.position);
-                transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
-            }
-        }
-        //양치기 쳐다봄.
-        else if (desFlag[5])
-        {
-            anim.CrossFade("WC_Idle");
+            anim.CrossFade(anim_name + "_Idle");
             if (delay < 30)
             {
                 Quaternion turretRotation = Quaternion.LookRotation(shepherd.transform.position - transform.position);
@@ -116,30 +83,22 @@ public class WoodCutter4 : MonoBehaviour {
             else if (delay == 30)
             {
                 delay++;
-                StartCoroutine("move5");
+                StartCoroutine("move2");
             }
         }
-        //토크
-        else if (desFlag[6])
-        {
-                desFlag[6] = !desFlag[6];
-                StartCoroutine("move6");
-        }
-
         //양치기가 뛰어감.
-        else if (desFlag[7])
+        else if (desFlag[3])
         {
             if (shepherdManager.getDesFlag(5))
             {
-                desFlag[7] = !desFlag[7];
-                StartCoroutine("move7");
-                
+                desFlag[3] = !desFlag[3];
+                StartCoroutine("move3");
             }
         }
         //양치기 따라감.
-        else if (desFlag[8])
+        else if (desFlag[4])
         {
-            anim.CrossFade("WC_Walk");
+            anim.CrossFade(anim_name + "_Walk");
             Vector3 vDirection = shepherd.transform.position - transform.position;
             Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
             transform.position += vMoveVector;
@@ -152,39 +111,18 @@ public class WoodCutter4 : MonoBehaviour {
 
 
     //딜레이
+    IEnumerator move2()
+    {
+        yield return new WaitForSeconds(1.0f);
+        desFlag[2] = false;
+        delay = 0;
+        desFlag[3] = true;
+    }
+    //딜레이
     IEnumerator move3()
     {
-        yield return new WaitForSeconds(2.0f);
-        desFlag[3] = false;
-        desFlag[4] = true;
-    }
-    //딜레이
-    IEnumerator move4()
-    {
-        yield return new WaitForSeconds(2.0f);
-        desFlag[5] = true;
-    }
-    //딜레이
-    IEnumerator move5()
-    {
-        yield return new WaitForSeconds(2.0f);
-        desFlag[5] = false;
-        delay = 0;
-        desFlag[6] = true;
-    }
-    //토크
-    IEnumerator move6()
-    {
-        yield return new WaitForSeconds(1.0f);
-        anim.CrossFade("WC_Talk");
-        yield return new WaitForSeconds(1.0f);
-        desFlag[7] = !desFlag[7];
-    }
-    //딜레이
-    IEnumerator move7()
-    {
         yield return new WaitForSeconds(0.5f);
-        desFlag[8] = !desFlag[8];
+        desFlag[4] = !desFlag[4];
     }
 
 
@@ -203,29 +141,8 @@ public class WoodCutter4 : MonoBehaviour {
         //중간 목적지 충돌.
         if (coll.tag == "destination")
         {
-            //3목적지. 
-            if (desFlag[4] == true)
-            {
-                desFlag[4] = false;
-                desFlag[5] = true;
-                destination[3].SetActive(false);
-            }
-            //2목적지. 
-            else if(desFlag[3] == true)
-            {
-                desFlag[3] = false;
-                desFlag[4] = true;
-                destination[2].SetActive(false);
-            }
-            //1목적지. 
-            else if (desFlag[2] == true)
-            {
-                desFlag[2] = false;
-                desFlag[3] = true;
-                destination[1].SetActive(false);
-            }
             //0목적지. 
-            else if (desFlag[1] == true)
+            if (desFlag[1] == true)
             {
                 desFlag[1] = false;
                 desFlag[2] = true;
@@ -235,9 +152,6 @@ public class WoodCutter4 : MonoBehaviour {
         }
 
     }
-
-
-
 
 
 }

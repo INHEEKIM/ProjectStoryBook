@@ -38,7 +38,7 @@ public class Sheep6 : MonoBehaviour {
 
     void Update()
     {
-        if (mMarkerStateManager.getOnePageMarker() == MarkerStateManager.StateType.On)
+        if (mMarkerStateManager.getSixPageMarker() == MarkerStateManager.StateType.On)
             Move();
     }
 

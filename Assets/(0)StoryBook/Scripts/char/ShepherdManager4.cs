@@ -6,7 +6,10 @@ public class ShepherdManager4 : MonoBehaviour {
     //목적지
     public GameObject[] destination;
     //사람
-    public GameObject person;
+    public GameObject[] person;
+    //사람 방향
+    public GameObject personDir;
+
     //동작 순서 체크
     private bool[] desFlag;
 
@@ -81,13 +84,13 @@ public class ShepherdManager4 : MonoBehaviour {
         else if (desFlag[3])
         {
             anim.SetBool("run", false);
-            if (delay < 30)
+            if (delay < 20)
             {
-                Quaternion turretRotation = Quaternion.LookRotation(person.transform.position - transform.position);
+                Quaternion turretRotation = Quaternion.LookRotation(personDir.transform.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
                 delay++;
             }
-            else if (delay == 30)
+            else if (delay == 20)
             {
                 delay++;
                 StartCoroutine("move3");
@@ -120,18 +123,22 @@ public class ShepherdManager4 : MonoBehaviour {
     //늑대가 나타났다고 외침
     IEnumerator move1()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         anim.SetTrigger("talk2");
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.5f);
         anim.SetTrigger("talk2");
         yield return new WaitForSeconds(2.0f);
         //마을사람들 모임.
+        for(int i=0; i < person.Length; i++)
+        {
+            person[i].SetActive(true);
+        }
         desFlag[2] = true;
     }
     //딜레이
     IEnumerator move3()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(4.0f);
         desFlag[3] = false;
         delay = 0;
         desFlag[4] = true;
@@ -139,7 +146,7 @@ public class ShepherdManager4 : MonoBehaviour {
     //딜레이
     IEnumerator move4()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(5.0f);
         desFlag[4] = false;
         desFlag[5] = true;
     }
