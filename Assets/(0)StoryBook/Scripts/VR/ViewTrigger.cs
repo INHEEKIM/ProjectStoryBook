@@ -75,13 +75,9 @@ public class ViewTrigger : MonoBehaviour
             mFocusedTime += Time.deltaTime;
             if ((mFocusedTime > activationTime) || startAction)
             {
-                mTriggered = true;
+                mTriggered = true; /////
                 mFocusedTime = 0;
                 
-                //
-                
-                //
-
                 // Activate transition from AR to VR or vice versa
                 bool goingBackToAR = (triggerType == TriggerType.AR_TRIGGER);
                 mTransitionManager.Play(goingBackToAR);
@@ -141,5 +137,12 @@ public class ViewTrigger : MonoBehaviour
         UpdateMaterials(false);
     }
     #endregion // PRIVATE_METHODS
+
+
+    public bool getMTriggered()
+    {
+        return mTriggered;
+    }
+
 }
 
