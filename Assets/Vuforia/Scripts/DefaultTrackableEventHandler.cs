@@ -69,6 +69,7 @@ namespace Vuforia
                 //stoneMarker를 발견하게 되면
                 if (mTrackableBehaviour.TrackableName == "stones") //Page1
                 {
+                    
                     mMarkerStateManager.setOnePageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page1);
                     //Debug.Log(mMarkerStateManager.getOnePageMarker() + "" + mMarkerStateManager.getCuboidMarker());

@@ -15,6 +15,7 @@ public class TransitionManager : MonoBehaviour
     #region PRIVATE_MEMBER_VARIABLES
     private BlackMaskBehaviour mBlackMask;
 
+    public GameObject ARCameraPos;
     private float mTransitionCursor = 0;
     private bool mPlaying = false;
     private bool mBackward = false;
@@ -58,6 +59,8 @@ public class TransitionManager : MonoBehaviour
         mCurrentMode = GetMixedRealityMode();
         MixedRealityController.Instance.SetMode(mCurrentMode);
 
+        Debug.Log(VuforiaARController.Instance.WorldCenterModeSetting);
+       
         UpdateVisibleObjects();
 
         mCurrentTime = Time.realtimeSinceStartup;
@@ -84,6 +87,7 @@ public class TransitionManager : MonoBehaviour
             // mixed reality mode to switch to
             mCurrentMode = mixedRealityMode;
 
+
             // When we transition to VR, we deactivate the Datasets 
             // before setting the mixed reality mode.
             // so to reduce CPU usage, as tracking is not needed in this phase
@@ -96,6 +100,7 @@ public class TransitionManager : MonoBehaviour
                 || mCurrentMode == MixedRealityController.Mode.VIEWER_VR)
             {
                 Debug.Log("Switching to VR: deactivating datasets");
+                
                 ActivateDatasets(false);
             }
 
@@ -110,6 +115,7 @@ public class TransitionManager : MonoBehaviour
                 || mCurrentMode == MixedRealityController.Mode.VIEWER_AR)
             {
                 Debug.Log("Switching to AR: activating datasets");
+              
                 ActivateDatasets(true);
             }
 
@@ -192,11 +198,14 @@ public class TransitionManager : MonoBehaviour
         {
             //조건문 만약 isFullScreenMode가 참이면 Mode.Handheld_AR을 반환
             //거짓이면 Mode.Viewer_AR를 반환
+           //VuforiaARController.Instance.SetWorldCenterMode(Vuforia.VuforiaARController.WorldCenterMode.FIRST_TARGET);
             return ModeConfig.isFullScreenMode ?
                 MixedRealityController.Mode.HANDHELD_AR : MixedRealityController.Mode.VIEWER_AR;
         }
         else // in VR
         {
+            ARCameraPos.transform.position = new Vector3(0,0,0);
+           // VuforiaARController.Instance.SetWorldCenterMode(Vuforia.VuforiaARController.WorldCenterMode.DEVICE_TRACKING);
             return ModeConfig.isFullScreenMode ?
                 MixedRealityController.Mode.HANDHELD_VR : MixedRealityController.Mode.VIEWER_VR;
         }
