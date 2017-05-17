@@ -58,6 +58,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ModeConfig.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\Reticle.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\TransitionManager.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\VR\VR1Manager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewButtonTrigger.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewModeManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewTrigger.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\char\Sheep6.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager1.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager2.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager2VR.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager4.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager5.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager6.cs" />
@@ -88,7 +90,7 @@
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\SepiaToneEffect.cs" />
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
-     <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\Billboard.cs" />
+     <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\Billboard0.cs" />
      <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\Effect.cs" />
      <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\Intro_GuiButton.cs" />
      <Compile Include="Assets\Micro Wood Cutter\Scripts\Common\loadLevelbutton.cs" />

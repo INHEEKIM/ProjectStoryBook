@@ -6,6 +6,7 @@ public class ShepherdManager2 : MonoBehaviour {
     //VR 포탈
     public GameObject Potal;
 
+
     //목적지
     public GameObject[] destination;
     //사람
@@ -35,7 +36,9 @@ public class ShepherdManager2 : MonoBehaviour {
     {
         viewTrigger = ViewTriggerObj.GetComponent<ViewTrigger>();
         mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
+
         anim = GetComponent<Animator>();
+
         desFlag = new bool[10];
         for (int i = 0; i < desFlag.Length; i++)
             desFlag[i] = false;
@@ -89,16 +92,20 @@ public class ShepherdManager2 : MonoBehaviour {
             desFlag[2] = !desFlag[2];
             desFlag[3] = !desFlag[3];
         }
+        //VR에서 돌아옴.
         else if (desFlag[3])
+        {            
+            if (viewTrigger.getMTriggered())
+            {
+                desFlag[3] = !desFlag[3];
+                desFlag[4] = !desFlag[4];
+            }
+        }
+        //VR에서 돌아옴.
+        else if (desFlag[4])
         {
-            //VR체크
-            //if (viewTrigger.getMTriggered())
-            //{
-                Debug.Log("mTriggered : " + viewTrigger.getMTriggered());
-            //}
 
         }
-
 
 
 
@@ -203,10 +210,10 @@ public class ShepherdManager2 : MonoBehaviour {
         if (coll.tag == "destination")
         {
             //1목적지. 
-            if (desFlag[2] == true)
+            if (desFlag[9] == true)
             {
-                desFlag[2] = false;
-                desFlag[3] = true;
+                desFlag[9] = false;
+                desFlag[9] = true;
                 destination[1].SetActive(false);
             }
             //0목적지. 

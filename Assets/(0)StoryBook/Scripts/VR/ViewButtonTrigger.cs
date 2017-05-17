@@ -77,9 +77,9 @@ public class ViewButtonTrigger : MonoBehaviour
             {
                 mTriggered = true;
                 mFocusedTime = 0;
+                boolTrigger = true; //이 값으로 조건 체크함
 
                 gameObject.SetActive(false);
-                boolTrigger = true; //이 값으로 조건 체크함
 
                 //mFocuseState = false;
             }
@@ -136,5 +136,8 @@ public class ViewButtonTrigger : MonoBehaviour
         UpdateMaterials(false);
     }
     #endregion // PRIVATE_METHODS
+
+
+
 }
 
