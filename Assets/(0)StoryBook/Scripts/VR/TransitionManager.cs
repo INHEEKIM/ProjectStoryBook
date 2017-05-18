@@ -229,22 +229,32 @@ public class TransitionManager : MonoBehaviour
             //go.SetActive(!InAR);
             if (!InAR)
             {
-                //홈버튼 충돌상태가 트루이면
-                if (viewTrigger == "VRHomePotal")
+                //Village1
+                if (viewTrigger == "VRVillage1Potal")
                 {
-                    mTransitionManager.VROnlyObjects[0].SetActive(true); //Home
-                    mTransitionManager.VROnlyObjects[1].SetActive(false); //Sky
+                    mTransitionManager.VROnlyObjects[0].SetActive(true); //1
+                    mTransitionManager.VROnlyObjects[1].SetActive(false); //2
+                    mTransitionManager.VROnlyObjects[2].SetActive(false); //3
                 }
-                //스카이버튼 충돌상태가 트루이면
-                if (viewTrigger == "VRSkyPotal")
+                //Village2
+                if (viewTrigger == "VRVillage2Potal")
                 {
-                    mTransitionManager.VROnlyObjects[0].SetActive(false); //Home
-                    mTransitionManager.VROnlyObjects[1].SetActive(true); //Sky
+                    mTransitionManager.VROnlyObjects[0].SetActive(false); //1
+                    mTransitionManager.VROnlyObjects[1].SetActive(true); //2
+                    mTransitionManager.VROnlyObjects[2].SetActive(false); //3
                 }
-                if (viewTrigger == "QuitPotal")
+                //Village3
+                if (viewTrigger == "VRVillage3Potal")
                 {
-                    SceneManager.LoadScene("TitleScene");
+                    mTransitionManager.VROnlyObjects[0].SetActive(false); //1
+                    mTransitionManager.VROnlyObjects[1].SetActive(false); //2
+                    mTransitionManager.VROnlyObjects[2].SetActive(true); //3
                 }
+
+                //if (viewTrigger == "QuitPotal")
+                //{
+                //    SceneManager.LoadScene("TitleScene");
+                //}
             }
             else
             {
