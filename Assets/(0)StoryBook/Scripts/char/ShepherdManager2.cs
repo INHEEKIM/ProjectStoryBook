@@ -73,13 +73,13 @@ public class ShepherdManager2 : MonoBehaviour {
         else if (desFlag[1])
         {
             anim.SetBool("rrr", false);
-            if (delay < 10)
+            if (delay < 15)
             {
                 Quaternion turretRotation = Quaternion.LookRotation(personDir.transform.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
                 delay++;
             }
-            else if (delay == 10)
+            else if (delay == 15)
             {
                 delay++;
                 StartCoroutine("move1");
@@ -92,16 +92,16 @@ public class ShepherdManager2 : MonoBehaviour {
             desFlag[2] = !desFlag[2];
             desFlag[3] = !desFlag[3];
         }
-        //VR에서 돌아옴.
+        //VR에서 돌아옴. 시간차 줘야 함.
         else if (desFlag[3])
         {            
             if (viewTrigger.getMTriggered())
             {
                 desFlag[3] = !desFlag[3];
-                desFlag[4] = !desFlag[4];
+                StartCoroutine("move3");
             }
         }
-        //VR에서 돌아옴.
+        //
         else if (desFlag[4])
         {
 
@@ -173,20 +173,17 @@ public class ShepherdManager2 : MonoBehaviour {
         desFlag[2] = true;
     }
 
-    //늑대가 나타났다고 외침
-    IEnumerator move111()
+    //시간차 줌. 포탈 없애고 마을사람들 등장.
+    IEnumerator move3()
     {
         yield return new WaitForSeconds(1.0f);
-        anim.SetTrigger("talk2");
-        yield return new WaitForSeconds(1.5f);
-        anim.SetTrigger("talk2");
-        yield return new WaitForSeconds(2.0f);
+        Potal.SetActive(false);
         //마을사람들 모임.
         for (int i = 0; i < person.Length; i++)
         {
             person[i].SetActive(true);
         }
-        desFlag[2] = true;
+        desFlag[4] = true;
     }
     
     //딜레이
