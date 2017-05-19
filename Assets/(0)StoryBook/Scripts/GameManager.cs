@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
 
     public static GameManager manager;
 
+    //ar->vr
+    public GameObject[] ViewTriggerARObj;
+    private ViewTrigger[] viewTriggerAR;
+    //vr->ar
+    public GameObject[] ViewTriggerVRObj;
+    private ViewTrigger[] viewTriggerVR;
 
+    private bool[] arTrigger;
+    private bool[] vrTrigger;
 
     void Awake()
     {
@@ -23,11 +27,37 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        viewTriggerAR = new ViewTrigger[3];
+        viewTriggerVR = new ViewTrigger[3];
 
+        arTrigger = new bool[3];
+        vrTrigger = new bool[3];
+
+        for (int i = 0; i < ViewTriggerARObj.Length; i++)
+            viewTriggerAR[i] = ViewTriggerARObj[i].GetComponent<ViewTrigger>();
+        for (int i = 0; i < ViewTriggerVRObj.Length; i++)
+            viewTriggerVR[i] = ViewTriggerVRObj[i].GetComponent<ViewTrigger>();
     }
 
+    void Update()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (viewTriggerAR[i].getMTriggered())
+                arTrigger[i] = true;
+            if (viewTriggerVR[i].getMTriggered())
+                vrTrigger[i] = true;
+        }
+    }
 
-
+    public bool getARTrigger(int i)
+    {
+        return arTrigger[i];
+    }
+    public bool getVRTrigger(int i)
+    {
+        return vrTrigger[i];
+    }
 
 }
 
