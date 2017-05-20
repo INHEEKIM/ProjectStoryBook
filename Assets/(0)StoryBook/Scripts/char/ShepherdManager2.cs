@@ -23,20 +23,15 @@ public class ShepherdManager2 : MonoBehaviour {
     private int delay = 0;
 
     //속도
-    private float walkSpeed = 15.0f;
     private float runSpeed = 30.0f;
     private float minDistance = 0.1f;
 
-
-    public GameObject ViewTriggerObj;
-    private ViewTrigger viewTrigger;
 
     private MarkerStateManager mMarkerStateManager;
     private Animator anim;
 
     void Awake()
     {
-        viewTrigger = ViewTriggerObj.GetComponent<ViewTrigger>();
         mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
 
         anim = GetComponent<Animator>();
