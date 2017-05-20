@@ -18,7 +18,7 @@ public class ShepherdManager4 : MonoBehaviour {
 
     //속도
     private float walkSpeed = 15.0f;
-    private float runSpeed = 30.0f;
+    private float runSpeed = 35.0f;
     private float minDistance = 0.1f;
 
 

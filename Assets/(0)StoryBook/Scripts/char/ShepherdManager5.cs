@@ -6,7 +6,10 @@ public class ShepherdManager5 : MonoBehaviour {
     //목적지
     public GameObject[] destination;
     //사람
-    public GameObject person;
+    public GameObject[] person;
+    //사람 등장 플래그
+    private bool personFlag = false;
+
     //동작 순서 체크
     private bool[] desFlag;
 
@@ -14,7 +17,6 @@ public class ShepherdManager5 : MonoBehaviour {
     private int delay = 0;
 
     //속도
-    private float walkSpeed = 15.0f;
     private float runSpeed = 30.0f;
     private float minDistance = 0.1f;
 
@@ -57,9 +59,14 @@ public class ShepherdManager5 : MonoBehaviour {
 
             }
         }
-        //1번째 목적지로
+        //1번째 목적지로. 마을사람들 나타남.
         else if (desFlag[1])
         {
+            if (!personFlag)
+            {
+                personFlag = !personFlag;
+                StartCoroutine("move1");
+            }
             if (Vector3.Distance(transform.position, destination[1].transform.position) > minDistance)
             {
                 //anim.SetBool("run", true);
@@ -72,7 +79,7 @@ public class ShepherdManager5 : MonoBehaviour {
 
             }
         }
-        //2번째 목적지로
+        //2번째 목적지로.
         else if(desFlag[2])
         {
             if (Vector3.Distance(transform.position, destination[2].transform.position) > minDistance)
@@ -147,6 +154,17 @@ public class ShepherdManager5 : MonoBehaviour {
         }
     }
 
+
+    // 마을사람들 등장.
+    IEnumerator move1()
+    {
+        //마을사람들 모임.
+        person[0].SetActive(true);
+        yield return new WaitForSeconds(0.8f);
+        person[1].SetActive(true);
+        yield return new WaitForSeconds(0.8f);
+        person[2].SetActive(true);
+    }
     //딜레이
     IEnumerator move4()
     {
@@ -180,6 +198,7 @@ public class ShepherdManager5 : MonoBehaviour {
         anim.SetTrigger("talk2");
         yield return new WaitForSeconds(1.5f);
         anim.SetBool("laugh", true);
+        desFlag[8] = true;
         yield return new WaitForSeconds(3.0f);
         anim.SetBool("laugh", false);
 
@@ -205,6 +224,8 @@ public class ShepherdManager5 : MonoBehaviour {
                 desFlag[3] = false;
                 desFlag[4] = true;
                 destination[3].SetActive(false);
+                destination[9].SetActive(true);
+                destination[10].SetActive(true);
             }
             //2목적지. 
             else if(desFlag[2] == true)
@@ -213,12 +234,14 @@ public class ShepherdManager5 : MonoBehaviour {
                 desFlag[3] = true;
                 destination[2].SetActive(false);
             }
-            //1목적지. 
+            //1목적지. 마을사람들 목적지
             else if (desFlag[1] == true)
             {
                 desFlag[1] = false;
                 desFlag[2] = true;
                 destination[1].SetActive(false);
+                destination[7].SetActive(true);
+                destination[8].SetActive(true);
             }
             //0목적지. 
             else if (desFlag[0] == true)
@@ -230,4 +253,11 @@ public class ShepherdManager5 : MonoBehaviour {
         }
     
     }
+
+    public bool getDesFlag(int i)
+    {
+        return desFlag[i];
+    }
+
+
 }

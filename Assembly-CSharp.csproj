@@ -67,6 +67,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\char\People2.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\People3.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\People4.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\char\People5.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\Sheep6.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager1.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager2.cs" />

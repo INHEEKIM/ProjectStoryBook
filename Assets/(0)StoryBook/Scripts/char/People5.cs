@@ -1,36 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class People4 : MonoBehaviour {
+public class People5 : MonoBehaviour {
 
-    //목적지
-    public GameObject[] destination;
     //양치기
     public GameObject shepherd;
+    //양치기방향
+    public GameObject shepherdDir;
     //동작 순서 체크
     private bool[] desFlag;
 
-    //딜레이 횟수 체크
+    //목적지
+    public GameObject[] destination;
+
     private int delay = 0;
 
-    //속도
-    private float runSpeed = 33.0f;
-    private float minDistance = 0.1f;
-
+    //토크 딜레이
     public float delayTime = 1.0f;
+    //돌아갈 때 시간
+    public float backTime = 1.0f;
+
+    //속도
+    private float runSpeed = 35.0f;
+    private float minDistance = 0.1f;
 
     //애니메이션 이름
     public string anim_name;
 
-    //양치기4
-    private ShepherdManager4 shepherdManager;
+    //양치기5
+    private ShepherdManager5 shepherdManager;
 
     private MarkerStateManager mMarkerStateManager;
     private Animation anim;
 
     void Awake()
     {
-        shepherdManager = shepherd.GetComponent<ShepherdManager4>();
+        shepherdManager = shepherd.GetComponent<ShepherdManager5>();
         mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
 
         anim = GetComponent<Animation>();
@@ -40,30 +45,20 @@ public class People4 : MonoBehaviour {
         desFlag[0] = true;
     }
 
-
     void Update()
     {
-        if (mMarkerStateManager.getFourPageMarker() == MarkerStateManager.StateType.On)
+        if (mMarkerStateManager.getThreePageMarker() == MarkerStateManager.StateType.On)
             Move();
     }
 
     void Move()
     {
-        //양치기가 늑대가 나타났다고 외침.
+        //각자 위치로.
         if (desFlag[0])
         {
-            if (shepherdManager.getDesFlag(2))
-            {
-                desFlag[0] = !desFlag[0];
-                desFlag[1] = !desFlag[1];
-            }
-        }
-        //0목적지 달려감.
-        else if (desFlag[1])
-        {
+            anim.CrossFade(anim_name + "_Walk");
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
             {
-                anim.CrossFade(anim_name + "_Walk");
                 Vector3 vDirection = destination[0].transform.position - transform.position;
                 Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
                 transform.position += vMoveVector;
@@ -72,62 +67,68 @@ public class People4 : MonoBehaviour {
                 transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
             }
         }
-        //양치기 쳐다봄.
-        else if (desFlag[2])
+
+
+        // 돌아서서 대기.
+        else if (desFlag[1])
         {
             anim.CrossFade(anim_name + "_Idle");
             if (delay < 30)
             {
-                Quaternion turretRotation = Quaternion.LookRotation(shepherd.transform.position - transform.position);
+                Quaternion turretRotation = Quaternion.LookRotation(shepherdDir.transform.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
                 delay++;
             }
             else if (delay == 30)
             {
                 delay++;
+                StartCoroutine("move1");
+            }
+        }
+        //말하고 화냄.
+        else if (desFlag[2])
+        {
+            if (shepherdManager.getDesFlag(8))
+            {
+                desFlag[2] = !desFlag[2];
                 StartCoroutine("move2");
             }
         }
-        //양치기가 뛰어감.
+        //마을로 돌아감.
         else if (desFlag[3])
         {
-            if (shepherdManager.getDesFlag(5))
-            {
-                desFlag[3] = !desFlag[3];
-                StartCoroutine("move3");
-            }
-        }
-        //양치기 따라감.
-        else if (desFlag[4])
-        {
             anim.CrossFade(anim_name + "_Walk");
-            Vector3 vDirection = shepherd.transform.position - transform.position;
+            Vector3 vDirection = destination[1].transform.position - transform.position;
             Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
             transform.position += vMoveVector;
 
-            Quaternion turretRotation = Quaternion.LookRotation(shepherd.transform.position - transform.position);
+            Quaternion turretRotation = Quaternion.LookRotation(destination[1].transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
         }
 
+
     }
 
 
-    //딜레이
+
+    //대기
+    IEnumerator move1()
+    {
+        yield return new WaitForSeconds(0.5f);
+        desFlag[1] = false;
+        delay = 0;
+        desFlag[2] = !desFlag[2];
+    }
+
+    //화냄
     IEnumerator move2()
     {
-        yield return new WaitForSeconds(1.0f);
-        desFlag[2] = false;
-        delay = 0;
-        desFlag[3] = true;
-    }
-    //딜레이
-    IEnumerator move3()
-    {
         yield return new WaitForSeconds(delayTime);
-        desFlag[4] = !desFlag[4];
+        anim.CrossFade(anim_name + "_Talk");
+        yield return new WaitForSeconds(backTime + 1.0f);
+        anim.CrossFade(anim_name + "_Idle");
+        desFlag[3] = !desFlag[3];
     }
-
-
 
 
 
@@ -139,21 +140,16 @@ public class People4 : MonoBehaviour {
         {
             gameObject.SetActive(false);
         }
-
-        //중간 목적지 충돌.
-        if (coll.tag == "destination")
+        //0목적지. 
+        if (desFlag[0] == true)
         {
-            //0목적지. 
-            if (desFlag[1] == true)
-            {
-                desFlag[1] = false;
-                desFlag[2] = true;
-                destination[0].SetActive(false);
-            }
-
+            desFlag[0] = false;
+            desFlag[1] = true;
+            destination[0].SetActive(false);
         }
-
     }
+
+
 
 
 }
