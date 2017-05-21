@@ -75,6 +75,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager4.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager5.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager6.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager7.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\WolfManager6.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\WoodCutter4.cs" />
      <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\DestorySelf.cs" />
