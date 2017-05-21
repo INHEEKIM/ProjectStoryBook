@@ -13,6 +13,7 @@ public class MarkerStateManager : MonoBehaviour {
     private StateType CharMarker = StateType.Off;
     private StateType WolfMarker = StateType.Off;
     private StateType PersonsMarker = StateType.Off;
+    private StateType SheepMarker = StateType.Off;
 
     //페이즈 마커
     private StateType OnePageMarker = StateType.Off; // 임시용 스톤마커 상태 저장
@@ -93,6 +94,21 @@ public class MarkerStateManager : MonoBehaviour {
     {
         PersonsMarker = newState;
     }
+
+    public StateType getSheepMarker()
+    {
+        return SheepMarker;
+    }
+
+    public void setSheepMarker(StateType newState)
+    {
+        SheepMarker = newState;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
 
     public StateType getOnePageMarker()
     {
