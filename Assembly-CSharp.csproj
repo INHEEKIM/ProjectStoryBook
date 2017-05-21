@@ -58,8 +58,6 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ModeConfig.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\Reticle.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\TransitionManager.cs" />
-     <Compile Include="Assets\(0)StoryBook\Scripts\VR\VR1Manager.cs" />
-     <Compile Include="Assets\(0)StoryBook\Scripts\VR\VR2Manager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewButtonTrigger.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewModeManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewTrigger.cs" />
@@ -69,6 +67,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\char\People4.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\People5.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\Sheep6.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\char\Sheep8.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager1.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager2.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager3.cs" />
@@ -76,7 +75,9 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager5.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager6.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager7.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\char\ShepherdManager8.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\WolfManager6.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\char\WolfManager8.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\char\WoodCutter4.cs" />
      <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\DestorySelf.cs" />
      <Compile Include="Assets\Character\CommodityProgect\CommodityShowScript\ObjMoveFront.cs" />
