@@ -89,6 +89,7 @@
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\ModeConfig.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\Reticle.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\TransitionManager.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\VRManager.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewButtonTrigger.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewModeManager.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\ViewTrigger.cs" />
