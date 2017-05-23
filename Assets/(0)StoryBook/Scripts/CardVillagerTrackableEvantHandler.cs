@@ -75,7 +75,7 @@ namespace Vuforia
                 if (mMarkerStateManager.getOnePageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On)
                 {
-                    //MaleCivilian[0].SetActive(true);
+                    MaleCivilian[0].SetActive(true);
                 }
 
                 //2Paga와 마커를 찾으면
