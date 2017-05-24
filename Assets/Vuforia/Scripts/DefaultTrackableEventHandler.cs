@@ -126,19 +126,63 @@ namespace Vuforia
             {
                 OnTrackingLost();
 
-                //stoneMarker를 읽으면
+                //1
                 if (mTrackableBehaviour.TrackableName == "stones")
                 {
                     mMarkerStateManager.setOnePageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
-                    Debug.Log(mMarkerStateManager.getOnePageMarker());
+                    Debug.Log(" 1p : " + mMarkerStateManager.getOnePageMarker());
                 }
 
-                //chipMarker를 잃으면
+                //2
                 if (mTrackableBehaviour.TrackableName == "chips")
                 {
                     mMarkerStateManager.setTwoPageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
+                    Debug.Log(" 2p : " + mMarkerStateManager.getTwoPageMarker());
+                }
+                //3
+                if (mTrackableBehaviour.TrackableName == "tarmac")
+                {
+                    mMarkerStateManager.setThreePageMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
+                    Debug.Log(" 3p : " + mMarkerStateManager.getThreePageMarker());
+                }
+
+                //4
+                if (mTrackableBehaviour.TrackableName == "grass")
+                {
+                    mMarkerStateManager.setFourPageMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
+                    Debug.Log(" 4p : " + mMarkerStateManager.getFourPageMarker());
+                }
+                //5
+                if (mTrackableBehaviour.TrackableName == "painted")
+                {
+                    mMarkerStateManager.setFivePageMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
+                    Debug.Log(" 5p : " + mMarkerStateManager.getFivePageMarker());
+                }
+                //6
+                if (mTrackableBehaviour.TrackableName == "wolf")
+                {
+                    mMarkerStateManager.setSixPageMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
+                    Debug.Log(" 6p : " + mMarkerStateManager.getSixPageMarker());
+                }
+                //7
+                if (mTrackableBehaviour.TrackableName == "flower")
+                {
+                    mMarkerStateManager.setSevenPageMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
+                    Debug.Log(" 7p : " + mMarkerStateManager.getSevenPageMarker());
+                }
+                //8
+                if (mTrackableBehaviour.TrackableName == "fruits")
+                {
+                    mMarkerStateManager.setEightPageMarker(MarkerStateManager.StateType.Off);
+                    mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
+                    Debug.Log(" 8p : " + mMarkerStateManager.getEightPageMarker());
                 }
 
 
