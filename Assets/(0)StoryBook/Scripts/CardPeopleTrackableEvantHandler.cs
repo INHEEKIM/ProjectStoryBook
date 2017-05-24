@@ -20,9 +20,6 @@ namespace Vuforia
         private MarkerStateManager mMarkerStateManager;
         private GameObject PeopleMarker;
 
-        //
-        public GameObject[] MaleCivilian;
-
         private bool moveTrigger = false;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
