@@ -53,6 +53,7 @@
      <Compile Include="Assets\(0)StoryBook\Scripts\CuboidTrackableEventHandler.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\GameManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\MarkerStateManager.cs" />
+     <Compile Include="Assets\(0)StoryBook\Scripts\SoundManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\ARVRAboutManager.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\Autofocus.cs" />
      <Compile Include="Assets\(0)StoryBook\Scripts\VR\BackToAbout.cs" />

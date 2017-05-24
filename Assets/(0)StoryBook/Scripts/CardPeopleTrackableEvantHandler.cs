@@ -68,61 +68,6 @@ namespace Vuforia
                     Debug.Log(mMarkerStateManager.getPersonsMarker());
                 }
 
-                //1Paga와 마커를 찾으면
-                if (mMarkerStateManager.getOnePageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
-                {
-                    //MaleCivilian[0].SetActive(true);
-                }
-
-                //2Paga와 마커를 찾으면
-                if (mMarkerStateManager.getTwoPageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
-                {
-                    //MaleCivilian[0].SetActive(true);
-                }
-
-                //3Paga와 마커를 찾으면
-                if (mMarkerStateManager.getThreePageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
-                {
-                    //MaleCivilian[0].SetActive(true);
-                }
-
-                //4Paga와 마커를 찾으면
-                if (mMarkerStateManager.getFourPageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
-                {
-                    //MaleCivilian[0].SetActive(true);
-                }
-
-                //5Paga와 마커를 찾으면
-                if (mMarkerStateManager.getFivePageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
-                {
-                    //MaleCivilian[0].SetActive(true);
-                }
-
-                //6Paga와 마커를 찾으면
-                if (mMarkerStateManager.getSixPageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
-                {
-                    //MaleCivilian[0].SetActive(true);
-                }
-
-                //7Paga와 마커를 찾으면
-                if (mMarkerStateManager.getSevenPageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
-                {
-                    //MaleCivilian[0].SetActive(true);
-                }
-
-                //8Page와 마커를 찾으면
-                if (mMarkerStateManager.getEightPageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
-                {
-                    //MaleCivilian[0].SetActive(true);
-                }
 
             }
             else

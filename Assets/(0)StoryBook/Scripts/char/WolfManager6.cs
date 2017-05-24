@@ -51,11 +51,11 @@ public class WolfManager6 : MonoBehaviour {
     {
         if (desFlag[0])
         {
-            if (shepherdManager.getDesFlag(3))
-            {
+            //if (shepherdManager.getDesFlag(3))
+            //{
                 desFlag[0] = !desFlag[0];
                 StartCoroutine("move0");
-            }
+            //}
         }
         //0번째 목적지로
         else if (desFlag[1])
@@ -97,7 +97,8 @@ public class WolfManager6 : MonoBehaviour {
     //기다렸다가 0목적지로.
     IEnumerator move0()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(5.8f);
+        //yield return new WaitForSeconds(1.5f);
         desFlag[1] = true;
     }
 
