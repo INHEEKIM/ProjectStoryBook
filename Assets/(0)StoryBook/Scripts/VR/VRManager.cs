@@ -24,7 +24,7 @@ public class VRManager : MonoBehaviour {
         if (viewButtonTrigger[0].boolTrigger == true)
             buttonFlag[0] = true;
         if (viewButtonTrigger[1].boolTrigger == true)
-            buttonFlag[0] = true;
+            buttonFlag[1] = true;
 
         if (buttonFlag[0] == true && buttonFlag[1] == true)
             ExitButton.SetActive(true);

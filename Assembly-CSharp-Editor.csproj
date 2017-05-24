@@ -93,7 +93,6 @@
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Quantum Theory\3D Cloud Models\Shaders\3DCloudModels-SoftAlphaBlend.shader" />
-     <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
@@ -127,6 +126,7 @@
      <None Include="Assets\Micro Wood Cutter\Shader\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\Micro Wood Cutter\ReadMe_[ v 1.0 ]_ 12_11.txt" />
      <None Include="Assets\Villager\Animation Info\frame animation guide.txt" />
+     <None Include="Assets\StreamingAssets\QCAR\ProjectStoryBook.xml" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Character\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\grassKit\readme.txt" />
