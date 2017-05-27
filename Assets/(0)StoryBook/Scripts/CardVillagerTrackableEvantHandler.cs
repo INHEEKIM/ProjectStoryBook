@@ -22,8 +22,8 @@ namespace Vuforia
 
         //
         public GameObject[] MaleCivilian;
-        //마을 사람
-        public GameObject People;
+        ////마을 사람
+        //public GameObject People;
         //늑대
         public GameObject Wolf;
         //양
@@ -114,7 +114,6 @@ namespace Vuforia
                     mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
                 {
                     MaleCivilian[4].SetActive(true);
-                    People.SetActive(true);
                 }
 
                 //6Paga와 마커를 찾으면

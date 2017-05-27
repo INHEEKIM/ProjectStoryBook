@@ -47,7 +47,7 @@ public class People5 : MonoBehaviour {
 
     void Update()
     {
-        if (mMarkerStateManager.getThreePageMarker() == MarkerStateManager.StateType.On)
+        if (mMarkerStateManager.getFivePageMarker() == MarkerStateManager.StateType.On)
             Move();
     }
 
