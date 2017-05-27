@@ -67,7 +67,7 @@ namespace Vuforia
                 OnTrackingFound();
 
                 //stoneMarker를 발견하게 되면
-                if (mTrackableBehaviour.TrackableName == "stones") //Page1
+                if (mTrackableBehaviour.TrackableName == "Page1") //Page1
                 {
                     
                     mMarkerStateManager.setOnePageMarker(MarkerStateManager.StateType.On);
@@ -76,44 +76,44 @@ namespace Vuforia
                 }
 
                 //chipMarker
-                if (mTrackableBehaviour.TrackableName == "chips") //Page2
+                if (mTrackableBehaviour.TrackableName == "Page2") //Page2
                 {
                     mMarkerStateManager.setTwoPageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page2);
                 }
 
                 //3
-                if (mTrackableBehaviour.TrackableName == "tarmac") 
+                if (mTrackableBehaviour.TrackableName == "Page3") 
                 {
                     mMarkerStateManager.setThreePageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page3);
                 }
                 //4
-                if (mTrackableBehaviour.TrackableName == "grass")
+                if (mTrackableBehaviour.TrackableName == "Page4")
                 {
                     mMarkerStateManager.setFourPageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page4);
                 }
                 //5
-                if (mTrackableBehaviour.TrackableName == "painted")
+                if (mTrackableBehaviour.TrackableName == "Page5")
                 {
                     mMarkerStateManager.setFivePageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page5);
                 }
                 //6
-                if (mTrackableBehaviour.TrackableName == "wolf")
+                if (mTrackableBehaviour.TrackableName == "Page6")
                 {
                     mMarkerStateManager.setSixPageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page6);
                 }
                 //7
-                if (mTrackableBehaviour.TrackableName == "flower")
+                if (mTrackableBehaviour.TrackableName == "Page7")
                 {
                     mMarkerStateManager.setSevenPageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page7);
                 }
                 //8
-                if (mTrackableBehaviour.TrackableName == "fruits")
+                if (mTrackableBehaviour.TrackableName == "Page8")
                 {
                     mMarkerStateManager.setEightPageMarker(MarkerStateManager.StateType.On);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Page8);
@@ -127,7 +127,7 @@ namespace Vuforia
                 OnTrackingLost();
 
                 //1
-                if (mTrackableBehaviour.TrackableName == "stones")
+                if (mTrackableBehaviour.TrackableName == "Page1")
                 {
                     mMarkerStateManager.setOnePageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
@@ -135,14 +135,14 @@ namespace Vuforia
                 }
 
                 //2
-                if (mTrackableBehaviour.TrackableName == "chips")
+                if (mTrackableBehaviour.TrackableName == "Page2")
                 {
                     mMarkerStateManager.setTwoPageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                     Debug.Log(" 2p : " + mMarkerStateManager.getTwoPageMarker());
                 }
                 //3
-                if (mTrackableBehaviour.TrackableName == "tarmac")
+                if (mTrackableBehaviour.TrackableName == "Page3")
                 {
                     mMarkerStateManager.setThreePageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
@@ -150,35 +150,35 @@ namespace Vuforia
                 }
 
                 //4
-                if (mTrackableBehaviour.TrackableName == "grass")
+                if (mTrackableBehaviour.TrackableName == "Page4")
                 {
                     mMarkerStateManager.setFourPageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                     Debug.Log(" 4p : " + mMarkerStateManager.getFourPageMarker());
                 }
                 //5
-                if (mTrackableBehaviour.TrackableName == "painted")
+                if (mTrackableBehaviour.TrackableName == "Page5")
                 {
                     mMarkerStateManager.setFivePageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                     Debug.Log(" 5p : " + mMarkerStateManager.getFivePageMarker());
                 }
                 //6
-                if (mTrackableBehaviour.TrackableName == "wolf")
+                if (mTrackableBehaviour.TrackableName == "Page6")
                 {
                     mMarkerStateManager.setSixPageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                     Debug.Log(" 6p : " + mMarkerStateManager.getSixPageMarker());
                 }
                 //7
-                if (mTrackableBehaviour.TrackableName == "flower")
+                if (mTrackableBehaviour.TrackableName == "Page7")
                 {
                     mMarkerStateManager.setSevenPageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
                     Debug.Log(" 7p : " + mMarkerStateManager.getSevenPageMarker());
                 }
                 //8
-                if (mTrackableBehaviour.TrackableName == "fruits")
+                if (mTrackableBehaviour.TrackableName == "Page8")
                 {
                     mMarkerStateManager.setEightPageMarker(MarkerStateManager.StateType.Off);
                     mMarkerStateManager.setBookMarkerPageNumber(MarkerStateManager.PageType.Nothing);
