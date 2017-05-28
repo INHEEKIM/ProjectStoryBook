@@ -25,6 +25,7 @@ public class ShepherdManager1 : MonoBehaviour {
         desFlag = new bool[10];
         for (int i = 0; i < desFlag.Length; i++)
             desFlag[i] = false;
+        desFlag[0] = true;
     }
 
 
@@ -39,7 +40,7 @@ public class ShepherdManager1 : MonoBehaviour {
     void Move()
     {
         ////인식 후 토크 애니메이션 1번
-        if (!desFlag[0])
+        if (desFlag[0])
         {
             desFlag[0] = !desFlag[0];
             StartCoroutine("move0");
@@ -159,7 +160,7 @@ public class ShepherdManager1 : MonoBehaviour {
         {
             Debug.Log("도착");
             gameObject.SetActive(false);
-
+            desFlag[8] = true;
         }
 
         //중간 목적지 충돌.
@@ -203,5 +204,11 @@ public class ShepherdManager1 : MonoBehaviour {
         }
 
     }
+
+    public bool getDesFlag(int i)
+    {
+        return desFlag[i];
+    }
+
 
 }
