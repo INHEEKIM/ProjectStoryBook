@@ -142,7 +142,7 @@ public class ShepherdManager2 : MonoBehaviour {
     //딜레이
     IEnumerator move1()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         desFlag[1] = false;
         delay = 0;
         desFlag[2] = true;
@@ -164,7 +164,7 @@ public class ShepherdManager2 : MonoBehaviour {
         {
             person[i].SetActive(true);
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(7.0f);
         desFlag[5] = true;
     }
     // 마을사람들 토크.
@@ -183,6 +183,7 @@ public class ShepherdManager2 : MonoBehaviour {
         if (coll.tag == "LastDestination")
         {
             gameObject.SetActive(false);
+            desFlag[7] = true;
         }
 
         //중간 목적지 충돌.

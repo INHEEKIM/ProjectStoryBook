@@ -13,9 +13,11 @@ public class TextManager : MonoBehaviour {
     public GameObject shepherd1;
     public AudioClip[] Page1_music;
 
-
-
+    //2페
+    public GameObject shepherd2;
     public AudioClip[] Page2_music;
+
+
     public AudioClip[] Page3_music;
     public AudioClip[] Page4_music;
     public AudioClip[] Page5_music;
@@ -41,8 +43,7 @@ public class TextManager : MonoBehaviour {
 
     void Update()
     {
-
-        //1페이지
+        #region 1페이지
         if (mMarkerStateManager.getOnePageMarker() == MarkerStateManager.StateType.On)
         {
             //책 마커만 인식된 경우.
@@ -89,7 +90,53 @@ public class TextManager : MonoBehaviour {
 
 
         }//1페이지
+        #endregion
 
+        #region 2페이지
+        if (mMarkerStateManager.getTwoPageMarker() == MarkerStateManager.StateType.On)
+        {
+            //책 마커만 인식된 경우.
+            if (!makerFlag[0])
+            {
+                if (mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On)
+                    makerFlag[0] = true;
+                else
+                    text[0].GetComponent<TextMesh>().text = "양치기 카드와 마을사람 카드를 비춰주세요.";
+            }
+            //캐릭터 카드가 인식된 후.
+            else
+            {
+                if (shepherd2.GetComponent<ShepherdManager2>().getDesFlag(0))
+                {
+                    //4
+                    audioSource.clip = Page2_music[0];
+                    audioSource.Play();
+                    text[1].GetComponent<TextMesh>().text = "늑대다! 늑대가 나타났다!";
+                    
+                }
+                else if (shepherd2.GetComponent<ShepherdManager2>().getDesFlag(4))
+                {
+                    //7
+                    text[1].GetComponent<TextMesh>().text = "양치기소년의 목소리를 들은 마을사람들은 \n하나둘씩 소년의 주위로 모여들기 시작하더니";
+                    audioSource.clip = Page2_music[1]; audioSource.Play();
+                }
+                else if (shepherd2.GetComponent<ShepherdManager2>().getDesFlag(5))
+                {
+                    //3
+                    text[1].GetComponent<TextMesh>().text = "어디?! 어디에 늑대가 있다는 거냐!";
+                    audioSource.clip = Page2_music[2]; audioSource.Play();
+                }
+                else if (shepherd2.GetComponent<ShepherdManager2>().getDesFlag(7))
+                {
+                    //
+                    text[0].GetComponent<TextMesh>().text = "다음 페이지로 넘기세요.";
+                }
+
+            }
+
+
+        }//2페이지
+        #endregion
 
 
     }
