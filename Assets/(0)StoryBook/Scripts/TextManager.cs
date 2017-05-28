@@ -17,8 +17,12 @@ public class TextManager : MonoBehaviour {
     public GameObject shepherd2;
     public AudioClip[] Page2_music;
 
-
+    //3페
+    public GameObject shepherd3;
+    public GameObject people3;
     public AudioClip[] Page3_music;
+
+
     public AudioClip[] Page4_music;
     public AudioClip[] Page5_music;
     public AudioClip[] Page6_music;
@@ -96,12 +100,13 @@ public class TextManager : MonoBehaviour {
         if (mMarkerStateManager.getTwoPageMarker() == MarkerStateManager.StateType.On)
         {
             //책 마커만 인식된 경우.
-            if (!makerFlag[0])
+            if (!makerFlag[1])
             {
-                if (mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On)
-                    makerFlag[0] = true;
+                if (mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
+                    makerFlag[1] = true;
                 else
-                    text[0].GetComponent<TextMesh>().text = "양치기 카드와 마을사람 카드를 비춰주세요.";
+                    text[1].GetComponent<TextMesh>().text = "양치기 카드와 마을사람 카드를 비춰주세요.";
             }
             //캐릭터 카드가 인식된 후.
             else
@@ -129,13 +134,83 @@ public class TextManager : MonoBehaviour {
                 else if (shepherd2.GetComponent<ShepherdManager2>().getDesFlag(7))
                 {
                     //
-                    text[0].GetComponent<TextMesh>().text = "다음 페이지로 넘기세요.";
+                    text[1].GetComponent<TextMesh>().text = "다음 페이지로 넘기세요.";
                 }
 
             }
 
 
         }//2페이지
+        #endregion
+
+        #region 3페이지
+        if (mMarkerStateManager.getThreePageMarker() == MarkerStateManager.StateType.On)
+        {
+            //책 마커만 인식된 경우.
+            if (!makerFlag[2])
+            {
+                if (mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
+                    makerFlag[2] = true;
+                else
+                    text[2].GetComponent<TextMesh>().text = "양치기 카드와 마을사람 카드를 비춰주세요.";
+            }
+            //캐릭터 카드가 인식된 후.
+            else
+            {
+                if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(0))
+                {
+                    //5
+                    audioSource.clip = Page3_music[0];
+                    audioSource.Play();
+                    text[2].GetComponent<TextMesh>().text = "마을 사람들은 모두 몽둥이를 들고 \n목장으로 달려갔어요.";
+                }
+                else if (people3.GetComponent<People3>().getDesFlag(0))
+                {
+                    //3
+                    text[2].GetComponent<TextMesh>().text = "여기에 느, 늑대가 나타났대요!";
+                    audioSource.clip = Page3_music[1]; audioSource.Play();
+                }
+                else if (people3.GetComponent<People3>().getDesFlag(2))
+                {
+                    //2
+                    text[2].GetComponent<TextMesh>().text = "어디에? 어디에 있는 거야!";
+                    audioSource.clip = Page3_music[2]; audioSource.Play();
+                }
+                else if (people3.GetComponent<People3>().getTalkFlag())
+                {
+                    //5
+                    text[2].GetComponent<TextMesh>().text = "헤헤헤! 거짓말인데! \n심심해서 장난 좀 쳐본 거에요! 아하하!";
+                    audioSource.clip = Page3_music[3]; audioSource.Play();
+                }
+                else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(7))
+                {
+                    //2
+                    text[2].GetComponent<TextMesh>().text = "저런 못된 녀석 같으니라고!";
+                    audioSource.clip = Page3_music[5]; audioSource.Play();
+                }
+                else if (people3.GetComponent<People3>().getDesFlag(4))
+                {
+                    //2
+                    text[2].GetComponent<TextMesh>().text = "어디서 저런 거짓말을 해!";
+                    audioSource.clip = Page3_music[6]; audioSource.Play();
+                }
+                else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(8))
+                {
+                    //3
+                    text[2].GetComponent<TextMesh>().text = "마을 사람들은 화를 내며 돌아갔어요.";
+                    audioSource.clip = Page3_music[4]; audioSource.Play();
+                }
+                else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(9))
+                {
+                    //
+                    text[2].GetComponent<TextMesh>().text = "다음 페이지로 넘기세요.";
+                }
+
+            }
+
+
+        }//3페이지
         #endregion
 
 

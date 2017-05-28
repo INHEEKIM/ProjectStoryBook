@@ -152,7 +152,7 @@ public class ShepherdManager3 : MonoBehaviour {
         //마을사람들 모임.
         person[0].SetActive(true);
         desFlag[6] = true;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         person[1].SetActive(true);
         
     }
@@ -181,8 +181,8 @@ public class ShepherdManager3 : MonoBehaviour {
         anim.SetBool("laugh", true);
         yield return new WaitForSeconds(3.0f);
         anim.SetBool("laugh", false);
+        desFlag[8] = true;
 
-        
     }
 
 
