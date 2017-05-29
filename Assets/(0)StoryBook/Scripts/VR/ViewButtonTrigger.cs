@@ -29,6 +29,8 @@ public class ViewButtonTrigger : MonoBehaviour
     public Material nonFocusedMaterial;
     //public bool mFocuseState;
     public bool boolTrigger;
+    //voice
+    public bool voiceTrigger;
     public bool Focused { get; set; }
     #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -45,6 +47,7 @@ public class ViewButtonTrigger : MonoBehaviour
     {
         //
         boolTrigger = false;
+        voiceTrigger = false;
 
         mTransitionManager = FindObjectOfType<TransitionManager>();
         mTriggered = false;
@@ -78,7 +81,7 @@ public class ViewButtonTrigger : MonoBehaviour
                 mTriggered = true;
                 mFocusedTime = 0;
                 boolTrigger = true; //이 값으로 조건 체크함
-
+                voiceTrigger = true;
                 gameObject.SetActive(false);
 
                 //mFocuseState = false;

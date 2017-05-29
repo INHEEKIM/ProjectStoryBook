@@ -159,6 +159,7 @@ public class ShepherdManager2 : MonoBehaviour {
     // 마을사람들 등장.
     IEnumerator move4()
     {
+        desFlag[9] = true;
         //마을사람들 모임.
         for (int i = 0; i < person.Length; i++)
         {
@@ -205,6 +206,10 @@ public class ShepherdManager2 : MonoBehaviour {
     public bool getDesFlag(int i)
     {
         return desFlag[i];
+    }
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
     }
     public bool getTalkFlag()
     {

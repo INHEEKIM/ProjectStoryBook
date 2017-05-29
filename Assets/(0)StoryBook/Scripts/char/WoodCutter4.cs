@@ -167,7 +167,7 @@ public class WoodCutter4 : MonoBehaviour {
     //딜레이
     IEnumerator move5()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.5f);
         desFlag[5] = false;
         delay = 0;
         desFlag[6] = true;
@@ -175,7 +175,8 @@ public class WoodCutter4 : MonoBehaviour {
     //토크
     IEnumerator move6()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
+        desFlag[9] = true;
         anim.CrossFade("WC_Talk");
         yield return new WaitForSeconds(1.0f);
         desFlag[7] = !desFlag[7];
@@ -236,7 +237,14 @@ public class WoodCutter4 : MonoBehaviour {
 
     }
 
-
+    public bool getDesFlag(int i)
+    {
+        return desFlag[i];
+    }
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
+    }
 
 
 

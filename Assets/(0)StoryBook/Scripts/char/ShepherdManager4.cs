@@ -29,7 +29,7 @@ public class ShepherdManager4 : MonoBehaviour {
     {
         mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
         anim = GetComponent<Animator>();
-        desFlag = new bool[10];
+        desFlag = new bool[11];
         for (int i = 0; i < desFlag.Length; i++)
             desFlag[i] = false;
         desFlag[0] = true;
@@ -123,8 +123,12 @@ public class ShepherdManager4 : MonoBehaviour {
     //늑대가 나타났다고 외침
     IEnumerator move1()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(6.0f);
+        desFlag[9] = true;
+
+        yield return new WaitForSeconds(7.0f);
         anim.SetTrigger("talk2");
+        desFlag[8] = true;
         yield return new WaitForSeconds(1.5f);
         anim.SetTrigger("talk2");
         yield return new WaitForSeconds(2.0f);
@@ -138,7 +142,7 @@ public class ShepherdManager4 : MonoBehaviour {
     //딜레이
     IEnumerator move3()
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(9.0f);
         desFlag[3] = false;
         delay = 0;
         desFlag[4] = true;
@@ -146,7 +150,17 @@ public class ShepherdManager4 : MonoBehaviour {
     //딜레이
     IEnumerator move4()
     {
-        yield return new WaitForSeconds(5.0f);
+        //yield return new WaitForSeconds(1.0f);
+        anim.SetTrigger("talk2");
+        desFlag[7] = true;
+        yield return new WaitForSeconds(1.0f);
+        anim.SetTrigger("talk2");
+        yield return new WaitForSeconds(1.0f);
+        anim.SetTrigger("talk2");
+        yield return new WaitForSeconds(1.0f);
+        anim.SetTrigger("talk2");
+
+        yield return new WaitForSeconds(3.0f);
         desFlag[4] = false;
         desFlag[5] = true;
     }
@@ -158,6 +172,7 @@ public class ShepherdManager4 : MonoBehaviour {
         if (coll.tag == "LastDestination")
         {
             gameObject.SetActive(false);
+            desFlag[10] = true;
         }
 
         //중간 목적지 충돌.
@@ -187,7 +202,10 @@ public class ShepherdManager4 : MonoBehaviour {
     {
         return desFlag[i];
     }
-
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
+    }
 
 
 }

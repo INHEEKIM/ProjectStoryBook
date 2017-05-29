@@ -22,12 +22,13 @@ namespace Vuforia
 
         //
         public GameObject[] MaleCivilian;
-        ////마을 사람
-        //public GameObject People;
+        //마을 사람
+        public GameObject People;
         //늑대
         public GameObject Wolf;
         //양
         public GameObject[] sheep;
+
 
         private bool moveTrigger = false;
 
@@ -49,6 +50,7 @@ namespace Vuforia
                 mTrackableBehaviour.RegisterTrackableEventHandler(this);
             }
         }
+        
 
         #endregion // UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -105,7 +107,9 @@ namespace Vuforia
                     mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
                 {
-                    MaleCivilian[3].SetActive(true);
+                        MaleCivilian[3].SetActive(true);
+                        People.SetActive(true);
+                    
                 }
 
                 //5Paga와 마커를 찾으면
