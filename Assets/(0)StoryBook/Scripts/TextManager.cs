@@ -28,8 +28,12 @@ public class TextManager : MonoBehaviour {
     public GameObject people4;
     public AudioClip[] Page4_music;
 
-
+    //5페
+    public GameObject shepherd5;
+    public GameObject people5;
     public AudioClip[] Page5_music;
+
+
     public AudioClip[] Page6_music;
     public AudioClip[] Page7_music;
     public AudioClip[] Page8_music;
@@ -303,6 +307,59 @@ public class TextManager : MonoBehaviour {
 
 
         }//4페이지
+        #endregion
+
+
+        #region 5페이지
+        if (mMarkerStateManager.getFivePageMarker() == MarkerStateManager.StateType.On)
+        {
+            //책 마커만 인식된 경우.
+            if (!makerFlag[4])
+            {
+                if (mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
+                    makerFlag[4] = true;
+                else
+                    text[4].GetComponent<TextMesh>().text = "양치기 카드와 마을사람 카드를 비춰주세요.";
+            }
+            //캐릭터 카드가 인식된 후.
+            else
+            {
+                if (shepherd5.GetComponent<ShepherdManager5>().getDesFlag(0))
+                {
+                    audioSource.clip = Page5_music[0];
+                    audioSource.Play();
+                    text[4].GetComponent<TextMesh>().text = "사람들은 또 몽둥이를 가지고 \n목장으로 헐레벌떡 달려갔어요.";
+                }
+                else if (shepherd5.GetComponent<ShepherdManager5>().getDesFlag(9))
+                {
+                    text[4].GetComponent<TextMesh>().text = "또 거짓말인데! 하하하!";
+                    audioSource.clip = Page5_music[1]; audioSource.Play();
+                    shepherd5.GetComponent<ShepherdManager5>().setDesFlag(9, false);
+                }
+                else if (people5.GetComponent<People5>().getDesFlag(9))
+                {
+                    text[4].GetComponent<TextMesh>().text = "못된 녀석 같으니라고! 이젠 두 번 다시 속지 않을 테다!";
+                    audioSource.Stop();
+                    audioSource.clip = Page5_music[2]; audioSource.Play();
+                    people5.GetComponent<People5>().setDesFlag(9, false);
+                }
+                else if (people5.GetComponent<People5>().getDesFlag(8))
+                {
+                    text[4].GetComponent<TextMesh>().text = "마을 사람들은 무척 화를 내며 돌아갔어요.";
+                    audioSource.clip = Page5_music[3]; audioSource.Play();
+                    people5.GetComponent<People5>().setDesFlag(8, false);
+
+                }
+                else if (people5.GetComponent<People5>().getDesFlag(7))
+                {
+                    text[4].GetComponent<TextMesh>().text = "다음 페이지로 넘기세요.";
+                }
+
+            }
+
+
+        }//5페이지
         #endregion
 
 

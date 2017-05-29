@@ -193,6 +193,7 @@ public class ShepherdManager5 : MonoBehaviour {
     //거짓말이라고 말하고 웃는 모션.
     IEnumerator move7()
     {
+        desFlag[9] = true;
         anim.SetTrigger("talk2");
         yield return new WaitForSeconds(1.0f);
         anim.SetTrigger("talk2");
@@ -258,6 +259,9 @@ public class ShepherdManager5 : MonoBehaviour {
     {
         return desFlag[i];
     }
-
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
+    }
 
 }

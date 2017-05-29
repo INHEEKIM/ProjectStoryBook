@@ -124,9 +124,11 @@ public class People5 : MonoBehaviour {
     IEnumerator move2()
     {
         yield return new WaitForSeconds(delayTime);
+        desFlag[9] = true;
         anim.CrossFade(anim_name + "_Talk");
         yield return new WaitForSeconds(backTime + 1.0f);
         anim.CrossFade(anim_name + "_Idle");
+        desFlag[8] = true;
         desFlag[3] = !desFlag[3];
     }
 
@@ -138,6 +140,7 @@ public class People5 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
+            desFlag[7] = true;
             gameObject.SetActive(false);
         }
         //0목적지. 
@@ -150,6 +153,13 @@ public class People5 : MonoBehaviour {
     }
 
 
-
+    public bool getDesFlag(int i)
+    {
+        return desFlag[i];
+    }
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
+    }
 
 }
