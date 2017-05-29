@@ -18,6 +18,9 @@ public class ShepherdManager7 : MonoBehaviour {
     //딜레이 횟수 체크
     private int delay = 0;
 
+    //첫시작 flag
+    private bool flag = false;
+
     //속도
     private float runSpeed = 35.0f;
     private float minDistance = 0.1f;
@@ -32,7 +35,7 @@ public class ShepherdManager7 : MonoBehaviour {
 
         anim = GetComponent<Animator>();
 
-        desFlag = new bool[10];
+        desFlag = new bool[11];
         for (int i = 0; i < desFlag.Length; i++)
             desFlag[i] = false;
         desFlag[0] = true;
@@ -50,6 +53,11 @@ public class ShepherdManager7 : MonoBehaviour {
         //0번째 목적지로
         if (desFlag[0])
         {
+            if (!flag)
+            {
+                flag = !flag;
+                desFlag[9] = true;
+            }
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
             {
                 anim.SetBool("rrr", true);
@@ -59,7 +67,6 @@ public class ShepherdManager7 : MonoBehaviour {
 
                 Quaternion turretRotation = Quaternion.LookRotation(destination[0].transform.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
-
             }
         }
         //마을을 향해 돈다.
@@ -152,19 +159,22 @@ public class ShepherdManager7 : MonoBehaviour {
     //딜레이
     IEnumerator move4()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(5.0f);
         desFlag[4] = false;
         desFlag[5] = true;
     }
     // 토크 외침
     IEnumerator move5()
     {
+        desFlag[8] = true;
         anim.SetTrigger("talk2");
         yield return new WaitForSeconds(1.0f);
         anim.SetTrigger("talk2");
         yield return new WaitForSeconds(1.0f);
         anim.SetTrigger("talk2");
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(7.0f);
+        desFlag[7] = true;
+        yield return new WaitForSeconds(7.0f);
         desFlag[6] = true;
     }
 
@@ -174,6 +184,7 @@ public class ShepherdManager7 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
+            desFlag[10] = true;
             gameObject.SetActive(false);
         }
 

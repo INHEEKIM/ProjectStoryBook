@@ -40,6 +40,7 @@ public class TextManager : MonoBehaviour {
     //7페
     public GameObject shepherd7;
     public AudioClip[] Page7_music;
+    public GameObject[] shoutButton7;
 
     //8페
     public GameObject shepherd8;
@@ -410,6 +411,70 @@ public class TextManager : MonoBehaviour {
         }//6페이지
         #endregion
 
+        #region 7페이지
+        if (mMarkerStateManager.getSevenPageMarker() == MarkerStateManager.StateType.On)
+        {
+            //vr일 때.
+            if (shoutButton7[0].GetComponent<ViewButtonTrigger>().voiceTrigger)
+            {
+                audioSource.clip = Page7_music[0];
+                audioSource.Play();
+                shoutButton7[0].GetComponent<ViewButtonTrigger>().voiceTrigger = false;
+            }
+            if (shoutButton7[1].GetComponent<ViewButtonTrigger>().voiceTrigger)
+            {
+                audioSource.clip = Page7_music[0];
+                audioSource.Play();
+                shoutButton7[1].GetComponent<ViewButtonTrigger>().voiceTrigger = false;
+            }
+
+
+            //책 마커만 인식된 경우.
+            if (!makerFlag[6])
+            {
+                if (mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On)
+                    makerFlag[6] = true;
+                else
+                    text[6].GetComponent<TextMesh>().text = "양치기 카드를 비춰주세요.";
+            }
+            //캐릭터 카드가 인식된 후.
+            else
+            {
+                if (shepherd7.GetComponent<ShepherdManager7>().getDesFlag(9))
+                {
+                    audioSource.clip = Page7_music[0];
+                    audioSource.Play();
+                    text[6].GetComponent<TextMesh>().text = "도와주세요! 진짜 늑대가 나타났어요!";
+                    shepherd7.GetComponent<ShepherdManager7>().setDesFlag(9, false);
+                }
+                //else if (shepherd7.GetComponent<ShepherdManager7>().getDesFlag(8))
+                //{
+                //    text[6].GetComponent<TextMesh>().text = "양치기 소년의 외침이 들렸지만 \n마을사람들은 꿈쩍도 하지 않았어요.";
+                //    audioSource.clip = Page7_music[1]; audioSource.Play();
+                //    shepherd7.GetComponent<ShepherdManager7>().setDesFlag(8, false);
+                //}
+                else if (shepherd7.GetComponent<ShepherdManager7>().getDesFlag(8))
+                {
+                    text[6].GetComponent<TextMesh>().text = "제발 도와주세요. 이번엔 진짜로 나타났다고요!";
+                    audioSource.clip = Page7_music[2]; audioSource.Play();
+                    shepherd7.GetComponent<ShepherdManager7>().setDesFlag(8, false);
+                }
+                else if (shepherd7.GetComponent<ShepherdManager7>().getDesFlag(7))
+                {
+                    text[6].GetComponent<TextMesh>().text = "양치기 소년이 호소했지만 \n마을사람들은 들은 체도 하지 않았어요.";
+                    audioSource.clip = Page7_music[3]; audioSource.Play();
+                    shepherd7.GetComponent<ShepherdManager7>().setDesFlag(7, false);
+                }
+                else if (shepherd7.GetComponent<ShepherdManager7>().getDesFlag(10))
+                {
+                    text[6].GetComponent<TextMesh>().text = "다음 페이지로 넘기세요.";
+                }
+
+            }
+
+
+        }//7페이지
+        #endregion
 
 
         #region 8페이지
