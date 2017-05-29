@@ -33,7 +33,7 @@ public class ShepherdManager3 : MonoBehaviour {
 
         anim = GetComponent<Animator>();
 
-        desFlag = new bool[10];
+        desFlag = new bool[11];
         for (int i = 0; i < desFlag.Length; i++)
             desFlag[i] = false;
         desFlag[0] = true;
@@ -164,6 +164,7 @@ public class ShepherdManager3 : MonoBehaviour {
         destination[5].SetActive(true);
 
         anim.SetBool("laugh", true);
+        desFlag[9] = true;
         yield return new WaitForSeconds(2.0f);
         anim.SetBool("laugh", false);
 
@@ -179,10 +180,11 @@ public class ShepherdManager3 : MonoBehaviour {
         desFlag[7] = true;
 
         anim.SetBool("laugh", true);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(8.0f);
         anim.SetBool("laugh", false);
         desFlag[8] = true;
-
+        yield return new WaitForSeconds(5.0f);
+        desFlag[10] = true;
     }
 
 
@@ -224,5 +226,9 @@ public class ShepherdManager3 : MonoBehaviour {
     public bool getDesFlag(int i)
     {
         return desFlag[i];
+    }
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
     }
 }

@@ -19,7 +19,7 @@ public class TextManager : MonoBehaviour {
 
     //3페
     public GameObject shepherd3;
-    public GameObject people3;
+    public GameObject[] people3;
     public AudioClip[] Page3_music;
 
 
@@ -43,6 +43,7 @@ public class TextManager : MonoBehaviour {
 
         makerFlag = new bool[8];
         for (int i = 0; i < 8; i++) makerFlag[i] = false;
+
     }
 
     void Update()
@@ -165,43 +166,50 @@ public class TextManager : MonoBehaviour {
                     audioSource.Play();
                     text[2].GetComponent<TextMesh>().text = "마을 사람들은 모두 몽둥이를 들고 \n목장으로 달려갔어요.";
                 }
-                else if (people3.GetComponent<People3>().getDesFlag(0))
+                else if (people3[0].GetComponent<People3>().getDesFlag(9))
                 {
                     //3
-                    text[2].GetComponent<TextMesh>().text = "여기에 느, 늑대가 나타났대요!";
+                    text[2].GetComponent<TextMesh>().text = "여, 여기에 늑대가 나타났다는 게냐!";
                     audioSource.clip = Page3_music[1]; audioSource.Play();
+                    people3[0].GetComponent<People3>().setDesFlag(9, false);
                 }
-                else if (people3.GetComponent<People3>().getDesFlag(2))
+                else if (people3[1].GetComponent<People3>().getDesFlag(9))
                 {
                     //2
-                    text[2].GetComponent<TextMesh>().text = "어디에? 어디에 있는 거야!";
+                    text[2].GetComponent<TextMesh>().text = "어디? 어디에 있는 거냐!";
+                    audioSource.Stop();
                     audioSource.clip = Page3_music[2]; audioSource.Play();
+                    people3[1].GetComponent<People3>().setDesFlag(9, false);
                 }
-                else if (people3.GetComponent<People3>().getTalkFlag())
+                else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(9))
                 {
                     //5
                     text[2].GetComponent<TextMesh>().text = "헤헤헤! 거짓말인데! \n심심해서 장난 좀 쳐본 거에요! 아하하!";
                     audioSource.clip = Page3_music[3]; audioSource.Play();
+                    shepherd3.GetComponent<ShepherdManager3>().setDesFlag(9, false);
                 }
-                else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(7))
+                else if (people3[0].GetComponent<People3>().getDesFlag(8))
                 {
                     //2
                     text[2].GetComponent<TextMesh>().text = "저런 못된 녀석 같으니라고!";
                     audioSource.clip = Page3_music[5]; audioSource.Play();
+                    people3[0].GetComponent<People3>().setDesFlag(8, false);
                 }
-                else if (people3.GetComponent<People3>().getDesFlag(4))
+                else if (people3[1].GetComponent<People3>().getDesFlag(8))
                 {
                     //2
                     text[2].GetComponent<TextMesh>().text = "어디서 저런 거짓말을 해!";
                     audioSource.clip = Page3_music[6]; audioSource.Play();
+                    people3[1].GetComponent<People3>().setDesFlag(8, false);
                 }
                 else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(8))
                 {
                     //3
                     text[2].GetComponent<TextMesh>().text = "마을 사람들은 화를 내며 돌아갔어요.";
                     audioSource.clip = Page3_music[4]; audioSource.Play();
+                    shepherd3.GetComponent<ShepherdManager3>().setDesFlag(8, false);
                 }
-                else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(9))
+                else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(10))
                 {
                     //
                     text[2].GetComponent<TextMesh>().text = "다음 페이지로 넘기세요.";

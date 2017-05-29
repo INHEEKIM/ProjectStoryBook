@@ -110,7 +110,8 @@ public class People3 : MonoBehaviour {
     {
         yield return new WaitForSeconds(delayTime);
         anim.CrossFade(anim_name + "_Talk");
-        yield return new WaitForSeconds(3.0f);
+        desFlag[9] = true;
+        yield return new WaitForSeconds(6.0f);
         anim.CrossFade(anim_name + "_Idle");
         //토크 끝.
         talkFlag = true;
@@ -122,6 +123,7 @@ public class People3 : MonoBehaviour {
     {
         yield return new WaitForSeconds(delayTime);
         anim.CrossFade(anim_name + "_Talk");
+        desFlag[8] = true;
         yield return new WaitForSeconds(backTime + 1.0f);
         anim.CrossFade(anim_name + "_Idle");
         desFlag[4] = !desFlag[4];
@@ -150,6 +152,11 @@ public class People3 : MonoBehaviour {
     {
         return desFlag[i];
     }
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
+    }
+
     public bool getTalkFlag()
     {
         return talkFlag;
