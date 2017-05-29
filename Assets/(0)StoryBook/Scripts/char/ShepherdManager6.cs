@@ -28,7 +28,7 @@ public class ShepherdManager6 : MonoBehaviour
     {
         mMarkerStateManager = GameObject.Find("MarkerManager").GetComponent<MarkerStateManager>();
         anim = GetComponent<Animator>();
-        desFlag = new bool[10];
+        desFlag = new bool[15];
         for (int i = 0; i < desFlag.Length; i++)
             desFlag[i] = false;
         desFlag[0] = true;
@@ -165,7 +165,8 @@ public class ShepherdManager6 : MonoBehaviour
     //기다렸다가 1목적지로.
     IEnumerator move1()
     {
-        yield return new WaitForSeconds(1.0f);
+        desFlag[14] = true;
+        yield return new WaitForSeconds(1.0f);       
         desFlag[2] = true;
     }
     //기다렸다가 2목적지로.
@@ -186,8 +187,9 @@ public class ShepherdManager6 : MonoBehaviour
     //늑대를 보고 놀람
     IEnumerator move6()
     {
+        desFlag[13] = true;
         anim.SetTrigger("jump");
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.0f);       
         desFlag[6] = false;
         delay = 0;
         desFlag[7] = true;
@@ -200,7 +202,7 @@ public class ShepherdManager6 : MonoBehaviour
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            Debug.Log("도착");
+            desFlag[12] = true;
             gameObject.SetActive(false);
 
         }
@@ -251,6 +253,9 @@ public class ShepherdManager6 : MonoBehaviour
     {
         return desFlag[i];
     }
-
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
+    }
 }
 

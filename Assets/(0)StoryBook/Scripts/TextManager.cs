@@ -33,9 +33,16 @@ public class TextManager : MonoBehaviour {
     public GameObject people5;
     public AudioClip[] Page5_music;
 
-
+    //6페
+    public GameObject shepherd6;
     public AudioClip[] Page6_music;
+
+    //7페
+    public GameObject shepherd7;
     public AudioClip[] Page7_music;
+
+    //8페
+    public GameObject shepherd8;
     public AudioClip[] Page8_music;
 
 
@@ -362,7 +369,88 @@ public class TextManager : MonoBehaviour {
         }//5페이지
         #endregion
 
+        #region 6페이지
+        if (mMarkerStateManager.getSixPageMarker() == MarkerStateManager.StateType.On)
+        {
+            //책 마커만 인식된 경우.
+            if (!makerFlag[5])
+            {
+                if (mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getWolfMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getSheepMarker() == MarkerStateManager.StateType.On
+                    )
+                    makerFlag[5] = true;
+                else
+                    text[5].GetComponent<TextMesh>().text = "양치기 카드와 늑대 카드와 양 카드를 비춰주세요.";
+            }
+            //캐릭터 카드가 인식된 후.
+            else
+            {
+                if (shepherd6.GetComponent<ShepherdManager6>().getDesFlag(14))
+                {
+                    audioSource.clip = Page6_music[0];
+                    audioSource.Play();
+                    text[5].GetComponent<TextMesh>().text = "그러던 어느 날, \n목장에 진짜 무시무시한 늑대가 나타났어요.";
+                    shepherd6.GetComponent<ShepherdManager6>().setDesFlag(14, false);
+                }
+                else if (shepherd6.GetComponent<ShepherdManager6>().getDesFlag(13))
+                {
+                    text[5].GetComponent<TextMesh>().text = "깜짝 놀란 소년은 \n마을을 향해 부리나케 달려갔답니다.";
+                    audioSource.clip = Page6_music[1]; audioSource.Play();
+                    shepherd6.GetComponent<ShepherdManager6>().setDesFlag(13, false);
+                }
+                else if (shepherd6.GetComponent<ShepherdManager6>().getDesFlag(12))
+                {
+                    text[5].GetComponent<TextMesh>().text = "다음 페이지로 넘기세요.";
+                }
 
+            }
+
+
+        }//6페이지
+        #endregion
+
+
+
+        #region 8페이지
+        if (mMarkerStateManager.getEightPageMarker() == MarkerStateManager.StateType.On)
+        {
+            //책 마커만 인식된 경우.
+            if (!makerFlag[7])
+            {
+                if (mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getWolfMarker() == MarkerStateManager.StateType.On &&
+                    mMarkerStateManager.getSheepMarker() == MarkerStateManager.StateType.On
+                    )
+                    makerFlag[7] = true;
+                else
+                    text[7].GetComponent<TextMesh>().text = "양치기 카드와 늑대 카드와 양 카드를 비춰주세요.";
+            }
+            //캐릭터 카드가 인식된 후.
+            else
+            {
+                if (shepherd8.GetComponent<ShepherdManager8>().getDesFlag(0))
+                {
+                    audioSource.clip = Page8_music[0];
+                    audioSource.Play();
+                    text[7].GetComponent<TextMesh>().text = "그 틈에 늑대는 양들을 몽땅 잡아먹어 버렸답니다.";
+                }
+                else if (shepherd8.GetComponent<ShepherdManager8>().getDesFlag(5))
+                {
+                    text[7].GetComponent<TextMesh>().text = "어떡해! 내 양들!";
+                    audioSource.clip = Page8_music[1]; audioSource.Play();
+                    shepherd8.GetComponent<ShepherdManager8>().setDesFlag(5, false);
+                }
+                else if (shepherd8.GetComponent<ShepherdManager8>().getDesFlag(6))
+                {
+                    text[7].GetComponent<TextMesh>().text = "끝.";
+                }
+
+            }
+
+
+        }//8페이지
+        #endregion
     }
 
 

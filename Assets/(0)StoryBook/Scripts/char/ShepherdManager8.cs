@@ -128,7 +128,10 @@ public class ShepherdManager8 : MonoBehaviour {
         yield return new WaitForSeconds(0.1f);
         desFlag[4] = false;
         delay = 0;
+        yield return new WaitForSeconds(2.0f);
         desFlag[5] = true;
+        yield return new WaitForSeconds(6.0f);
+        desFlag[6] = true;
     }
 
 
@@ -139,7 +142,6 @@ public class ShepherdManager8 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            Debug.Log("도착");
             gameObject.SetActive(false);
 
         }
@@ -176,5 +178,9 @@ public class ShepherdManager8 : MonoBehaviour {
     public bool getDesFlag(int i)
     {
         return desFlag[i];
+    }
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
     }
 }

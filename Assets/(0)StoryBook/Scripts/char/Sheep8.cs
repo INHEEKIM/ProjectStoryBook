@@ -40,7 +40,7 @@ public class Sheep8 : MonoBehaviour {
 
     void Update()
     {
-        if (mMarkerStateManager.getSixPageMarker() == MarkerStateManager.StateType.On)
+        if (mMarkerStateManager.getEightPageMarker() == MarkerStateManager.StateType.On)
             Move();
     }
 

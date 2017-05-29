@@ -191,7 +191,14 @@ public class ShepherdManager7 : MonoBehaviour {
         }
 
     }
-
+    public void setDesFlag(int i, bool b)
+    {
+        desFlag[i] = b;
+    }
+    public bool getDesFlag(int i)
+    {
+        return desFlag[i];
+    }
 
 
 }
