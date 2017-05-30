@@ -47,16 +47,18 @@ public class GameManager : MonoBehaviour {
             if (viewTriggerAR[i].getMTriggered())
             {
                 arTrigger[i] = true;
-                vrTrigger[i] = false;
-
+                VuforiaARController.Instance.SetWorldCenterMode(Vuforia.VuforiaARController.WorldCenterMode.DEVICE_TRACKING);
+                Debug.Log(VuforiaARController.Instance.WorldCenterModeSetting);
+                viewTriggerAR[i].setMTriggered(false);
             }
             if (viewTriggerVR[i].getMTriggered())
             {
                 vrTrigger[i] = true;
-                arTrigger[i] = false;
                 VuforiaARController.Instance.SetWorldCenterMode(Vuforia.VuforiaARController.WorldCenterMode.FIRST_TARGET);
                 //Debug.Log(VuforiaARController.Instance.WorldCenter);
-                //Debug.Log(VuforiaARController.Instance.WorldCenterModeSetting);
+                Debug.Log(VuforiaARController.Instance.WorldCenterModeSetting);
+                viewTriggerVR[i].setMTriggered(false);
+
             }
         }
     }

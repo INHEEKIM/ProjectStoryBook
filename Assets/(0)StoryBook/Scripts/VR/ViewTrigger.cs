@@ -143,6 +143,10 @@ public class ViewTrigger : MonoBehaviour
     {
         return mTriggered;
     }
+    public void setMTriggered(bool b)
+    {
+        mTriggered = b;
+    }
 
 }
 
