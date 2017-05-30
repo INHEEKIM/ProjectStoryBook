@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Vuforia;
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
@@ -44,9 +45,19 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < 3; i++)
         {
             if (viewTriggerAR[i].getMTriggered())
+            {
                 arTrigger[i] = true;
+                vrTrigger[i] = false;
+
+            }
             if (viewTriggerVR[i].getMTriggered())
+            {
                 vrTrigger[i] = true;
+                arTrigger[i] = false;
+                VuforiaARController.Instance.SetWorldCenterMode(Vuforia.VuforiaARController.WorldCenterMode.FIRST_TARGET);
+                //Debug.Log(VuforiaARController.Instance.WorldCenter);
+                //Debug.Log(VuforiaARController.Instance.WorldCenterModeSetting);
+            }
         }
     }
 

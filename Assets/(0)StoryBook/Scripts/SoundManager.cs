@@ -31,53 +31,6 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(Sound);
     }
 
-    //void Update()
-    //{
-    //    //if (markerManager.getOnePageMarker() == MarkerStateManager.StateType.On)
-    //    //{
-    //    //    audioSource.clip = Page1_music;
-    //    //}
-    //    if(audioSource.isPlaying == false)
-    //    {
-    //        switch ((int)markerManager.getBookMarkerPageNumber())
-    //        {
-    //            case 1:
-    //                audioSource.clip = Page1_music;
-    //                SoundSetup = false;
-    //                break;
-    //            case 2:
-    //                audioSource.clip = Page2_music;
-    //                SoundSetup = false;
-    //                break;
-    //            case 3:
-    //                audioSource.clip = Page3_music;
-    //                SoundSetup = false;
-    //                break;
-    //            case 4:
-    //                audioSource.clip = Page4_music;
-    //                SoundSetup = false;
-    //                break;
-    //            case 5:
-    //                audioSource.clip = Page5_music;
-    //                SoundSetup = false;
-    //                break;
-    //            case 6:
-    //                audioSource.clip = Page6_music;
-    //                SoundSetup = false;
-    //                break;
-    //            case 7:
-    //                audioSource.clip = Page7_music;
-    //                SoundSetup = false;
-    //                break;
-    //            case 8:
-    //                audioSource.clip = Page8_music;
-    //                SoundSetup = false;
-    //                break;
-
-    //        }
-    //    }
-    //}
-
     IEnumerator SoundCall()
     {
         while (true)
@@ -128,8 +81,13 @@ public class SoundManager : MonoBehaviour
                 yield return null;
             }
 
-
-            if (markerManager.getOnePageMarker() == MarkerStateManager.StateType.Off &&
+            if (GameManager.manager.getARTrigger(0) 
+                || GameManager.manager.getARTrigger(1) 
+                || GameManager.manager.getARTrigger(2))
+            {
+                yield return audioSource.mute = false;
+            }
+            else if (markerManager.getOnePageMarker() == MarkerStateManager.StateType.Off &&
                 markerManager.getTwoPageMarker() == MarkerStateManager.StateType.Off &&
                 markerManager.getThreePageMarker() == MarkerStateManager.StateType.Off &&
                 markerManager.getFourPageMarker() == MarkerStateManager.StateType.Off &&
@@ -140,9 +98,9 @@ public class SoundManager : MonoBehaviour
             {
                 yield return audioSource.mute = true;
             }
-            else
+            else  yield return audioSource.mute = false;
             {
-                yield return audioSource.mute = false;
+              
             }
 
 

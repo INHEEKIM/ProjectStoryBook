@@ -52,6 +52,7 @@ public class TextManager : MonoBehaviour {
 
     private MarkerStateManager mMarkerStateManager;
 
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -115,7 +116,9 @@ public class TextManager : MonoBehaviour {
         #endregion
 
         #region 2페이지
-        if (mMarkerStateManager.getTwoPageMarker() == MarkerStateManager.StateType.On)
+
+        //vr
+        if (GameManager.manager.getARTrigger(0))
         {
             //vr일 때.
             if (shoutButton2[0].GetComponent<ViewButtonTrigger>().voiceTrigger)
@@ -130,8 +133,10 @@ public class TextManager : MonoBehaviour {
                 audioSource.Play();
                 shoutButton2[1].GetComponent<ViewButtonTrigger>().voiceTrigger = false;
             }
-
-
+        }
+        //ar
+        if (mMarkerStateManager.getTwoPageMarker() == MarkerStateManager.StateType.On)
+        {             
             //책 마커만 인식된 경우.
             if (!makerFlag[1])
             {
@@ -412,7 +417,9 @@ public class TextManager : MonoBehaviour {
         #endregion
 
         #region 7페이지
-        if (mMarkerStateManager.getSevenPageMarker() == MarkerStateManager.StateType.On)
+
+        //vr
+        if (GameManager.manager.getARTrigger(2))
         {
             //vr일 때.
             if (shoutButton7[0].GetComponent<ViewButtonTrigger>().voiceTrigger)
@@ -427,8 +434,10 @@ public class TextManager : MonoBehaviour {
                 audioSource.Play();
                 shoutButton7[1].GetComponent<ViewButtonTrigger>().voiceTrigger = false;
             }
+        }
 
-
+        if (mMarkerStateManager.getSevenPageMarker() == MarkerStateManager.StateType.On)
+        {
             //책 마커만 인식된 경우.
             if (!makerFlag[6])
             {
