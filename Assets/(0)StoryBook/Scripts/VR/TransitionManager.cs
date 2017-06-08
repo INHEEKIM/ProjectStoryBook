@@ -198,7 +198,7 @@ public class TransitionManager : MonoBehaviour
         {
             //조건문 만약 isFullScreenMode가 참이면 Mode.Handheld_AR을 반환
             //거짓이면 Mode.Viewer_AR를 반환
-           //
+            //
             return ModeConfig.isFullScreenMode ?
                 MixedRealityController.Mode.HANDHELD_AR : MixedRealityController.Mode.VIEWER_AR;
         }
@@ -258,7 +258,9 @@ public class TransitionManager : MonoBehaviour
             }
             else
             {
-               
+                mTransitionManager.VROnlyObjects[0].SetActive(false); //1
+                mTransitionManager.VROnlyObjects[1].SetActive(false); //2
+                mTransitionManager.VROnlyObjects[2].SetActive(false); //3
                 go.SetActive(false);
             }           
         }
