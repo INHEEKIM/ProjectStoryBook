@@ -5,6 +5,8 @@ public class People2 : MonoBehaviour {
 
     //양치기
     public GameObject shepherd;
+    //목적지
+    public GameObject destination;
     //동작 순서 체크
     private bool[] desFlag;
 
@@ -70,15 +72,15 @@ public class People2 : MonoBehaviour {
                 StartCoroutine("move2");
             }
         }
-        //양치기 따라감.
+        //양치기 따라가는 듯
         else if (desFlag[3])
         {
             anim.CrossFade(anim_name + "_Walk");
-            Vector3 vDirection = shepherd.transform.position - transform.position;
+            Vector3 vDirection = destination.transform.position - transform.position;
             Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
             transform.position += vMoveVector;
 
-            Quaternion turretRotation = Quaternion.LookRotation(shepherd.transform.position - transform.position);
+            Quaternion turretRotation = Quaternion.LookRotation(destination.transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
         }
 

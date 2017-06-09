@@ -7,6 +7,7 @@ countries.
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class ViewTrigger : MonoBehaviour
 {
@@ -148,5 +149,9 @@ public class ViewTrigger : MonoBehaviour
         mTriggered = b;
     }
 
+    public static implicit operator ViewTrigger(bool v)
+    {
+        throw new NotImplementedException();
+    }
 }
 

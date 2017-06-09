@@ -166,13 +166,6 @@ public class ShepherdManager1 : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
         desFlag[5] = true;
     }
-    IEnumerator end()
-    {
-        anim.SetBool("run", false);
-        yield return new WaitForSeconds(0.5f);
-        gameObject.SetActive(false);
-
-    }
 
 
 
