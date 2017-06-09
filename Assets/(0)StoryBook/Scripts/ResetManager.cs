@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Vuforia;
 
 public class ResetManager : MonoBehaviour {
 
 
     //버튼
+    public GameObject[] button;
     public ViewButtonTrigger[] viewButtonTrigger;
 
     //양치기
@@ -40,14 +42,17 @@ public class ResetManager : MonoBehaviour {
     public GameObject[] des8;
 
 
+    //마커인식
+    public GameObject card;
+    CardVillagerTrackableEvantHandler cardHandler;
 
+    //텍스트 인식
+    public TextManager textManager;
 
-    // Use this for initialization
     void Start () {
-	
+        cardHandler = card.GetComponent<CardVillagerTrackableEvantHandler>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
         if (viewButtonTrigger[0].boolTrigger)
@@ -62,7 +67,12 @@ public class ResetManager : MonoBehaviour {
     //1페이지 초기화
     void resetPage1()
     {
+        button[0].SetActive(true);
         viewButtonTrigger[0].boolTrigger = false;
+        viewButtonTrigger[0].mTriggered = false;
+
+        textManager.setMakerFlag(0, true);
+
         shepherd[0].transform.position = shepherdPosition[0].transform.position;
         shepherd[0].transform.rotation = shepherdPosition[0].transform.rotation;
         shepherd[0].SetActive(true);

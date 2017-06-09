@@ -477,7 +477,10 @@ public class TextManager : MonoBehaviour {
         #endregion
     }
 
-
+    public void setMakerFlag(int i, bool b)
+    {
+        makerFlag[i] = b;
+    }
 
 }
 
