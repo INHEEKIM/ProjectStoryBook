@@ -29,6 +29,8 @@ namespace Vuforia
         //양
         public GameObject[] sheep;
 
+        //첫번째 인식
+        public bool[] flag;
 
         private bool moveTrigger = false;
 
@@ -49,6 +51,10 @@ namespace Vuforia
             {
                 mTrackableBehaviour.RegisterTrackableEventHandler(this);
             }
+
+            flag = new bool[8];
+            for (int i = 0; i < flag.Length; i++)
+                flag[i] = false;
         }
         
 
@@ -81,74 +87,90 @@ namespace Vuforia
 
                 //1Paga와 마커를 찾으면
                 if (mMarkerStateManager.getOnePageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On)
+                    mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On
+                    && flag[0] == false)
                 {
                     MaleCivilian[0].SetActive(true);
+                    flag[0] = true;
                 }
 
                 //2Paga와 마커, 마을사람
                 if (mMarkerStateManager.getTwoPageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
+                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On
+                    && flag[1] == false)
                 {
                     MaleCivilian[1].SetActive(true);
+                    flag[1] = true;
                 }
 
                 //3Paga와 마커를 찾으면
                 if (mMarkerStateManager.getThreePageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
+                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On
+                    && flag[2] == false)
                 {
                     MaleCivilian[2].SetActive(true);
+                    flag[2] = true;
                 }
 
                 //4Paga와 마커를 찾으면
                 if (mMarkerStateManager.getFourPageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
+                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On
+                    && flag[3] == false)
                 {
                         MaleCivilian[3].SetActive(true);
                         People.SetActive(true);
-                    
+                    flag[3] = true;
+
                 }
 
                 //5Paga와 마커를 찾으면
                 if (mMarkerStateManager.getFivePageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On)
+                    mMarkerStateManager.getPersonsMarker() == MarkerStateManager.StateType.On
+                    && flag[4] == false)
                 {
                     MaleCivilian[4].SetActive(true);
+                    flag[4] = true;
                 }
 
                 //6Paga와 마커를 찾으면
                 if (mMarkerStateManager.getSixPageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getSheepMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getWolfMarker() == MarkerStateManager.StateType.On)
+                    mMarkerStateManager.getWolfMarker() == MarkerStateManager.StateType.On
+                    && flag[5] == false)
                 {
                     MaleCivilian[5].SetActive(true);
                     Wolf.SetActive(true);
                     sheep[0].SetActive(true);
                     sheep[1].SetActive(true);
                     sheep[2].SetActive(true);
+                    flag[5] = true;
                 }
 
                 //7Paga와 마커를 찾으면
                 if (mMarkerStateManager.getSevenPageMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On)
+                    mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On
+                    && flag[6] == false)
                 {
                     MaleCivilian[6].SetActive(true);
+                    flag[6] = true;
                 }
 
                 //8Page와 마커를 찾으면
                 if (mMarkerStateManager.getEightPageMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getCharMarker() == MarkerStateManager.StateType.On &&
                     mMarkerStateManager.getSheepMarker() == MarkerStateManager.StateType.On &&
-                    mMarkerStateManager.getWolfMarker() == MarkerStateManager.StateType.On)
+                    mMarkerStateManager.getWolfMarker() == MarkerStateManager.StateType.On
+                    && flag[7] == false)
                 {
                     MaleCivilian[7].SetActive(true);
                     sheep[3].SetActive(true);
                     sheep[4].SetActive(true);
+                    flag[7] = true;
                 }
 
             }

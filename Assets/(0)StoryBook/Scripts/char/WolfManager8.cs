@@ -122,4 +122,10 @@ public class WolfManager8 : MonoBehaviour {
         }
 
     }
+    public void resetDesFlag()
+    {
+        for (int i = 0; i < desFlag.Length; i++)
+            desFlag[i] = false;
+        desFlag[0] = true;
+    }
 }

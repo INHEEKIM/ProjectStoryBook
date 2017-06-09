@@ -215,5 +215,11 @@ public class ShepherdManager2 : MonoBehaviour {
     {
         return talkFlag;
     }
+    public void resetDesFlag()
+    {
+        for (int i = 0; i < desFlag.Length; i++)
+            desFlag[i] = false;
+        desFlag[0] = true;
 
+    }
 }

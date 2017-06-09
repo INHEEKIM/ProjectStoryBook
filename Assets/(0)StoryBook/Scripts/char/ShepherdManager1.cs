@@ -8,6 +8,8 @@ public class ShepherdManager1 : MonoBehaviour {
     //동작 순서 체크
     private bool[] desFlag;
 
+    //끝나고 임시 위치
+    public GameObject position;
 
     //속도
     private float walkSpeed = 15.0f;
@@ -42,6 +44,16 @@ public class ShepherdManager1 : MonoBehaviour {
         ////인식 후 토크 애니메이션 1번
         if (desFlag[0])
         {
+            StopCoroutine("move0");
+            StopCoroutine("move2");
+            StopCoroutine("move4");
+
+            anim.SetBool("walk", false);
+            anim.SetBool("run", false);
+            anim.SetBool("laugh", false);
+            anim.SetTrigger("idle");
+
+
             desFlag[0] = !desFlag[0];
             StartCoroutine("move0");
         }
@@ -112,11 +124,15 @@ public class ShepherdManager1 : MonoBehaviour {
         // 4목적지로.
         else if (desFlag[7])
         {
-            anim.SetBool("run", true);
+            if (Vector3.Distance(transform.position, destination[4].transform.position) > minDistance)
+            {
 
-            Vector3 vDirection = destination[4].transform.position - transform.position;
-            Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
-            transform.position += vMoveVector;
+                anim.SetBool("run", true);
+
+                Vector3 vDirection = destination[4].transform.position - transform.position;
+                Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
+                transform.position += vMoveVector;
+            }
         }
 
 
@@ -150,6 +166,14 @@ public class ShepherdManager1 : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
         desFlag[5] = true;
     }
+    IEnumerator end()
+    {
+        anim.SetBool("run", false);
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
+
+    }
+
 
 
     //충돌
@@ -158,22 +182,19 @@ public class ShepherdManager1 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            Debug.Log("도착");
-            gameObject.SetActive(false);
+            desFlag[7] = false;
+
+            anim.SetBool("run", false);
+            gameObject.transform.position = position.transform.position;
+
             desFlag[8] = true;
         }
 
         //중간 목적지 충돌.
         if (coll.tag == "destination")
         {
-            //4목적지. 
-            if (desFlag[7] == true)
-            {
-                desFlag[7] = false;
-                destination[4].SetActive(false);
-            }
             //3목적지. 
-            else if(desFlag[6] == true)
+            if(desFlag[6] == true)
             {
                 desFlag[6] = false;
                 desFlag[7] = true;
@@ -208,6 +229,13 @@ public class ShepherdManager1 : MonoBehaviour {
     public bool getDesFlag(int i)
     {
         return desFlag[i];
+    }
+    public void resetDesFlag()
+    {
+        for (int i = 0; i < desFlag.Length; i++)
+            desFlag[i] = false;
+        desFlag[0] = true;
+
     }
 
 

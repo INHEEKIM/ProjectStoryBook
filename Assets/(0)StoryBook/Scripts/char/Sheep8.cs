@@ -145,4 +145,10 @@ public class Sheep8 : MonoBehaviour {
     {
         return desFlag[i];
     }
+    public void resetDesFlag()
+    {
+        for (int i = 0; i < desFlag.Length; i++)
+            desFlag[i] = false;
+        desFlag[0] = true;
+    }
 }
