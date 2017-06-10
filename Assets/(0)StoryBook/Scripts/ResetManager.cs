@@ -36,15 +36,15 @@ public class ResetManager : MonoBehaviour {
     public GameObject[] sheep6;
     public GameObject[] sheep6Position;
     public GameObject[] sheep8;
-    public GameObject[] sheep8Position;
+    public GameObject sheep8Position;
     //목적지
     public GameObject[] des1;   //다 켬
     public GameObject[] des2;   //다 켬
-    public GameObject[] des3;   //마지막꺼 false해줘야
+    public GameObject[] des3;   
     public GameObject[] des4;
-    public GameObject[] des5; //마지막꺼 false해줘야
+    public GameObject[] des5; 
     public GameObject[] des6;
-    public GameObject[] des7; //마지막꺼 false해줘야
+    public GameObject[] des7; 
     public GameObject[] des8;
 
 
@@ -70,10 +70,22 @@ public class ResetManager : MonoBehaviour {
         if (viewButtonTrigger[1].boolTrigger)
             resetPage2();
 
+        //4페
+        if (viewButtonTrigger[3].boolTrigger)
+            resetPage4();
+        //5페
+        if (viewButtonTrigger[4].boolTrigger)
+            resetPage5();
+        //6페
+        if (viewButtonTrigger[5].boolTrigger)
+            resetPage6();
+        //8페
+        if (viewButtonTrigger[7].boolTrigger)
+            resetPage8();
+
     }
 
-
-    //1페이지 초기화
+    #region 1페이지 초기화
     void resetPage1()
     {
         button[0].SetActive(true);
@@ -89,8 +101,9 @@ public class ResetManager : MonoBehaviour {
         shepherd[0].GetComponent<ShepherdManager1>().resetDesFlag();
         for (int i = 0; i < des1.Length; i++) des1[i].SetActive(true);
     }
+    #endregion
 
-    //2페이지 초기화
+    #region 2페이지 초기화
     void resetPage2()
     {
         //다시보기 버튼 초기화
@@ -133,13 +146,166 @@ public class ResetManager : MonoBehaviour {
  
 
     }
+    #endregion
 
 
+    #region 4페이지 초기화
+    void resetPage4()
+    {
+        button[3].SetActive(true);
+        viewButtonTrigger[3].boolTrigger = false;
+        viewButtonTrigger[3].mTriggered = false;
+
+        textManager.setMakerFlag(3, true);
+
+        //양치기
+        shepherd[3].transform.position = shepherdPosition[3].transform.position;
+        shepherd[3].transform.rotation = shepherdPosition[3].transform.rotation;
+        shepherd[3].SetActive(true);
+        shepherd[3].GetComponent<ShepherdManager4>().resetDesFlag();
+        
+        //나무꾼
+        people4[0].transform.position = people4Position[0].transform.position;
+        people4[0].transform.rotation = people4Position[0].transform.rotation;
+        people4[0].SetActive(true);
+        people4[0].GetComponent<WoodCutter4>().resetDesFlag();
+
+        //나머지
+        people4[1].transform.position = people4Position[1].transform.position;
+        people4[1].transform.rotation = people4Position[1].transform.rotation;
+        people4[1].SetActive(false);
+        people4[1].GetComponent<People4>().resetDesFlag();
+        people4[2].transform.position = people4Position[2].transform.position;
+        people4[2].transform.rotation = people4Position[2].transform.rotation;
+        people4[2].SetActive(false);
+        people4[2].GetComponent<People4>().resetDesFlag();
+
+        //목적지
+        for (int i = 0; i < des4.Length; i++) des4[i].SetActive(true);
 
 
+    }
+
+    #endregion
+
+    #region 5페이지 초기화
+    void resetPage5()
+    {
+        button[4].SetActive(true);
+        viewButtonTrigger[4].boolTrigger = false;
+        viewButtonTrigger[4].mTriggered = false;
+
+        textManager.setMakerFlag(4, true);
+
+        //양치기
+        shepherd[4].transform.position = shepherdPosition[4].transform.position;
+        shepherd[4].transform.rotation = shepherdPosition[4].transform.rotation;
+        shepherd[4].SetActive(true);
+        shepherd[4].GetComponent<ShepherdManager5>().resetDesFlag();
+
+        people5[0].transform.position = people5Position[0].transform.position;
+        people5[0].transform.rotation = people5Position[0].transform.rotation;
+        people5[0].GetComponent<People5>().resetDesFlag();
+        people5[0].SetActive(false);
+        people5[1].transform.position = people5Position[1].transform.position;
+        people5[1].transform.rotation = people5Position[1].transform.rotation;
+        people5[1].GetComponent<People5>().resetDesFlag();
+        people5[1].SetActive(false);
+        people5[2].transform.position = people5Position[2].transform.position;
+        people5[2].transform.rotation = people5Position[2].transform.rotation;
+        people5[2].GetComponent<People5>().resetDesFlag();
+        people5[2].SetActive(false);
+
+        //목적지
+        for (int i = 0; i < 7; i++) des5[i].SetActive(true);
+        for (int i = 7; i < des5.Length; i++) des5[i].SetActive(false);
 
 
+    }
 
+    #endregion
+
+    #region 6페이지 초기화
+    void resetPage6()
+    {
+        button[5].SetActive(true);
+        viewButtonTrigger[5].boolTrigger = false;
+        viewButtonTrigger[5].mTriggered = false;
+
+        textManager.setMakerFlag(5, true);
+
+        //양치기
+        shepherd[5].transform.position = shepherdPosition[5].transform.position;
+        shepherd[5].transform.rotation = shepherdPosition[5].transform.rotation;
+        shepherd[5].SetActive(true);
+        shepherd[5].GetComponent<ShepherdManager6>().resetDesFlag();
+
+        //늑대
+        wolf6.transform.position = wolf6Position.transform.position;
+        wolf6.transform.rotation = wolf6Position.transform.rotation;
+        wolf6.SetActive(true);
+        wolf6.GetComponent<WolfManager6>().resetDesFlag();
+
+        //양
+        sheep6[0].transform.position = sheep6Position[0].transform.position;
+        sheep6[0].transform.rotation = sheep6Position[0].transform.rotation;
+        sheep6[0].SetActive(true);
+        sheep6[0].GetComponent<Sheep6>().resetDesFlag();
+        sheep6[1].transform.position = sheep6Position[1].transform.position;
+        sheep6[1].transform.rotation = sheep6Position[1].transform.rotation;
+        sheep6[1].SetActive(true);
+        sheep6[1].GetComponent<Sheep6>().resetDesFlag();
+        sheep6[2].transform.position = sheep6Position[2].transform.position;
+        sheep6[2].transform.rotation = sheep6Position[2].transform.rotation;
+        sheep6[2].SetActive(true);
+        sheep6[2].GetComponent<Sheep6>().resetDesFlag();
+
+        //목적지
+        for (int i = 0; i < des6.Length; i++) des6[i].SetActive(true);
+
+
+    }
+
+    #endregion
+
+
+    #region 8페이지 초기화
+    void resetPage8()
+    {
+        button[7].SetActive(true);
+        viewButtonTrigger[7].boolTrigger = false;
+        viewButtonTrigger[7].mTriggered = false;
+
+        textManager.setMakerFlag(7, true);
+
+        //양치기
+        shepherd[7].transform.position = shepherdPosition[7].transform.position;
+        shepherd[7].transform.rotation = shepherdPosition[7].transform.rotation;
+        shepherd[7].SetActive(true);
+        shepherd[7].GetComponent<ShepherdManager8>().resetDesFlag();
+
+        sheep8[1].SetActive(true);
+        sheep8[2].SetActive(true);
+
+        //늑대
+        wolf8.transform.position = wolf8Position.transform.position;
+        wolf8.transform.rotation = wolf8Position.transform.rotation;
+        wolf8.GetComponent<WolfManager8>().resetDesFlag();
+        wolf8.SetActive(false);
+
+        //양
+        sheep8[0].transform.position = sheep8Position.transform.position;
+        sheep8[0].transform.rotation = sheep8Position.transform.rotation;
+        sheep8[0].GetComponent<Sheep8>().resetDesFlag();
+        sheep8[0].SetActive(false);
+
+        //목적지
+        for (int i = 0; i < des8.Length; i++) des8[i].SetActive(true);
+
+
+    }
+
+    #endregion
 
 
 

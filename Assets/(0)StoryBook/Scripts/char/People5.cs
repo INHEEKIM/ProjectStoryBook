@@ -20,6 +20,9 @@ public class People5 : MonoBehaviour {
     //돌아갈 때 시간
     public float backTime = 1.0f;
 
+    //끝나고 임시 위치
+    public GameObject position;
+
     //속도
     private float runSpeed = 35.0f;
     private float minDistance = 0.1f;
@@ -56,6 +59,9 @@ public class People5 : MonoBehaviour {
         //각자 위치로.
         if (desFlag[0])
         {
+            StopCoroutine("move1");
+            StopCoroutine("move2");
+
             anim.CrossFade(anim_name + "_Walk");
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
             {
@@ -141,14 +147,21 @@ public class People5 : MonoBehaviour {
         if (coll.tag == "LastDestination")
         {
             desFlag[7] = true;
-            gameObject.SetActive(false);
+
+            desFlag[3] = false;
+            anim.CrossFade(anim_name + "_Idle");
+
+            gameObject.transform.position = position.transform.position;
         }
-        //0목적지. 
-        if (desFlag[0] == true)
+        if (coll.tag == "destination")
         {
-            desFlag[0] = false;
-            desFlag[1] = true;
-            destination[0].SetActive(false);
+            //0목적지. 
+            if (desFlag[0] == true)
+            {
+                desFlag[0] = false;
+                desFlag[1] = true;
+                destination[0].SetActive(false);
+            }
         }
     }
 

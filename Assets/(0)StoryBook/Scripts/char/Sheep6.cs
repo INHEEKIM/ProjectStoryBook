@@ -14,6 +14,8 @@ public class Sheep6 : MonoBehaviour {
     //대기 시간
     public float delayTime = 1.0f;
 
+    //끝나고 임시 위치
+    public GameObject position;
 
     //속도
     private float runSpeed = 25.0f;
@@ -48,6 +50,10 @@ public class Sheep6 : MonoBehaviour {
         {
             if (wolfManager.getDesFlag(1))
             {
+                StopCoroutine("move0");
+
+                anim.SetBool("run", false);
+
                 desFlag[0] = !desFlag[0];
                 StartCoroutine("move0");
             }
@@ -85,7 +91,9 @@ public class Sheep6 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            gameObject.SetActive(false);
+            desFlag[1] = false;
+            anim.SetBool("run", false);
+            gameObject.transform.position = position.transform.position;
         }
 
     }

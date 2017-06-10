@@ -13,6 +13,9 @@ public class People4 : MonoBehaviour {
     //딜레이 횟수 체크
     private int delay = 0;
 
+    //끝나고 임시 위치
+    public GameObject position;
+
     //속도
     private float runSpeed = 33.0f;
     private float minDistance = 0.1f;
@@ -52,6 +55,11 @@ public class People4 : MonoBehaviour {
         //양치기가 늑대가 나타났다고 외침.
         if (desFlag[0])
         {
+            StopCoroutine("move2");
+            StopCoroutine("move3");
+            anim.Stop();
+
+
             if (shepherdManager.getDesFlag(2))
             {
                 desFlag[0] = !desFlag[0];
@@ -101,11 +109,11 @@ public class People4 : MonoBehaviour {
         else if (desFlag[4])
         {
             anim.CrossFade(anim_name + "_Walk");
-            Vector3 vDirection = shepherd.transform.position - transform.position;
+            Vector3 vDirection = destination[1].transform.position - transform.position;
             Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
             transform.position += vMoveVector;
 
-            Quaternion turretRotation = Quaternion.LookRotation(shepherd.transform.position - transform.position);
+            Quaternion turretRotation = Quaternion.LookRotation(destination[1].transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
         }
 
@@ -137,7 +145,10 @@ public class People4 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            gameObject.SetActive(false);
+            desFlag[4] = false;
+            anim.CrossFade(anim_name + "_Idle");
+
+            gameObject.transform.position = position.transform.position;
         }
 
         //중간 목적지 충돌.

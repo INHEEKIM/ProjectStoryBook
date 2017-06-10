@@ -13,6 +13,8 @@ public class WolfManager8 : MonoBehaviour {
     //딜레이 횟수 체크
     private int delay = 0;
 
+    //끝나고 임시 위치
+    public GameObject position;
 
     //속도
     private float runSpeed = 45.0f;
@@ -47,6 +49,12 @@ public class WolfManager8 : MonoBehaviour {
         //양 쫓아감.
         if (desFlag[0])
         {
+            StopCoroutine("move1");
+            StopCoroutine("move00");
+
+            anim.SetBool("Run", false);
+            delay = 0;
+
             if (Vector3.Distance(transform.position, sheep.transform.position) > minDistance)
             {
                 anim.SetBool("Run", true);
@@ -111,14 +119,16 @@ public class WolfManager8 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            gameObject.SetActive(false);
+            desFlag[2] = false;
+            anim.SetBool("Run", false);
+            gameObject.transform.position = position.transform.position;
         }
 
         //양
         if (coll.tag == "sheep")
         {
             if(desFlag[0])
-            StartCoroutine("move00");
+                StartCoroutine("move00");
         }
 
     }

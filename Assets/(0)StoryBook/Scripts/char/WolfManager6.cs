@@ -16,6 +16,9 @@ public class WolfManager6 : MonoBehaviour {
     private int delay = 0;
 
 
+    //끝나고 임시 위치
+    public GameObject position;
+
     //속도
     private float walkSpeed = 20.0f;
     private float runSpeed = 45.0f;
@@ -51,11 +54,14 @@ public class WolfManager6 : MonoBehaviour {
     {
         if (desFlag[0])
         {
-            //if (shepherdManager.getDesFlag(3))
-            //{
-                desFlag[0] = !desFlag[0];
-                StartCoroutine("move0");
-            //}
+            StopCoroutine("move0");
+
+            anim.SetBool("Walk", false);
+            anim.SetBool("Run", false);
+            delay = 0;
+
+            desFlag[0] = !desFlag[0];
+            StartCoroutine("move0");
         }
         //0번째 목적지로
         else if (desFlag[1])
@@ -76,21 +82,18 @@ public class WolfManager6 : MonoBehaviour {
         //양을 쫓아감.
         else if (desFlag[2])
         {
-            if (Vector3.Distance(transform.position, sheep.transform.position) > minDistance)
+            if (Vector3.Distance(transform.position, destination[1].transform.position) > minDistance)
             {
                 anim.SetBool("Run", true);
-                Vector3 vDirection = sheep.transform.position - transform.position;
+                Vector3 vDirection = destination[1].transform.position - transform.position;
                 Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
                 transform.position += vMoveVector;
 
-                Quaternion turretRotation = Quaternion.LookRotation(sheep.transform.position - transform.position);
+                Quaternion turretRotation = Quaternion.LookRotation(destination[1].transform.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
 
             }
         }
-
-
-
     }
 
 
@@ -108,7 +111,10 @@ public class WolfManager6 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            gameObject.SetActive(false);
+            desFlag[2] = false;
+            anim.SetBool("Run", false);
+            gameObject.transform.position = position.transform.position;
+
         }
         //중간 목적지 충돌.
         if (coll.tag == "destination")

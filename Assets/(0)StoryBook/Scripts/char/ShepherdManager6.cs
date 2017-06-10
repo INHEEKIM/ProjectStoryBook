@@ -15,6 +15,9 @@ public class ShepherdManager6 : MonoBehaviour
     private int delay = 0;
 
 
+    //끝나고 임시 위치
+    public GameObject position;
+
     //속도
     private float walkSpeed = 15.0f;
     private float runSpeed = 35.0f;
@@ -46,6 +49,17 @@ public class ShepherdManager6 : MonoBehaviour
         //0번째 목적지로
         if (desFlag[0])
         {
+            StopCoroutine("move1");
+            StopCoroutine("move3");
+            StopCoroutine("move5");
+            StopCoroutine("move6");
+
+            anim.SetBool("walk", false);
+            anim.SetBool("run", false);
+            anim.SetBool("rrr", false);
+            anim.SetBool("laugh", false);
+            delay = 0;
+
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
             {
                 anim.SetBool("walk", true);
@@ -203,7 +217,9 @@ public class ShepherdManager6 : MonoBehaviour
         if (coll.tag == "LastDestination")
         {
             desFlag[12] = true;
-            gameObject.SetActive(false);
+            desFlag[9] = false;
+            anim.SetBool("rrr", false);
+            gameObject.transform.position = position.transform.position;
 
         }
 

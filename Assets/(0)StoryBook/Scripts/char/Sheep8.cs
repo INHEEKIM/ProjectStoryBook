@@ -49,6 +49,10 @@ public class Sheep8 : MonoBehaviour {
         //0번째 목적지로
         if (desFlag[0])
         {
+            StopCoroutine("move3");
+
+            anim.SetBool("run", false);
+
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
             {
                 anim.SetBool("run", true);

@@ -13,6 +13,10 @@ public class WoodCutter4 : MonoBehaviour {
     //딜레이 횟수 체크
     private int delay = 0;
 
+
+    //끝나고 임시 위치
+    public GameObject position;
+
     //속도
     private float runSpeed = 38.0f;
     private float minDistance = 0.1f;
@@ -47,6 +51,13 @@ public class WoodCutter4 : MonoBehaviour {
         //양치기가 늑대가 나타났다고 외침.
         if (desFlag[0])
         {
+            StopCoroutine("move3");
+            StopCoroutine("move4");
+            StopCoroutine("move5");
+            StopCoroutine("move6");
+            StopCoroutine("move7");
+            anim.CrossFade("WC_Work");
+
             if (shepherdManager.getDesFlag(2))
             {
                 desFlag[0] = !desFlag[0];
@@ -140,11 +151,11 @@ public class WoodCutter4 : MonoBehaviour {
         else if (desFlag[8])
         {
             anim.CrossFade("WC_Walk");
-            Vector3 vDirection = shepherd.transform.position - transform.position;
+            Vector3 vDirection = destination[4].transform.position - transform.position;
             Vector3 vMoveVector = vDirection.normalized * runSpeed * Time.deltaTime;
             transform.position += vMoveVector;
 
-            Quaternion turretRotation = Quaternion.LookRotation(shepherd.transform.position - transform.position);
+            Quaternion turretRotation = Quaternion.LookRotation(destination[4].transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, turretRotation, Time.deltaTime * 5f);
         }
 
@@ -198,7 +209,9 @@ public class WoodCutter4 : MonoBehaviour {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            gameObject.SetActive(false);
+            desFlag[8] = false;
+            anim.CrossFade("WC_Idle");
+            gameObject.transform.position = position.transform.position;
         }
 
         //중간 목적지 충돌.

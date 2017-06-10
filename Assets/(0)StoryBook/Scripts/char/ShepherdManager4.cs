@@ -16,6 +16,10 @@ public class ShepherdManager4 : MonoBehaviour {
     //딜레이 횟수 체크
     private int delay = 0;
 
+    //끝나고 임시 위치
+    public GameObject position;
+
+
     //속도
     private float walkSpeed = 15.0f;
     private float runSpeed = 35.0f;
@@ -47,6 +51,16 @@ public class ShepherdManager4 : MonoBehaviour {
         //0번째 목적지로
         if (desFlag[0])
         {
+            StopCoroutine("move1");
+            StopCoroutine("move3");
+            StopCoroutine("move4");
+
+            anim.SetBool("walk", false);
+            anim.SetBool("run", false);
+            anim.SetBool("rrr", false);
+            anim.SetBool("laugh", false);
+            delay = 0;
+
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
             {
                 anim.SetBool("rrr", true);
@@ -165,13 +179,17 @@ public class ShepherdManager4 : MonoBehaviour {
         desFlag[5] = true;
     }
 
+
+
     //충돌
     void OnTriggerEnter(Collider coll)
     {
         //최종 목적지 도달.
         if (coll.tag == "LastDestination")
         {
-            gameObject.SetActive(false);
+            desFlag[5] = false;
+            anim.SetBool("run", false);
+            gameObject.transform.position = position.transform.position;
             desFlag[10] = true;
         }
 
