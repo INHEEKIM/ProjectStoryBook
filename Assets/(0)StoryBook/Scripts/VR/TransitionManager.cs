@@ -24,6 +24,8 @@ public class TransitionManager : MonoBehaviour
     private string viewTrigger;
 
     private TransitionManager mTransitionManager; //
+
+    private bool datasetBool = true;
     #endregion // PRIVATE_MEMBER_VARIABLES
 
 
@@ -102,7 +104,12 @@ public class TransitionManager : MonoBehaviour
             {
                 Debug.Log("Switching to VR: deactivating datasets");
                 
-                ActivateDatasets(false);
+                if(datasetBool == true)
+                {
+                    datasetBool = false;
+                    ActivateDatasets(datasetBool); // false;
+                }
+                
             }
 
             // As we are moving back to AR, we re-activate the Datasets,
@@ -116,8 +123,12 @@ public class TransitionManager : MonoBehaviour
                 || mCurrentMode == MixedRealityController.Mode.VIEWER_AR)
             {
                 Debug.Log("Switching to AR: activating datasets");
-              
-                ActivateDatasets(true);
+                if (datasetBool == false)
+                {
+                    datasetBool = true;
+                    ActivateDatasets(datasetBool); // true
+                }
+                
             }
 
             MixedRealityController.Instance.SetMode(mCurrentMode);
