@@ -87,7 +87,8 @@ public class TransitionManager : MonoBehaviour
             // mixed reality mode to switch to
             mCurrentMode = mixedRealityMode;
 
-
+            Debug.Log("mCurrentMode" + mCurrentMode);
+            Debug.Log("mixedRealityMode" + mixedRealityMode);
             // When we transition to VR, we deactivate the Datasets 
             // before setting the mixed reality mode.
             // so to reduce CPU usage, as tracking is not needed in this phase

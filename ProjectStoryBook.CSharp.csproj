@@ -80,6 +80,7 @@
     <Compile Include="Assets\(0)StoryBook\Scripts\CuboidTrackableEventHandler.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\GameManager.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\MarkerStateManager.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\ResetManager.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\SoundManager.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\TextManager.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\ARVRAboutManager.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\BackToAbout.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\BlackMaskBehaviour.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\Button3D.cs" />
+    <Compile Include="Assets\(0)StoryBook\Scripts\VR\FullScreenButton.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\GazeRay.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\ModeConfig.cs" />
     <Compile Include="Assets\(0)StoryBook\Scripts\VR\Reticle.cs" />
