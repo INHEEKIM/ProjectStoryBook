@@ -21,6 +21,9 @@ public class ShepherdManager7 : MonoBehaviour {
     //첫시작 flag
     private bool flag = false;
 
+    //끝나고 임시 위치
+    public GameObject position;
+
     //속도
     private float runSpeed = 35.0f;
     private float minDistance = 0.1f;
@@ -53,6 +56,17 @@ public class ShepherdManager7 : MonoBehaviour {
         //0번째 목적지로
         if (desFlag[0])
         {
+            StopCoroutine("move1");
+            StopCoroutine("move3");
+            StopCoroutine("move4");
+            StopCoroutine("move5");
+
+            anim.SetBool("walk", false);
+            anim.SetBool("run", false);
+            anim.SetBool("laugh", false);
+            anim.SetBool("rrr", false);
+            flag = false;
+
             if (!flag)
             {
                 flag = !flag;
@@ -185,7 +199,11 @@ public class ShepherdManager7 : MonoBehaviour {
         if (coll.tag == "LastDestination")
         {
             desFlag[10] = true;
-            gameObject.SetActive(false);
+
+            desFlag[6] = false;
+
+            anim.SetBool("run", false);
+            gameObject.transform.position = position.transform.position;
         }
 
         //중간 목적지 충돌.

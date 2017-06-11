@@ -54,6 +54,10 @@ public class People3 : MonoBehaviour {
         //VR에서 돌아옴.
         if (desFlag[0])
         {
+            StopCoroutine("move2");
+            StopCoroutine("move3");
+            anim.Stop();
+
             if (shepherdManager.getDesFlag(6))
             {
                 desFlag[0] = !desFlag[0];

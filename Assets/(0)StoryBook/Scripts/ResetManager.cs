@@ -8,10 +8,10 @@ public class ResetManager : MonoBehaviour {
     //리셋 버튼
     public GameObject[] button;
     public ViewButtonTrigger[] viewButtonTrigger;
-    //vr 버튼
+    //vr 버튼 (vr 공간 안에서의 버튼
     public GameObject[] buttonVR;
     public ViewButtonTrigger[] viewButtonTriggerVR;
-    //전환 버튼
+    //전환 버튼 (포탈/ar로 향하는 포탈 순
     public GameObject[] buttonARVR;
     public ViewTrigger[] viewTriggerARVR;
 
@@ -69,6 +69,9 @@ public class ResetManager : MonoBehaviour {
         //2페
         if (viewButtonTrigger[1].boolTrigger)
             resetPage2();
+        //3페
+        if (viewButtonTrigger[2].boolTrigger)
+            resetPage3();
 
         //4페
         if (viewButtonTrigger[3].boolTrigger)
@@ -79,6 +82,11 @@ public class ResetManager : MonoBehaviour {
         //6페
         if (viewButtonTrigger[5].boolTrigger)
             resetPage6();
+
+        //7페
+        if (viewButtonTrigger[6].boolTrigger)
+            resetPage7();
+
         //8페
         if (viewButtonTrigger[7].boolTrigger)
             resetPage8();
@@ -111,17 +119,22 @@ public class ResetManager : MonoBehaviour {
         viewButtonTrigger[1].boolTrigger = false;
         viewButtonTrigger[1].mTriggered = false;
 
-        // vr. 일단 오브젝트 빼고.
+        // vr. 
         viewButtonTriggerVR[0].mTriggered = false;
         viewButtonTriggerVR[0].boolTrigger = false;
         viewButtonTriggerVR[1].mTriggered = false;
         viewButtonTriggerVR[1].boolTrigger = false;
+        buttonVR[0].SetActive(true);
+        buttonVR[1].SetActive(true);
 
         //vr로 넘어가기 전에 [potal]
         buttonARVR[0].SetActive(false);
         viewTriggerARVR[0].mTriggered = false;
         //ar로 넘어가기 전 [돌아가기]
         viewTriggerARVR[1].mTriggered = false;
+        buttonARVR[1].SetActive(false);
+
+        GameManager.manager.resetTrigger();
 
         //인식 무시하고 실행
         textManager.setMakerFlag(1, true);
@@ -144,6 +157,58 @@ public class ResetManager : MonoBehaviour {
         people2[1].GetComponent<People2>().resetDesFlag();
         people2[1].SetActive(false);
  
+
+    }
+    #endregion
+
+    #region 3페이지 초기화
+    void resetPage3()
+    {
+        //다시보기 버튼 초기화
+        button[2].SetActive(true);
+        viewButtonTrigger[2].boolTrigger = false;
+        viewButtonTrigger[2].mTriggered = false;
+
+        // vr. 
+        viewButtonTriggerVR[2].mTriggered = false;
+        viewButtonTriggerVR[2].boolTrigger = false;
+        viewButtonTriggerVR[3].mTriggered = false;
+        viewButtonTriggerVR[3].boolTrigger = false;
+        buttonVR[2].SetActive(true);
+        buttonVR[3].SetActive(true);
+
+        //vr로 넘어가기 전에 [potal]
+        buttonARVR[2].SetActive(false);
+        viewTriggerARVR[2].mTriggered = false;
+        //ar로 넘어가기 전 [돌아가기]
+        viewTriggerARVR[3].mTriggered = false;
+        buttonARVR[3].SetActive(false);
+
+        GameManager.manager.resetTrigger();
+
+        //인식 무시하고 실행
+        textManager.setMakerFlag(2, true);
+
+        //양치기
+        shepherd[2].transform.position = shepherdPosition[2].transform.position;
+        shepherd[2].transform.rotation = shepherdPosition[2].transform.rotation;
+        shepherd[2].SetActive(true);
+        shepherd[2].GetComponent<ShepherdManager3>().resetDesFlag();
+
+        //목적지
+        for (int i = 0; i < 3; i++) des3[i].SetActive(true);
+        for (int i = 3; i < des3.Length; i++) des3[i].SetActive(false);
+
+        //마을사람
+        people3[0].transform.position = people3Position[0].transform.position;
+        people3[0].transform.rotation = people3Position[0].transform.rotation;
+        people3[0].GetComponent<People3>().resetDesFlag();
+        people3[0].SetActive(false);
+        people3[1].transform.position = people3Position[1].transform.position;
+        people3[1].transform.rotation = people3Position[1].transform.rotation;
+        people3[1].GetComponent<People3>().resetDesFlag();
+        people3[1].SetActive(false);
+
 
     }
     #endregion
@@ -266,6 +331,48 @@ public class ResetManager : MonoBehaviour {
 
     }
 
+    #endregion
+
+    #region 7페이지 초기화
+    void resetPage7()
+    {
+        //다시보기 버튼 초기화
+        button[6].SetActive(true);
+        viewButtonTrigger[6].boolTrigger = false;
+        viewButtonTrigger[6].mTriggered = false;
+
+        // vr. 
+        viewButtonTriggerVR[4].mTriggered = false;
+        viewButtonTriggerVR[4].boolTrigger = false;
+        viewButtonTriggerVR[5].mTriggered = false;
+        viewButtonTriggerVR[5].boolTrigger = false;
+        buttonVR[4].SetActive(true);
+        buttonVR[5].SetActive(true);
+
+        //vr로 넘어가기 전에 [potal]
+        buttonARVR[4].SetActive(false);
+        viewTriggerARVR[4].mTriggered = false;
+        //ar로 넘어가기 전 [돌아가기]
+        viewTriggerARVR[5].mTriggered = false;
+        buttonARVR[5].SetActive(false);
+
+        GameManager.manager.resetTrigger();
+
+        //인식 무시하고 실행
+        textManager.setMakerFlag(6, true);
+
+        //양치기
+        shepherd[6].transform.position = shepherdPosition[6].transform.position;
+        shepherd[6].transform.rotation = shepherdPosition[6].transform.rotation;
+        shepherd[6].SetActive(true);
+        shepherd[6].GetComponent<ShepherdManager7>().resetDesFlag();
+
+        //목적지
+        des7[0].SetActive(true);
+        des7[1].SetActive(false);
+
+
+    }
     #endregion
 
 

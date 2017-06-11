@@ -82,18 +82,18 @@ public class TextManager : MonoBehaviour {
             {
                 if (shepherd1.GetComponent<ShepherdManager1>().getDesFlag(0))
                 {
-                    text[0].GetComponent<TextMesh>().text = "옛날 어느 마을에 양치기 소년이 살았어요.";
+                    text[0].GetComponent<TextMesh>().text = "옛날 어느 한 마을에 양치기 소년이 살고 있었어요.";
                     audioSource.clip = Page1_music[0];
                     audioSource.Play();
                 }
                 else if (shepherd1.GetComponent<ShepherdManager1>().getDesFlag(2))
                 {
-                    text[0].GetComponent<TextMesh>().text = "어휴, 심심해! 뭐 재미있는 일 없을까?";
+                    text[0].GetComponent<TextMesh>().text = "어휴, 심심해! 무슨 재미있는 일 없을까?";
                     audioSource.clip = Page1_music[1]; audioSource.Play();
                 }
                 else if (shepherd1.GetComponent<ShepherdManager1>().getDesFlag(4))
                 {
-                    text[0].GetComponent<TextMesh>().text = "궁리를 하던 양치기 소년은 \n마을을 향해 마구 달려가며 소리쳤어요.";
+                    text[0].GetComponent<TextMesh>().text = "곰곰히 생각하던 양치기 소년은 재밌는 생각을\n떠올렸는지 마을을 향해 달려가며 소리쳤어요.";
                     audioSource.clip = Page1_music[2]; audioSource.Play();
                 }
                 else if (shepherd1.GetComponent<ShepherdManager1>().getDesFlag(8))
@@ -149,14 +149,14 @@ public class TextManager : MonoBehaviour {
                 }
                 else if (shepherd2.GetComponent<ShepherdManager2>().getDesFlag(9))
                 {
-                    text[1].GetComponent<TextMesh>().text = "양치기소년의 목소리를 들은 마을사람들은 \n하나둘씩 소년의 주위로 모여들기 시작하더니";
+                    text[1].GetComponent<TextMesh>().text = "양치기 소년의 목소리를 들은 마을사람들은 \n소년의 주위로 하나둘씩 모이기 시작하더니";
                     audioSource.clip = Page2_music[1]; audioSource.Play();
                     shepherd2.GetComponent<ShepherdManager2>().setDesFlag(9, false);
 
                 }
                 else if (shepherd2.GetComponent<ShepherdManager2>().getDesFlag(5))
                 {
-                    text[1].GetComponent<TextMesh>().text = "어디?! 어디에 늑대가 있다는 거냐!";
+                    text[1].GetComponent<TextMesh>().text = "늑대라고? 어디, 어디에 나타났니!";
                     audioSource.clip = Page2_music[2]; audioSource.Play();
                 }
                 else if (shepherd2.GetComponent<ShepherdManager2>().getDesFlag(7))
@@ -204,7 +204,7 @@ public class TextManager : MonoBehaviour {
                 }
                 else if (shepherd3.GetComponent<ShepherdManager3>().getDesFlag(9))
                 {
-                    text[2].GetComponent<TextMesh>().text = "헤헤헤! 거짓말인데! \n심심해서 장난 좀 쳐본 거에요! 아하하!";
+                    text[2].GetComponent<TextMesh>().text = "헤헤! 거짓말인데! \n그냥 심심해서 장난 좀 쳐본 거에요! 아하하!";
                     audioSource.clip = Page3_music[3]; audioSource.Play();
                     shepherd3.GetComponent<ShepherdManager3>().setDesFlag(9, false);
                 }
@@ -255,11 +255,11 @@ public class TextManager : MonoBehaviour {
                 {
                     audioSource.clip = Page4_music[0];
                     audioSource.Play();
-                    text[3].GetComponent<TextMesh>().text = "소년은 마을 사람들이 \n놀라는 모습이 재미있었어요.";
+                    text[3].GetComponent<TextMesh>().text = "소년은 마을 사람들이 \n놀라는 모습이 너무 재미있었어요.";
                 }
                 else if (shepherd4.GetComponent<ShepherdManager4>().getDesFlag(9))
                 {
-                    text[3].GetComponent<TextMesh>().text = "며칠 후 양치기 소년은 또 거짓말을 했어요.";
+                    text[3].GetComponent<TextMesh>().text = "며칠 후 심심해진 양치기 소년은 \n또다시 거짓말을 했어요.";
                     audioSource.clip = Page4_music[1]; audioSource.Play();
                     shepherd4.GetComponent<ShepherdManager4>().setDesFlag(9, false);
                 }
@@ -272,14 +272,14 @@ public class TextManager : MonoBehaviour {
                 }
                 else if (people4.GetComponent<WoodCutter4>().getDesFlag(9))
                 {
-                    text[3].GetComponent<TextMesh>().text = "꼬마야, 무슨 일이 일어난거니?";
+                    text[3].GetComponent<TextMesh>().text = "꼬마야, 무슨 일이라도 일어난거니?";
                     audioSource.clip = Page4_music[3]; audioSource.Play();
                     people4.GetComponent<WoodCutter4>().setDesFlag(9, false);
                 }
                 else if (shepherd4.GetComponent<ShepherdManager4>().getDesFlag(7))
                 {
 
-                    text[3].GetComponent<TextMesh>().text = "아저씨, 도와주세요! 목장에 늑대가 나타났어요! ";
+                    text[3].GetComponent<TextMesh>().text = "아저씨, 도와주세요! \n목장에 엄청 큰 늑대가 나타났어요! ";
                     audioSource.clip = Page4_music[4]; audioSource.Play();
                     shepherd4.GetComponent<ShepherdManager4>().setDesFlag(7, false);
                 }
@@ -311,7 +311,7 @@ public class TextManager : MonoBehaviour {
                 {
                     audioSource.clip = Page5_music[0];
                     audioSource.Play();
-                    text[4].GetComponent<TextMesh>().text = "사람들은 또 몽둥이를 가지고 \n목장으로 헐레벌떡 달려갔어요.";
+                    text[4].GetComponent<TextMesh>().text = "사람들은 모두 몽둥이를 들고 \n헐레벌떡 목장으로 달려갔어요.";
                 }
                 else if (shepherd5.GetComponent<ShepherdManager5>().getDesFlag(9))
                 {
@@ -321,7 +321,7 @@ public class TextManager : MonoBehaviour {
                 }
                 else if (people5.GetComponent<People5>().getDesFlag(9))
                 {
-                    text[4].GetComponent<TextMesh>().text = "못된 녀석 같으니라고! 이젠 두 번 다시 속지 않을 테다!";
+                    text[4].GetComponent<TextMesh>().text = "이런 고얀 놈을 보았나!";
                     audioSource.Stop();
                     audioSource.clip = Page5_music[2]; audioSource.Play();
                     people5.GetComponent<People5>().setDesFlag(9, false);
@@ -460,7 +460,7 @@ public class TextManager : MonoBehaviour {
                 {
                     audioSource.clip = Page8_music[0];
                     audioSource.Play();
-                    text[7].GetComponent<TextMesh>().text = "그 틈에 늑대는 양들을 몽땅 잡아먹어 버렸답니다.";
+                    text[7].GetComponent<TextMesh>().text = "그 틈에 늑대는 양들을 몽땅 잡아먹어 버렸어요.";
                 }
                 else if (shepherd8.GetComponent<ShepherdManager8>().getDesFlag(5))
                 {

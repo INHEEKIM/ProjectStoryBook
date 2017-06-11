@@ -71,6 +71,14 @@ public class GameManager : MonoBehaviour {
     {
         return vrTrigger[i];
     }
+    public void resetTrigger()
+    {
+        for (int i = 0; i < arTrigger.Length; i++)
+        {
+            arTrigger[i] = false;
+            vrTrigger[i] = false;
+        }
+    }
 
 }
 

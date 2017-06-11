@@ -50,6 +50,15 @@ public class ShepherdManager3 : MonoBehaviour {
         //0번째 목적지로
         if (desFlag[0])
         {
+            StopCoroutine("move6");
+            StopCoroutine("move3");
+            StopCoroutine("move4");
+            StopCoroutine("move5");
+
+            anim.SetBool("walk", false);
+            anim.SetBool("run", false);
+            anim.SetBool("laugh", false);
+
             if (Vector3.Distance(transform.position, destination[0].transform.position) > minDistance)
             {
                 anim.SetBool("run", true);
